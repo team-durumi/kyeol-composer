@@ -1,0 +1,59 @@
+/*어드민 탭*/
+.tabs{border-bottom:1px solid #111}
+.tabs.primary li{display:inline-block;}
+.tabs.primary li a{border:3px solid #9f865f;min-width:100px;margin:1em 0.5em;display:block;padding:0.5em;text-decoration:none;text-align:center;color:#9f865f}
+.tabs.primary li:nth-child(1) a{margin-left:0}
+.tabs.primary li a:hover{background-color:#9f865f;color:white}
+.not-logged-in .tabs{display:none;}
+
+/*지난호 보기*/
+.lc01 li.views-row:nth-child(3n){margin-right:0}
+
+/*페이징*/
+.pager-ellipsis{display: inline-block}
+
+/*로그인 번튼*/
+#user-login #edit-submit{margin-top:10px;text-align: center;background-color: #2d1900;border: none;height: 66px;color: #fff;font-size: 1rem;cursor: pointer;min-width: 100px;border-radius: 10px;}
+
+/*message*/
+div.messages{margin-top: 35px}
+
+/*로그인 화면*/
+#user-login{margin-top:20px}
+#user-login .form-item{margin-bottom: 20px;position: relative}
+#user-login label{margin-right:1em;min-width:70px;display:inline-block}
+#user-login .form-required{color:#f00}
+#user-login .description{margin: 5px 0;line-height: 1.231em;font-size: 0.923em;color: #8F8F8F;position: absolute;top: 10px;left: 110px}
+
+/*모아보기-인물*/
+.fc_box01_01 .rightF.person{margin-right:10px;cursor:pointer}
+
+/*본문 이미지 캡션*/
+.caption{display:block;position:relative;}
+.caption p{position:absolute;margin:0;bottom:0;right:0;background-color:rgba(0, 0, 0, 0.4);color: #e3e3e3;font-size:10px;font-size:.8rem;line-height:1.8;font-weight:300;text-align:left;padding:6px 12px;left:0;}
+
+/*본문 Youtube*/
+.field-type-youtube .field-items .field-item, .field-type-video .field-items .field-item{margin-bottom:10px}
+
+/*본문 영상*/
+.field-type-video video{max-width:100%;height:auto}
+
+/*맨위로*/
+#toTop {
+    display: none; 
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+    padding: 8px 10px;
+    border-radius: 10px;
+}
+
+#toTop:hover {
+    background-color: #9f865f; 
+}

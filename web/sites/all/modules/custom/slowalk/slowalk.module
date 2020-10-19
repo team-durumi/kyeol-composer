@@ -1,0 +1,123 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: js
+ * Date: 2019-03-05
+ * Time: 00:06
+ */
+
+define('__SLOWALK__', drupal_get_path('module', 'slowalk'));
+
+/**
+ * Implements hook_menu().
+ */
+function slowalk_menu()
+{
+    $items['admin/webzine'] = array(
+        'title' => '유지관리',
+        'description' => '웹진 어드민 페이지입니다',
+        'page callback' => 'drupal_get_form',
+        'page arguments' => array('wz_main_callback'),
+        'access arguments' => array('access administrator webzine'),
+        'file' => 'include/main.php'
+    );
+
+    $items['admin/webzine/mainpage-settings'] = array(
+        'title' => '메인 페이지 설정',
+        'description' => '메인 페이지 구성 요소를 설정할 수 있습니다',
+        'type' => MENU_DEFAULT_LOCAL_TASK,
+        'weight' => 0
+    );
+
+    $items['admin/webzine/slide'] = array(
+        'title' => '메인 슬라이드',
+        'description' => '메인페이지 슬라이드 설정 페이지입니다.',
+        'page callback' => 'drupal_get_form',
+        'page arguments' => array('wz_slide_callback'),
+        'access arguments' => array('access administrator webzine'),
+        'type' => MENU_LOCAL_TASK,
+        'weight' => 1,
+        'file' => 'include/slide.php'
+    );
+
+//    $items['admin/webzine/devel'] = array(
+//        'title' => '개발 테스트',
+//        'description' => '',
+//        'page callback' => 'wz_devel',
+//        'access arguments' => array('access administrator'),
+//        'type' => MENU_LOCAL_TASK,
+//        'file' => 'include/devel.php'
+//    );
+
+    $items['ajax/webzine'] = array(
+        'title' => 'Ajax',
+        'description' => '',
+        'page callback' => 'webzine_ajax_callback',
+        'access arguments' => array('access webzine ajax'),
+        'type' => MENU_CALLBACK,
+        'file' => 'slowalk_ajax.php'
+    );
+
+    return $items;
+}
+
+/**
+ * Implements hook_permission().
+ */
+function slowalk_permission()
+{
+    return array(
+        'access webzine ajax' => array(
+            'title' => 'Webzine Ajax',
+            'description' => 'Webzine Ajax access role.'
+        ),
+        'access administrator webzine' => array(
+          'title' => 'Webzine Administor',
+          'description' => 'Webzine administor page access role.'
+        )
+    );
+}
+
+/**
+ * @param $tid
+ */
+function back_issues_date($tid)
+{
+    $query = new EntityFieldQuery();
+    $result = $query->entityCondition('entity_type', 'node')
+        ->entityCondition('bundle', 'article')
+        ->propertyCondition('status', 1)
+        ->fieldCondition('field_vol', 'tid', $tid)
+        ->fieldOrderBy('field_category', 'tid', 'ASC')
+        ->propertyOrderBy('created', 'DESC')
+        ->range(0,1)
+        ->execute();
+    if(isset($result['node'])) {
+        $nids = array_keys($result['node']);
+        $nodes = entity_load('node', $nids);
+        $node = array_shift($nodes);
+        return format_date($node->created, 'custom', 'Y.m.d');
+    }
+}
+
+function _slowalk_search($view_name, $display_id, $key)
+{
+    $search = views_get_view($view_name);
+    $search->set_display($display_id);
+    $filter = $search->get_item($display_id, 'filter', 'search_api_views_fulltext');
+    $filter['value'] = $key;
+    $search->set_item('page', 'filter', 'search_api_views_fulltext', $filter);
+    $search->pre_execute();
+    $search->execute();
+    return $search->total_rows;
+}
+
+/**
+ * Implements hook_preprocess_page().
+ */
+function slowalk_preprocess_page(&$variables)
+{
+  if(isset($variables['node']) && $variables['node']->type === 'article') {
+    drupal_add_js(__SLOWALK__ . '/js/linkit.js', array('type' => 'file', 'scope' => 'footer', 'group' => JS_THEME));
+  }
+}

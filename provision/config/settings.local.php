@@ -1,13 +1,12 @@
 <?php
-$databases['default']['default'] = array (
+$databases['default']['default'] = array(
+  'driver' => 'mysql',
   'database' => 'kyeol',
   'username' => 'vagrant',
   'password' => 'vagrant',
-  'prefix' => 'drupal_',
-  'host' => 'localhost',
-  'port' => '3306',
-  'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
-  'driver' => 'mysql',
+  'host' => '127.0.0.1',
+  'charset' => 'utf8mb4',
+  'collation' => 'utf8mb4_general_ci',
 );
 
 $settings['trusted_host_patterns'] = [

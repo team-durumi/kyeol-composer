@@ -16,12 +16,8 @@ echo "[php] install composer"
 curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
 
 # echo "[php] install drush launcher"
-# wget -O drush.phar https://github.com/drush-ops/drush-launcher/releases/latest/download/drush.phar
-# chmod +x drush.phar && sudo mv drush.phar /usr/local/bin/drush
+wget -O drush.phar https://github.com/drush-ops/drush-launcher/releases/latest/download/drush.phar
+chmod +x drush.phar && sudo mv drush.phar /usr/local/bin/drush
 
-echo "[php] install drush 8 globally"
-composer global require drush/drush:^8
-echo 'export PATH="/home/vagrant/.config/composer/vendor/bin:$PATH"' >> /home/vagrant/.profile
-
-# echo "[drupal] copy settings files"
-# cp -r /vagrant/provision/config/settings* /vagrant/web/sites/default/
+echo "[drupal] copy settings files"
+cp -r /vagrant/provision/config/settings* /vagrant/web/sites/default/

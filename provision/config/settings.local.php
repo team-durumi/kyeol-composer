@@ -9,12 +9,4 @@ $databases['default']['default'] = array(
   'collation' => 'utf8mb4_general_ci',
 );
 
-$settings['trusted_host_patterns'] = [
-  '^localhost$'
-];
-
-$config['system.performance']['css']['preprocess'] = FALSE;
-$config['system.performance']['js']['preprocess'] = FALSE;
-$settings['cache']['bins']['render'] = 'cache.backend.null';
-$settings['cache']['bins']['dynamic_page_cache'] = 'cache.backend.null';
-$settings['extension_discovery_scan_tests'] = FALSE;
+$conf['theme_debug'] = TRUE;

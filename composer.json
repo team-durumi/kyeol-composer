@@ -28,20 +28,18 @@
         "composer/semver": "^1.4",
         "cweagans/composer-patches": "^1.6.5",
         "drupal-composer/preserve-paths": "^0.1",
-        "drupal/composer_autoloader": "^1.0",
-        "drupal/drupal": "^7.62",
-        "drush/drush": "^8.0",
-        "symfony/filesystem": "~2.7|^3",
-        "webflo/drupal-finder": "^1.0.0",
         "drupal/admin_menu": "*",
         "drupal/adminimal_admin_menu": "*",
+        "drupal/adminimal_theme": "^1.26",
         "drupal/advanced_help": "*",
         "drupal/backup_migrate": "*",
         "drupal/ckeditor": "*",
+        "drupal/composer_autoloader": "^1.0",
         "drupal/conditional_styles": "*",
         "drupal/context": "*",
         "drupal/ctools": "*",
         "drupal/devel": "*",
+        "drupal/drupal": "^7.62",
         "drupal/elysia_cron": "*",
         "drupal/entity": "*",
         "drupal/file_entity": "*",
@@ -78,7 +76,10 @@
         "drupal/video": "*",
         "drupal/views": "*",
         "drupal/xmlsitemap": "*",
-        "drupal/youtube": "*"
+        "drupal/youtube": "*",
+        "drush/drush": "^8.0",
+        "symfony/filesystem": "~2.7|^3",
+        "webflo/drupal-finder": "^1.0.0"
     },
     "conflict": {
         "drupal/core": "8.*"
@@ -122,6 +123,9 @@
         "patches": {
             "cweagans/composer-patches": {
                 "Call the preserve paths hooks" : "https://github.com/SebCorbin/composer-patches/commit/1cb9bacba51f8bba0c5f3f322c3bb61e4ceae974.patch"
+            },
+            "drupal/ckeditor": {
+                "Add %conf_path% and %plugin_module_path% to plugin path render placeholders/replacements to make features reusable": "https://www.drupal.org/files/issues/ckeditor-plugin_module_paths-2422875-34.patch"
             }
         },
         "preserve-paths": [

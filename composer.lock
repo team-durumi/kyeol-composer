@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "002c933cf90325f1552e0cb4079728a0",
+    "content-hash": "2b65df08b4111015e5625d2d75757f21",
     "packages": [
         {
             "name": "composer/installers",
@@ -746,6 +746,57 @@
             }
         },
         {
+            "name": "drupal/adminimal_theme",
+            "version": "1.26.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/adminimal_theme.git",
+                "reference": "7.x-1.26"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/adminimal_theme-7.x-1.26.zip",
+                "reference": "7.x-1.26",
+                "shasum": "dac3a7031248ee544a569fd2c71be84fe1872c32"
+            },
+            "require": {
+                "drupal/drupal": "~7.0"
+            },
+            "type": "drupal-theme",
+            "extra": {
+                "drupal": {
+                    "version": "7.x-1.26",
+                    "datestamp": "1558584484",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/7/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "ANDiTKO",
+                    "homepage": "https://www.drupal.org/user/1428124"
+                },
+                {
+                    "name": "andrey.troeglazov",
+                    "homepage": "https://www.drupal.org/user/3145389"
+                },
+                {
+                    "name": "realityloop",
+                    "homepage": "https://www.drupal.org/user/139189"
+                }
+            ],
+            "homepage": "https://www.drupal.org/project/adminimal_theme",
+            "support": {
+                "source": "https://git.drupalcode.org/project/adminimal_theme"
+            }
+        },
+        {
             "name": "drupal/advanced_help",
             "version": "1.6.0",
             "source": {
@@ -902,6 +953,9 @@
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
                     }
+                },
+                "patches_applied": {
+                    "Add %conf_path% and %plugin_module_path% to plugin path render placeholders/replacements to make features reusable": "https://www.drupal.org/files/issues/ckeditor-plugin_module_paths-2422875-34.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/7/downloads",

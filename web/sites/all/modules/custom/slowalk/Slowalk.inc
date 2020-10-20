@@ -12,10 +12,9 @@ class Slowalk
 
     public function __construct()
     {
-        global $base_url;
         $this->vol = variable_get('wz_main_vol', '');   //호수
         $this->featureIds = array();    //메인피쳐
-        $this->baseUrl = $base_url;
+        $this->baseUrl = 'http://localhost';
 
         //기사 분류
         $this->catLabel = array(
@@ -129,7 +128,6 @@ class Main extends Slowalk
                 'nid' => $this->featureIds,
                 'type' => 'articles'
             );
-
             $articles = $this->getData($data);
         }
         return $articles;

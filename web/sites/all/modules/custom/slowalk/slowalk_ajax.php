@@ -35,8 +35,11 @@ function webzine_ajax_callback()
                 if($result['node']) {
                     $nid = key($result['node']);
                     $node = node_load($nid);
-                    $body = strip_tags(render(field_view_field('node', $node, 'body', 'teaser')));
-                    $writer = render(field_view_field('node', $node, 'field_writer', ['label' => 'hidden']));
+                    $output = field_view_field('node', $node, 'body', 'teaser');
+                    $body = render($output);
+                    $body = strip_tags($body);
+                    $output2 = field_view_field('node', $node, 'field_writer', ['label' => 'hidden']);
+                    $writer = render($output2);
                     $return = array(
                         'nid' => $nid,
                         'url' => '/node/'.$nid,

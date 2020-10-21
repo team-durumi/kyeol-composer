@@ -32,6 +32,7 @@
         "drupal/adminimal_admin_menu": "*",
         "drupal/adminimal_theme": "^1.26",
         "drupal/advanced_help": "*",
+        "drupal/autotag": "^3.1",
         "drupal/backup_migrate": "*",
         "drupal/ckeditor": "*",
         "drupal/composer_autoloader": "^1.0",

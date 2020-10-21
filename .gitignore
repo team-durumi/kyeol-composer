@@ -20,6 +20,7 @@
 /web/sites/all/*/README.txt
 /web/sites/example.sites.php
 /web/themes/
+/web/sites/all/translations
 
 # Ignore configuration files that may contain sensitive information.
 /web/sites/*/*.settings.php

@@ -17,7 +17,7 @@ mysql --password=root -e "GRANT ALL ON kyeol.* TO vagrant@localhost IDENTIFIED B
 cp /vagrant/provision/config/my.cnf /home/vagrant/.my.cnf
 chown vagrant:vagrant /home/vagrant/.my.cnf
 
-FILE=/vagrant/dump/1002.sql.gz
+FILE=/vagrant/dump/1020.sql.gz
 if [ -f "$FILE" ]; then
     echo "[mariadb] $FILE exists and restoring kyeol database..."
     gunzip -c $FILE | mysql kyeol --password=root

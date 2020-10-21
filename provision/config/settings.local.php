@@ -10,4 +10,4 @@ $databases['default']['default'] = array(
 );
 
 $conf['theme_debug'] = TRUE;
-$base_url = 'http://localhost:8888';
+$base_url = 'http://localhost:8080';

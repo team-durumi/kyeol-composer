@@ -18,6 +18,7 @@ curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/loca
 # echo "[php] install drush launcher"
 wget -O drush.phar https://github.com/drush-ops/drush-launcher/releases/latest/download/drush.phar
 chmod +x drush.phar && sudo mv drush.phar /usr/local/bin/drush
+su -c "cd /vagrant && composer install && " - vagrant
 
 echo "[drupal] copy settings files"
 cp -r /vagrant/provision/config/settings* /vagrant/web/sites/default/

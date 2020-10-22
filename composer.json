@@ -32,7 +32,6 @@
         "drupal/adminimal_admin_menu": "*",
         "drupal/adminimal_theme": "^1.26",
         "drupal/advanced_help": "*",
-        "drupal/autotag": "^3.1",
         "drupal/backup_migrate": "*",
         "drupal/ckeditor": "*",
         "drupal/composer_autoloader": "^1.0",
@@ -67,6 +66,7 @@
         "drupal/nodereference_url": "*",
         "drupal/panels": "*",
         "drupal/pathauto": "*",
+        "drupal/pirate": "1.x-dev",
         "drupal/plupload": "*",
         "drupal/references": "*",
         "drupal/search_api": "*",
@@ -103,9 +103,6 @@
             "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
         ],
         "post-install-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
-        ],
-        "post-update-cmd": [
             "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
         ],
         "post-create-project-cmd": [

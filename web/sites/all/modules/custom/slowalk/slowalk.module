@@ -118,6 +118,52 @@ function _slowalk_search($view_name, $display_id, $key)
 function slowalk_preprocess_page(&$variables)
 {
   if(isset($variables['node']) && $variables['node']->type === 'article') {
-    drupal_add_js(__SLOWALK__ . '/js/linkit.js', array('type' => 'file', 'scope' => 'footer', 'group' => JS_THEME));
+    drupal_add_js(__SLOWALK__ . '/js/cavacnotify.js', array('type' => 'file', 'scope' => 'footer', 'group' => JS_THEME));
   }
+}
+
+/**
+ * Implements hook_captain().
+ *
+ * pirate filter를 사용하는 경우 노드 본문의 텍스트 중 전문용어를 발견하면
+ * 해당 용어에 '#' 문자열을 추가하는 패턴 규칙을 제공합니다.
+ * 실제로는 pirate filter가 치환합니다.
+ *
+ */
+function slowalk_captain($patterns) {
+  $terms = get_terminology_terms();
+  $terms_patterns = [];
+  foreach ($terms as $tid => $term) {
+    $pattern = '/[^#|>]' . $term['name'] . '/u';
+    $terms_patterns[$pattern] = ' <span class="cavacnotify"';
+    $terms_patterns[$pattern] .= ' popuptext="' . $term['text'] . '"';
+    $terms_patterns[$pattern] .= ' popuptitle="' . $term['name'] . '"';
+    $terms_patterns[$pattern] .= ' data-url="' . $term['url'] . '"';
+    $terms_patterns[$pattern] .= '>#' . $term['name'] . '</span>';
+  }
+  return array_merge($patterns, $terms_patterns);
+}
+
+/**
+ * 전체 전문용어 배열 반환
+ */
+function get_terminology_terms() {
+  $vocabulary = taxonomy_vocabulary_machine_name_load('terms');
+  $terms = entity_load('taxonomy_term', FALSE, array('vid' => $vocabulary->vid));
+  $data = [];
+  foreach ($terms as $tid => $term) {
+    $data[$tid] = [
+      'name' => $term->name,
+      'text' => strip_tags(str_replace("\r\n","",$term->description)),
+      'url' => '/taxonomy/term/' . $tid
+    ];
+  }
+  return $data;
+}
+
+/**
+ * Implements hook_node_view().
+ */
+function slowalk_node_view($node, $view_mode, $langcode) {
+  // $terms = get_terminology_terms(); echo '<pre>' . print_r($terms, true) . '</pre>';
 }

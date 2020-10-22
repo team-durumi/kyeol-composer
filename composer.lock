@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c8fe287023bdf73c2c8518f2e9001cb6",
+    "content-hash": "09a802af0daedeb676dbf77fa87232b3",
     "packages": [
         {
             "name": "composer/installers",
@@ -862,55 +862,6 @@
             "homepage": "https://www.drupal.org/project/advanced_help",
             "support": {
                 "source": "https://git.drupalcode.org/project/advanced_help"
-            }
-        },
-        {
-            "name": "drupal/autotag",
-            "version": "3.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/autotag.git",
-                "reference": "7.x-3.1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/autotag-7.x-3.1.zip",
-                "reference": "7.x-3.1",
-                "shasum": "67fef974f7c0fb698e2123ee4e394766105307fb"
-            },
-            "require": {
-                "drupal/drupal": "~7.0",
-                "drupal/tag": "*"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "7.x-3.1",
-                    "datestamp": "1428928081",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/7/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "alvar0hurtad0",
-                    "homepage": "https://www.drupal.org/user/1564318"
-                },
-                {
-                    "name": "sdrycroft",
-                    "homepage": "https://www.drupal.org/user/151544"
-                }
-            ],
-            "description": "Implements the Tags API to help link entities to terms already present on a site.",
-            "homepage": "https://www.drupal.org/project/autotag",
-            "support": {
-                "source": "https://git.drupalcode.org/project/autotag"
             }
         },
         {
@@ -3484,6 +3435,52 @@
             }
         },
         {
+            "name": "drupal/pirate",
+            "version": "dev-1.x",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/pirate.git",
+                "reference": "139693bc72feb967ddcbc37198a5e9abe3728bad"
+            },
+            "require": {
+                "drupal/drupal": "~7.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "7.x-1.2+2-dev",
+                    "datestamp": "1570730287",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Dev releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/7/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "drupalspoons",
+                    "homepage": "https://www.drupal.org/user/3647684"
+                },
+                {
+                    "name": "sillygwailo",
+                    "homepage": "https://www.drupal.org/user/8791"
+                }
+            ],
+            "description": "Avast ye scurvy dogs!",
+            "homepage": "https://www.drupal.org/project/pirate",
+            "support": {
+                "source": "https://git.drupalcode.org/project/pirate"
+            },
+            "time": "2019-10-10T17:53:42+00:00"
+        },
+        {
             "name": "drupal/plupload",
             "version": "1.7.0",
             "source": {
@@ -3730,54 +3727,6 @@
             "homepage": "https://www.drupal.org/project/search_api_db",
             "support": {
                 "source": "https://git.drupalcode.org/project/search_api_db"
-            }
-        },
-        {
-            "name": "drupal/tag",
-            "version": "1.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/tag.git",
-                "reference": "7.x-1.0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/tag-7.x-1.0.zip",
-                "reference": "7.x-1.0",
-                "shasum": "2adc1b807f01ff64ffc1c335d18088935d656bdd"
-            },
-            "require": {
-                "drupal/drupal": "~7.0"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "7.x-1.0",
-                    "datestamp": "1399653843",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/7/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "alvar0hurtad0",
-                    "homepage": "https://www.drupal.org/user/1564318"
-                },
-                {
-                    "name": "sdrycroft",
-                    "homepage": "https://www.drupal.org/user/151544"
-                }
-            ],
-            "description": "Provides a front end implementation of the Tag API.",
-            "homepage": "https://www.drupal.org/project/tag",
-            "support": {
-                "source": "https://git.drupalcode.org/project/tag"
             }
         },
         {
@@ -5796,7 +5745,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "drupal/pirate": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

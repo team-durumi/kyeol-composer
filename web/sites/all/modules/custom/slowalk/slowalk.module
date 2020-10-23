@@ -165,5 +165,25 @@ function get_terminology_terms() {
  * Implements hook_node_view().
  */
 function slowalk_node_view($node, $view_mode, $langcode) {
-  // $terms = get_terminology_terms(); echo '<pre>' . print_r($terms, true) . '</pre>';
+  if($node->type == 'article' && $view_mode == 'full') {
+    // dpm($node);
+  }
+}
+
+/**
+ * Implements hook_node_presave().
+ */
+function slowalk_node_presave($node) {
+  if($node->type == 'article' && $node->field_terminology) {
+    $terms = get_terminology_terms();
+    $field_body = field_get_items('node', $node, 'body');
+    $body = strip_tags(str_replace(["\r" , "\n", '&nbsp;'], '', $field_body[0]['value']));
+    $matched_tids = [];
+    foreach ($terms as $tid => $term) {
+      if(strpos($body, $term['name']) !== FALSE) {
+        $matched_tids[] = ['tid' => $tid];
+      }
+    }
+    $node->field_terminology[LANGUAGE_NONE] = $matched_tids;
+  }
 }

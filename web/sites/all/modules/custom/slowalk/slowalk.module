@@ -174,7 +174,7 @@ function slowalk_node_view($node, $view_mode, $langcode) {
  * Implements hook_node_presave().
  */
 function slowalk_node_presave($node) {
-  if($node->type == 'article' && $node->field_terminology) {
+  if($node->type == 'article') {
     $terms = get_terminology_terms();
     $field_body = field_get_items('node', $node, 'body');
     $body = strip_tags(str_replace(["\r" , "\n", '&nbsp;'], '', $field_body[0]['value']));

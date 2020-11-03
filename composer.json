@@ -105,6 +105,9 @@
         "post-install-cmd": [
             "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
         ],
+        "post-update-cmd": [
+            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+        ],
         "post-create-project-cmd": [
             "DrupalProject\\composer\\ScriptHandler::removeInternalFiles"
         ]
@@ -124,6 +127,12 @@
             },
             "drupal/ckeditor": {
                 "Add %conf_path% and %plugin_module_path% to plugin path render placeholders/replacements to make features reusable": "https://www.drupal.org/files/issues/ckeditor-plugin_module_paths-2422875-34.patch"
+            },
+            "drupal/media_ckeditor": {
+                "Not able to submit in media browser": "https://www.drupal.org/files/issues/2020-08-13/3164945-2.patch"
+            },
+            "drupal/drupal": {
+                "Duplicate HTML IDs are created for file_managed_file fields": "https://www.drupal.org/files/issues/file-managed_file_duplicate_id_error-2594955-9.patch"
             }
         },
         "preserve-paths": [

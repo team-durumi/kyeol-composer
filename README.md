@@ -22,3 +22,9 @@ scp -r kyeol:/var/www/html/kyeol/sites/all/modules/ckeditor/plugins/ web/sites/a
 # 편집기 모양 > Support for Linkit module => 껏다 켜기
 
 ```
+
+## patches
+
+- drupal/ckeditor - [Add %conf_path% and %plugin_module_path% to plugin path render placeholders/replacements to make features reusable](https://www.drupal.org/project/ckeditor/issues/2422875)
+- drupal/media_ckeditor - [Not able to submit in media browser](https://www.drupal.org/project/media_ckeditor/issues/3164945)
+- drupal/drupal - [[D7] Duplicate HTML IDs are created for file_managed_file fields](https://www.drupal.org/project/drupal/issues/2594955)

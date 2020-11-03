@@ -19,9 +19,11 @@ Vagrant.configure("2") do |config|
   # Apache/2.4.41
   # PHP 7.3.22
   # 10.3.22-MariaDB
-
+  config.vm.box_check_update = false
+  config.vbguest.auto_update = false
   config.vm.provision "shell", path: "provision/bootstrap.sh"
   config.vm.provision "shell", path: "provision/mariadb-10.3.sh"
   config.vm.provision "shell", path: "provision/apache2-php7.3.sh"
+  config.vm.provision "shell", path: "provision/rclone.sh", privileged: false
   config.vm.provision "shell", path: "provision/check.sh"
 end

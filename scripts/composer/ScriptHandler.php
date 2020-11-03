@@ -44,12 +44,12 @@ class ScriptHandler {
     }
 
     // Create the files directory with chmod 0777
-    if (!$fs->exists($drupalRoot . '/sites/default/files')) {
-      $oldmask = umask(0);
-      $fs->mkdir($drupalRoot . '/sites/default/files', 0777);
-      umask($oldmask);
-      $event->getIO()->write("Created a sites/default/files directory with chmod 0777");
-    }
+    // if (!$fs->exists($drupalRoot . '/sites/default/files')) {
+    //   $oldmask = umask(0);
+    //   $fs->mkdir($drupalRoot . '/sites/default/files', 0777);
+    //   umask($oldmask);
+    //   $event->getIO()->write("Created a sites/default/files directory with chmod 0777");
+    // }
   }
 
   /**

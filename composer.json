@@ -33,13 +33,13 @@
         "drupal/adminimal_theme": "^1.26",
         "drupal/advanced_help": "*",
         "drupal/backup_migrate": "*",
-        "drupal/ckeditor": "*",
+        "drupal/ckeditor": "1.18",
         "drupal/composer_autoloader": "^1.0",
         "drupal/conditional_styles": "*",
         "drupal/context": "*",
         "drupal/ctools": "*",
         "drupal/devel": "*",
-        "drupal/drupal": "^7.62",
+        "drupal/drupal": "7.67",
         "drupal/elysia_cron": "*",
         "drupal/entity": "*",
         "drupal/file_entity": "*",
@@ -55,8 +55,8 @@
         "drupal/libraries": "*",
         "drupal/link": "*",
         "drupal/linkit": "*",
-        "drupal/media": "*",
-        "drupal/media_ckeditor": "*",
+        "drupal/media": "2.23",
+        "drupal/media_ckeditor": "2.10",
         "drupal/menu_block": "*",
         "drupal/menu_breadcrumb": "*",
         "drupal/metatag": "*",
@@ -128,15 +128,14 @@
             "drupal/ckeditor": {
                 "Add %conf_path% and %plugin_module_path% to plugin path render placeholders/replacements to make features reusable": "https://www.drupal.org/files/issues/ckeditor-plugin_module_paths-2422875-34.patch"
             },
-            "drupal/media_ckeditor": {
-                "Not able to submit in media browser": "https://www.drupal.org/files/issues/2020-08-13/3164945-2.patch"
-            },
             "drupal/drupal": {
                 "Duplicate HTML IDs are created for file_managed_file fields": "https://www.drupal.org/files/issues/file-managed_file_duplicate_id_error-2594955-9.patch"
             }
         },
         "preserve-paths": [
-            "web/sites"
+            "web/sites/all/libraries",
+            "web/sites/all/modules/custom",
+            "web/sites/all/themes/custom"
         ]
     }
 }

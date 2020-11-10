@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "767c56ec957887fdbeb9a6e5a9ce0127",
+    "content-hash": "efc3f256e20b451fccdfab62a4757b2e",
     "packages": [
         {
             "name": "composer/installers",
@@ -929,17 +929,17 @@
         },
         {
             "name": "drupal/ckeditor",
-            "version": "1.19.0",
+            "version": "1.18.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/ckeditor.git",
-                "reference": "7.x-1.19"
+                "reference": "7.x-1.18"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/ckeditor-7.x-1.19.zip",
-                "reference": "7.x-1.19",
-                "shasum": "0367a7d8a8016b8e9adbd47b15d65a71532d76e1"
+                "url": "https://ftp.drupal.org/files/projects/ckeditor-7.x-1.18.zip",
+                "reference": "7.x-1.18",
+                "shasum": "0c2f1ef0912de305f393f1d06258841a704c9bf9"
             },
             "require": {
                 "drupal/drupal": "~7.0"
@@ -947,7 +947,7 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "7.x-1.19",
+                    "version": "7.x-1.18",
                     "datestamp": "1584561413",
                     "security-coverage": {
                         "status": "covered",
@@ -1356,23 +1356,23 @@
         },
         {
             "name": "drupal/drupal",
-            "version": "7.73.0",
+            "version": "7.67.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/drupal.git",
-                "reference": "7.73"
+                "reference": "7.67"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/drupal-7.73.zip",
-                "reference": "7.73",
-                "shasum": "253212fb23a2d23daa3292a1d64ac9e44cfe207c"
+                "url": "https://ftp.drupal.org/files/projects/drupal-7.67.zip",
+                "reference": "7.67",
+                "shasum": "b7143116f747df1f5a07674f9b7132cc98589b55"
             },
             "type": "drupal-core",
             "extra": {
                 "drupal": {
-                    "version": "7.73",
-                    "datestamp": "1600297114",
+                    "version": "7.67",
+                    "datestamp": "1576698867",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -2582,17 +2582,17 @@
         },
         {
             "name": "drupal/media",
-            "version": "4.1.0",
+            "version": "2.23.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/media.git",
-                "reference": "7.x-4.1"
+                "reference": "7.x-2.23"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/media-7.x-4.1.zip",
-                "reference": "7.x-4.1",
-                "shasum": "e5b5c02ae33d42126fc80fe13d05d95b5585cc57"
+                "url": "https://ftp.drupal.org/files/projects/media-7.x-2.23.zip",
+                "reference": "7.x-2.23",
+                "shasum": "81d298d752fe80451e01a0f97d7cbd918e15a11a"
             },
             "require": {
                 "drupal/drupal": "*",
@@ -2601,8 +2601,6 @@
             },
             "require-dev": {
                 "drupal/ckeditor": "*",
-                "drupal/features": "*",
-                "drupal/media_wysiwyg": "*",
                 "drupal/multiform": "^1.3",
                 "drupal/plupload": "*",
                 "drupal/token": "*",
@@ -2611,8 +2609,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "7.x-4.1",
-                    "datestamp": "1584902617",
+                    "version": "7.x-2.23",
+                    "datestamp": "1572552484",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -2689,17 +2687,17 @@
         },
         {
             "name": "drupal/media_ckeditor",
-            "version": "2.14.0",
+            "version": "2.10.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/media_ckeditor.git",
-                "reference": "7.x-2.14"
+                "reference": "7.x-2.10"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/media_ckeditor-7.x-2.14.zip",
-                "reference": "7.x-2.14",
-                "shasum": "e3ea5eb03b636d6aeb93d50dedf9f747b988c1b6"
+                "url": "https://ftp.drupal.org/files/projects/media_ckeditor-7.x-2.10.zip",
+                "reference": "7.x-2.10",
+                "shasum": "eb2930b9dfb450e6204fb5fdb6c7209370bd24c2"
             },
             "require": {
                 "drupal/ckeditor": "*",
@@ -2709,7 +2707,6 @@
             "require-dev": {
                 "drupal/ckeditor": "*",
                 "drupal/ctools": "*",
-                "drupal/features": "*",
                 "drupal/file_entity": "*",
                 "drupal/media": "*",
                 "drupal/media_wysiwyg": "*",
@@ -2719,15 +2716,12 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "7.x-2.14",
-                    "datestamp": "1584902164",
+                    "version": "7.x-2.10",
+                    "datestamp": "1562859186",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
                     }
-                },
-                "patches_applied": {
-                    "Not able to submit in media browser": "https://www.drupal.org/files/issues/2020-08-13/3164945-2.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/7/downloads",

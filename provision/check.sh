@@ -15,3 +15,4 @@ tput setaf 2; echo '#5 [mariadb]'; tput sgr0;
 mysql -V
 tput setaf 2; echo '#6 [rclone]'; tput sgr0;
 rclone version
+sudo service apache2 start

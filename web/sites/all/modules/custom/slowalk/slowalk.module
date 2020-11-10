@@ -134,12 +134,12 @@ function slowalk_captain($patterns) {
   $terms = get_terminology_terms();
   $terms_patterns = [];
   foreach ($terms as $tid => $term) {
-    $pattern = '/[^#|>]' . $term['name'] . '/u';
+    $pattern = '/' . $term['name'] . '/u';
     $terms_patterns[$pattern] = ' <span class="cavacnotify"';
     $terms_patterns[$pattern] .= ' popuptext="' . $term['text'] . '"';
     $terms_patterns[$pattern] .= ' popuptitle="' . $term['name'] . '"';
     $terms_patterns[$pattern] .= ' data-url="' . $term['url'] . '"';
-    $terms_patterns[$pattern] .= '>#' . $term['name'] . '</span>';
+    $terms_patterns[$pattern] .= '>' . $term['name'] . '</span>';
   }
   return array_merge($patterns, $terms_patterns);
 }

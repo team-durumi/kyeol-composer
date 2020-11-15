@@ -7,7 +7,7 @@
 ```
 sudo service apache2 stop && sudo service php7.3-fpm stop
 echo 'user_allow_other' | sudo tee -a /etc/fuse.conf
-rclone mount drive: /data/kyeol --daemon --allow-other
+rclone mount drive:files /data/kyeol/files --daemon --allow-other
 sudo service apache2 start && sudo service php7.3-fpm start
 ```
 

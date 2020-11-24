@@ -26,3 +26,6 @@ chown -R vagrant:vagrant /usr/local/bin
 echo "[php] composer install"
 su - vagrant -c "cd /vagrant && composer install"
 chmod +w /vagrant/web/sites/default/
+su - vagrant -c "cp -r /vagrant/provision/config/*.php /vagrant/web/sites/default"
+rm -rf /vagrant/web/sites/default/files/
+ln -s /data/kyeol/files /vagrant/web/sites/default/

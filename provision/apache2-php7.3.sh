@@ -25,3 +25,4 @@ chown -R vagrant:vagrant /usr/local/bin
 
 echo "[php] composer install"
 su - vagrant -c "cd /vagrant && composer install"
+chmod +w /vagrant/web/sites/default/

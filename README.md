@@ -34,7 +34,7 @@ scp -r kyeol:/var/www/html/kyeol/sites/all/modules/ckeditor/plugins/ web/sites/a
 
 ```
 # https://www.drupal.org/docs/7/multilingual
-drush -y en entity_transaltion title 
+drush -y en entity_translation title 
 
 # [HowTo: Different home page (default front page) for each language](https://www.drupal.org/node/1216132)
 drush -y en i18n_select i18n_variable 
@@ -42,3 +42,12 @@ drush -y en i18n_select i18n_variable
 # [Multilingual frontpage with translation and URL alias](https://www.drupal.org/node/301587)
 
 ```
+
+1. 영어 언어 추가 및 사용 /admin/config/regional/language
+2. UI, 콘텐츠 언어 인식 설정 추가 /admin/config/regional/language/configure
+3. 엔티티 번역 설정 추가 /admin/config/regional/entity_translation
+   - 기본 언어 = 기본 언어
+   - [x] Hide language selector
+   - [x] Exclude Language neutral from th' available languages
+   - [x] Prevent language from bein' changed once th' entity has been created
+   - [x] Hide shared elements on translation forms

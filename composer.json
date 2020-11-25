@@ -137,7 +137,8 @@
         "preserve-paths": [
             "web/sites/all/libraries",
             "web/sites/all/modules/custom",
-            "web/sites/all/themes/custom"
+            "web/sites/all/themes/custom",
+            "web/sites/all/modules/ckeditor/plugins/"
         ]
     }
 }

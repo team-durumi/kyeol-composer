@@ -28,3 +28,17 @@ scp -r kyeol:/var/www/html/kyeol/sites/all/modules/ckeditor/plugins/ web/sites/a
 - drupal/ckeditor - [Add %conf_path% and %plugin_module_path% to plugin path render placeholders/replacements to make features reusable](https://www.drupal.org/project/ckeditor/issues/2422875)
 - drupal/media_ckeditor - [Not able to submit in media browser](https://www.drupal.org/project/media_ckeditor/issues/3164945)
 - drupal/drupal - [[D7] Duplicate HTML IDs are created for file_managed_file fields](https://www.drupal.org/project/drupal/issues/2594955)
+
+
+## multilingual drupal (translation, i18n)
+
+```
+# https://www.drupal.org/docs/7/multilingual
+drush -y en entity_transaltion title 
+
+# [HowTo: Different home page (default front page) for each language](https://www.drupal.org/node/1216132)
+drush -y en i18n_select i18n_variable 
+
+# [Multilingual frontpage with translation and URL alias](https://www.drupal.org/node/301587)
+
+```

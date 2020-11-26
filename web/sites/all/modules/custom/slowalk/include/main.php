@@ -15,7 +15,7 @@ function wz_main_callback($form, &$form_state)
 
     $form['fieldset'] = array(
         '#type' => 'fieldset',
-        '#title' => '메인 콘첸츠 선택'
+        '#title' => '메인 콘텐츠 선택'
     );
 
     $vol = taxonomy_vocabulary_machine_name_load('vol');

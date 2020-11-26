@@ -140,5 +140,8 @@
             "web/sites/all/themes/custom",
             "web/sites/all/modules/ckeditor/plugins/"
         ]
+    },
+    "require-dev": {
+        "drupal/kint": "^1.0"
     }
 }

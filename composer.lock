@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a006db0c0cbd3eb195eb95de0aa83ded",
+    "content-hash": "1e6507d17a9983bd0ccbb475a01a62e7",
     "packages": [
         {
             "name": "composer/installers",
@@ -5847,7 +5847,53 @@
             "time": "2015-12-17T08:42:14+00:00"
         }
     ],
-    "packages-dev": [],
+    "packages-dev": [
+        {
+            "name": "drupal/kint",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/kint.git",
+                "reference": "7.x-1.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/kint-7.x-1.0.zip",
+                "reference": "7.x-1.0",
+                "shasum": "c31e784ae47a0548695c5a37a757c52a9d562170"
+            },
+            "require": {
+                "drupal/drupal": "~7.0",
+                "drupal/libraries": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "7.x-1.0",
+                    "datestamp": "1514180286",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/7/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "alexander_danilenko",
+                    "homepage": "https://www.drupal.org/user/1072104"
+                }
+            ],
+            "description": "Kint debug tool",
+            "homepage": "https://www.drupal.org/project/kint",
+            "support": {
+                "source": "https://git.drupalcode.org/project/kint"
+            }
+        }
+    ],
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {

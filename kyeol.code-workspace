@@ -1,0 +1,20 @@
+{
+	"folders": [
+		{
+			"name": "theme-webzine",
+			"path": "web/sites/all/themes/custom/webzine"
+		},
+		{
+			"name": "module-slowalk",
+			"path": "web/sites/all/modules/custom/slowalk"
+    },
+    {
+			"name": "html-en",
+			"path": "../kyeol-en"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {}
+}

@@ -51,7 +51,7 @@ function slowalk_menu()
 
     $items['comfort-women'] = [
       'title' => 'Comfort women',
-      'description' => 'Comfort women',
+      'description' => 'Comfort Women',
       'page callback' => 'webzine_page_view',
       'page arguments' => ['comfort_women'],
       'access arguments' => ['access content'],

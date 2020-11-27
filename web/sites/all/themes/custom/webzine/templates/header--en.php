@@ -10,7 +10,7 @@
         <a href="/en/comfort-women">"Comfort Women"</a>
       </li>
       <li class="mx-6 float-left">
-        <a href="/en/about-us">RIMSS</a>
+        <a href="/en/rimss">RIMSS</a>
       </li>
       <li class="mx-6 float-left">
         <a href="/en/kyeol">KYEOL</a>

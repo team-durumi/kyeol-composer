@@ -40,15 +40,6 @@ function slowalk_menu()
         'file' => 'include/slide.php'
     );
 
-//    $items['admin/webzine/devel'] = array(
-//        'title' => '개발 테스트',
-//        'description' => '',
-//        'page callback' => 'wz_devel',
-//        'access arguments' => array('access administrator'),
-//        'type' => MENU_LOCAL_TASK,
-//        'file' => 'include/devel.php'
-//    );
-
     $items['ajax/webzine'] = array(
         'title' => 'Ajax',
         'description' => '',
@@ -57,6 +48,33 @@ function slowalk_menu()
         'type' => MENU_CALLBACK,
         'file' => 'slowalk_ajax.php'
     );
+
+    $items['comfort-women'] = [
+      'title' => 'Comfort women',
+      'description' => 'Comfort women',
+      'page callback' => 'webzine_page_view',
+      'page arguments' => ['comfort_women'],
+      'access arguments' => ['access content'],
+      'type' => MENU_CALLBACK
+    ];
+
+    $items['rimss'] = [
+      'title' => 'RIMSS',
+      'description' => 'RIMSS',
+      'page callback' => 'webzine_page_view',
+      'page arguments' => ['rimss'],
+      'access arguments' => ['access content'],
+      'type' => MENU_CALLBACK
+    ];
+
+    $items['kyeol'] = [
+      'title' => 'Webzine KYEOL',
+      'description' => 'Webzine KYEOL',
+      'page callback' => 'webzine_page_view',
+      'page arguments' => ['kyeol'],
+      'access arguments' => ['access content'],
+      'type' => MENU_CALLBACK
+    ];
 
     return $items;
 }
@@ -76,6 +94,22 @@ function slowalk_permission()
           'description' => 'Webzine administor page access role.'
         )
     );
+}
+
+/**
+ * Implements hook_theme().
+ */
+function slowalk_theme($existing, $type, $theme, $path) {
+  $pages = [ 'comfort_women', 'rimss', 'kyeol' ];
+  $themes = [];
+  foreach ($pages as $page) {
+    $themes[$page] = [
+      'path' => drupal_get_path('module', 'slowalk') . '/templates',
+      'template' => $page,
+      'variables' => []
+    ];
+  }
+  return $themes;
 }
 
 /**
@@ -187,4 +221,8 @@ function slowalk_node_presave($node) {
     }
     $node->field_terminology[LANGUAGE_NONE] = $matched_tids;
   }
+}
+
+function webzine_page_view($id) {
+  return [ 'content' => [ '#theme' => $id ] ];
 }

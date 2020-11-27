@@ -14,7 +14,7 @@
   <!-- //메인 컨텐츠 영역 -->
   <footer>
     <div class="inner">
-      <?php print render($page['footer']);?>
+      <?php include_once 'footer--en.php'; ?>
     </div>
   </footer>
 </div>

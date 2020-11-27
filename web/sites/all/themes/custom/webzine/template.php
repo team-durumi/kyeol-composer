@@ -92,6 +92,7 @@ function webzine_preprocess_page(&$variables) {
   // 언어에 따라 홈페이지 템플릿 선택
   $language = $variables['language'];
   if($language->language == 'en') {
+    $variables['theme_hook_suggestions'][] = 'page__en';
     // 홈페이지
     if($variables['is_front']) {
       $variables['theme_hook_suggestions'][] = 'page__front__en';

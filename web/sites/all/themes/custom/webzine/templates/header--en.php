@@ -7,27 +7,27 @@
     </div>
     <ul class="global-nav ml-4 mt-10 float-left" style="margin-left: 3rem;">
       <li class="mx-6 float-left">
-        <a href="01_intro_definition.html">"Comfort Women"</a>
+        <a href="/en/comfort-women">"Comfort Women"</a>
       </li>
       <li class="mx-6 float-left">
-        <a href="01_intro_institue.html">About</a>
+        <a href="/en/about-us">RIMSS</a>
       </li>
       <li class="mx-6 float-left">
-        <a href="05_basic_list.html">Contents</a>
+        <a href="/en/kyeol">KYEOL</a>
       </li>
       <li class="mx-6 float-left">
-        <a href="05_basic_list.html">Resources</a>
+        <a href="/en/category/articles">Contents</a>
       </li>
     </ul>
     <ul class="ng01">
       <li class="search"><a href="#" title="Open search box"><i class="xi-search"></i></a></li>
-      <li class="translate"><a href="http://kyeol.kr" title="Translate" ><i style="font-size: 1.955rem">KR</i></a></li>
+      <li class="translate"><a href="/" title="Translate" ><i style="font-size: 1.955rem">KR</i></a></li>
     </ul>
-    <form class="cf01" method="post">
+    <form class="cf01" method="post" action="/en/search">
       <a href="#" class="btn_icon01" title="Close search box"><i class="xi-close"></i></a>
       <fieldset>
         <label for="search_query">Search Keyword</label>
-        <input type="text" name="search_query" id="search_query" placeholder="Type in here ..."/>
+        <input type="text" name="key" id="search_query" placeholder="Type in here ..."/>
         <button><i class="xi-search"></i></button>
       </fieldset>
     </form>

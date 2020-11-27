@@ -11,7 +11,7 @@ rclone mount drive:files /data/kyeol/files --daemon --allow-other
 sudo service apache2 start && sudo service php7.3-fpm start
 ```
 
-## composerfiy fix 
+## composerfiy fix
 
 ```
 cd {{ project-dir }}
@@ -34,10 +34,10 @@ scp -r kyeol:/var/www/html/kyeol/sites/all/modules/ckeditor/plugins/ web/sites/a
 
 ```
 # https://www.drupal.org/docs/7/multilingual
-drush -y en entity_translation title 
+drush -y en entity_translation title
 
 # [HowTo: Different home page (default front page) for each language](https://www.drupal.org/node/1216132)
-drush -y en i18n_select i18n_variable 
+drush -y en i18n_select i18n_variable i18n_string i18n_block
 
 # [Multilingual frontpage with translation and URL alias](https://www.drupal.org/node/301587)
 
@@ -48,6 +48,26 @@ drush -y en i18n_select i18n_variable
 3. 엔티티 번역 설정 추가 /admin/config/regional/entity_translation
    - 기본 언어 = 기본 언어
    - [x] Hide language selector
-   - [x] Exclude Language neutral from th' available languages
-   - [x] Prevent language from bein' changed once th' entity has been created
+   - [x] Exclude Language neutral from the available languages
+   - [x] Prevent language from being changed once the entity has been created
    - [x] Hide shared elements on translation forms
+
+## 영문 사이트 정보
+
+- site_name: Webzine-KYEOL
+- site_slogan: Research Institute on Japanese Military Sexual Slavery (RIMSS) Webzine
+
+
+
+## 영문 일반 페이지
+
+- "Comfort Women" - 위안부 용어 소개 - /comfort-women (신규)
+- RIMSS - 연구소 소개 소개 - /rimss (신규)
+- KYEOL - 웹진 결 소개 - /about-us (번역)
+
+## 영문 콘텐츠 번역본
+
+- http://kyeol.durumi.io/en/node/138
+- http://kyeol.durumi.io/en/node/139
+- http://kyeol.durumi.io/en/node/160
+- http://kyeol.durumi.io/en/node/133

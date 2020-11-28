@@ -39,6 +39,9 @@ drush -y en entity_translation title
 # [HowTo: Different home page (default front page) for each language](https://www.drupal.org/node/1216132)
 drush -y en i18n_select i18n_variable i18n_string i18n_block
 
+# i18n menu and views
+drush -y en i18n_menu i18nviews
+
 # [Multilingual frontpage with translation and URL alias](https://www.drupal.org/node/301587)
 
 ```

@@ -64,11 +64,15 @@ function wz_slide_callback_validate($form, &$form_state)
     $start = $form_state['values']['wz_slide_count'] + 1;
 
     for($i = 1; $i < $start; $i++) {
+      if(!empty($form_state['values']['slide_'.$i.'_image'])) {
         $file = file_load($form_state['values']['slide_'.$i.'_image']);
-        $ref = file_usage_list($file);
-        if(empty($ref)) {
-            file_usage_add($file, 'slowalk', 'mainslide', $i);
+        if($file) {
+          $ref = file_usage_list($file);
+          if(empty($ref)) {
+              file_usage_add($file, 'slowalk', 'mainslide', $i);
+          }
         }
+      }
     }
 
     for($i = $start; $i <= 5; $i++) {

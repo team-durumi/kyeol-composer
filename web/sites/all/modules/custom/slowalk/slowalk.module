@@ -7,6 +7,7 @@
  */
 
 define('__SLOWALK__', drupal_get_path('module', 'slowalk'));
+require_once __SLOWALK__ . '/include/slowalk.variable.inc';
 
 /**
  * Implements hook_menu().

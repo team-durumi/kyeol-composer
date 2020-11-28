@@ -76,6 +76,10 @@ function webzine_preprocess_page(&$variables) {
         $variables['changed'] = $variables['node']->changed;
       }
     }
+    if(strpos(request_uri(), '/resources') !== false) {
+      $variables['main_class'] = 'fc02';
+      $variables['page']['sidebar_first'] = ['#type' => 'markup', '#markup' => '<h2>Downloads</h2>'];
+    }
   }
   drupal_add_js(array('Webzine' => array('vol' => $main->baseUrl.'/vol/'.$vol)), 'setting');
   drupal_add_js('https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js', array('type' => 'external', 'scope' => 'header', 'group' => JS_LIBRARY));
@@ -109,20 +113,12 @@ function webzine_preprocess_page(&$variables) {
       // 3단 소개
       $about_partial = file_get_contents(drupal_get_path('module', 'wz_block') . '/templates/about-three-cols.tpl.php');
 
-      $terms = [
-        2 => 'Discussion',
-        3 => 'Comment',
-        4 => 'Essay',
-        5 => 'Bibliographical Explanation',
-        7 => 'Interview'
-      ];
-
       // Essay 3
-      $essay = views_embed_view('recent_contents', 'essay', ['field_category' => 4]);
+      $essay = views_embed_view('recent_contents', 'essay');
       // Interview 2
-      $interview = views_embed_view('recent_contents', 'interview', ['field_category' => 7]);
+      $interview = views_embed_view('recent_contents', 'interview');
       // Researcher Forum 1
-      $resources = views_embed_view('recent_contents', 'resources');
+      $resources = views_embed_view('recent_contents', 'research_forum');
 
       $variables['page']['content']['slider'] = $slider;
       $variables['page']['content']['about'] = [ '#type' => 'markup', '#markup' => $about_partial ];
@@ -131,8 +127,8 @@ function webzine_preprocess_page(&$variables) {
       $variables['page']['content']['body']['box'] =  [ '#type' => 'container', '#attributes' => ['class' => 'fc_box02']];
       $variables['page']['content']['body']['box']['recents'] = [ '#type' => 'container', '#attributes' => ['class' => 'fc03'], '#prefix' => '<h2>Essay</h2>'];
       $variables['page']['content']['body']['box']['recents']['essay'] = [ '#type' => 'markup', '#markup' => $essay ];
-      $variables['page']['content']['body']['box']['recents']['interview'] = [ '#type' => 'markup', '#markup' => $interview, '#prefix' => '<h2 class="mt-5">Interview</h2>' ];
-      $variables['page']['content']['body']['box']['recents']['resources'] = [ '#type' => 'markup', '#markup' => $resources, '#prefix' => '<h2 class="my-5">Researcher Forum</h2>' ];
+      $variables['page']['content']['body']['box']['recents']['interview'] = [ '#type' => 'markup', '#markup' => $interview, '#prefix' => '<h2 class="mt-10">Interview</h2>' ];
+      $variables['page']['content']['body']['box']['recents']['resources'] = [ '#type' => 'markup', '#markup' => $resources, '#prefix' => '<h2 class="my-10">Researcher Forum</h2>' ];
     }
 
     drupal_add_css(drupal_get_path('theme', 'webzine') . '/css/webzine_en.css', array('type' => 'file', 'group' => CSS_THEME));

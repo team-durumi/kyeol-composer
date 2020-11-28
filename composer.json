@@ -50,6 +50,7 @@
         "drupal/google_analytics": "*",
         "drupal/google_analytics_reports": "*",
         "drupal/i18n": "*",
+        "drupal/i18nviews": "^3.0@alpha",
         "drupal/imagefield_crop": "*",
         "drupal/jcaption": "*",
         "drupal/l10n_update": "*",

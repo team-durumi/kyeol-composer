@@ -52,15 +52,15 @@ body.front header .ng01{float:right;margin-top:19px}
 body.front header{position:absolute;top:0;left:0;width:100%;z-index:10;border-bottom:none}
 body.front header .inner{height:100px;overflow:hidden}
 
-header .global-nav li { color: #fff;}
-.scrolling header .global-nav li { color: #333; }
+body.front header .global-nav li { color: #fff;}
+body.front.scrolling header .global-nav li { color: #333; }
 body.front .section { margin-top: -85px; }
 body.front .ib01 li dl { top: 200px; }
 
 header nav{position:fixed;right:-548px;top:0;background-color:#9f865f;width:548px;height:100%;box-sizing:border-box;padding:160px 80px 80px 80px;z-index:60;transition:right 0.5s ease-in-out;overflow-y:auto;-ms-overflow-style:none;overflow-y:scroll;
 	-ms-overflow-style: none;
-	&::-webkit-scrollbar{ display: none !important; /*윈도우 크롬 등*/}
 }
+::-webkit-scrollbar{ display: none !important; /*윈도우 크롬 등*/}
 header nav .btn_icon01{position:absolute;right:45px;top:40px}
 header nav h2{display: none}
 header nav #secondary-menu{margin-bottom:80px}
@@ -114,7 +114,7 @@ footer .infoA li span, footer .infoA li a{color:#fff}
 .fc01_02:after{content:"";display:block;width:434px;height:333px;background:url(../images/bg_pattern_main03.png) no-repeat 0 0;position:absolute;right:0;bottom:-100px;z-index:-1;}
 .fc01_02 .inner{padding:65px 0 35px}
 /*.fc01_03{background:url(../images/bg_pattern_comb02.png)}*/
-.fc01_03{}
+/* .fc01_03{} */
 .fc01_03 .inner{padding:10px;overflow:hidden}
 .fc01_03 h2{float:left;width:50%;font-size:28px;line-height:40px;color:#fff;font-family:'Iropke Batang',sans-serif}
 .fc01_03 .cf02{float:right;width:50%;margin-top:6px}

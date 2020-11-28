@@ -144,7 +144,7 @@ footer .infoA li span, footer .infoA li a{color:#fff}
 .fc_box01_01.tags .tagA .btn03{margin-top:10px}
 
 .fc_box02{margin-top:60px}
-.fc_box02 > h2{font-size:28px;line-height:28px;color:#111}
+.fc_box02 > h2,.fc_box02 .fc03 > h2{font-size:28px;line-height:28px;color:#111}
 
 .alignRight{text-align:right}
 .alignCenter{text-align:center}

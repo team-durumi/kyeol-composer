@@ -91,7 +91,8 @@ function webzine_preprocess_page(&$variables) {
 
   // 언어에 따라 홈페이지 템플릿 선택
   $language = $variables['language'];
-  if($language->language == 'en') {
+  $lang = $language->language;
+  if($lang == 'en') {
     $variables['theme_hook_suggestions'][] = 'page__en';
     // 홈페이지
     if($variables['is_front']) {
@@ -118,9 +119,10 @@ function webzine_preprocess_page(&$variables) {
 
       // Essay 3
       $essay = views_embed_view('recent_contents', 'essay', ['field_category' => 4]);
-
       // Interview 2
+      $interview = views_embed_view('recent_contents', 'interview', ['field_category' => 7]);
       // Researcher Forum 1
+      $resources = views_embed_view('recent_contents', 'resources');
 
       $variables['page']['content']['slider'] = $slider;
       $variables['page']['content']['about'] = [ '#type' => 'markup', '#markup' => $about_partial ];
@@ -129,18 +131,10 @@ function webzine_preprocess_page(&$variables) {
       $variables['page']['content']['body']['box'] =  [ '#type' => 'container', '#attributes' => ['class' => 'fc_box02']];
       $variables['page']['content']['body']['box']['recents'] = [ '#type' => 'container', '#attributes' => ['class' => 'fc03'], '#prefix' => '<h2>Essay</h2>'];
       $variables['page']['content']['body']['box']['recents']['essay'] = [ '#type' => 'markup', '#markup' => $essay ];
-
-/*
-      $recents = [ '#type' => 'container', '#attributes' => ['class' => 'fc03 inner']];
-      $essay = [ '#type' => 'markup', '#markup' => '<h4>essay</h4>' ];
-      $interview = [ '#type' => 'markup', '#markup' => '<h4>interview</h4>' ];
-      $resources = [ '#type' => 'markup', '#markup' => '<h4>resources</h4>' ];
-      $variables['page']['content']['recents'] = $recents;
-      $variables['page']['content']['recents']['essay'] = $essay;
-      $variables['page']['content']['recents']['interview'] = $interview;
-      $variables['page']['content']['recents']['resources'] = $resources;
-*/
+      $variables['page']['content']['body']['box']['recents']['interview'] = [ '#type' => 'markup', '#markup' => $interview, '#prefix' => '<h2 class="mt-5">Interview</h2>' ];
+      $variables['page']['content']['body']['box']['recents']['resources'] = [ '#type' => 'markup', '#markup' => $resources, '#prefix' => '<h2 class="my-5">Researcher Forum</h2>' ];
     }
+
     drupal_add_css(drupal_get_path('theme', 'webzine') . '/css/webzine_en.css', array('type' => 'file', 'group' => CSS_THEME));
     drupal_add_css('//unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css', array('type' => 'external', 'group' => CSS_THEME));
   }

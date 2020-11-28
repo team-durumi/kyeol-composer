@@ -238,7 +238,7 @@ section h1.title{font-size:38px;line-height:40px;padding-bottom:24px;font-family
 .ib01 .slick-dots li.slick-active button{background-color:#fff}
 .ib01 .slick-dotted.slick-slider{margin-bottom:0}
 .ib01:after{content:"";display:block;width:311px;height:307px;;background:url(../images/bg_pattern_main01.png) no-repeat 0 0;position:absolute;right:0;bottom:-230px}
-.ib01.slick-slide {
+.ib01 .slick-slide {
   height: 600px !important;
 }
 

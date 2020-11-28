@@ -227,3 +227,13 @@ function slowalk_node_presave($node) {
 function webzine_page_view($id) {
   return [ 'content' => [ '#theme' => $id ] ];
 }
+
+/**
+* Implements hook_entity_info_alter().
+*/
+function slowalk_entity_info_alter(&$entity_info) {
+  $entity_info['node']['view modes']['teaser_en'] = [
+    'label' => t('Teaser for english'),
+    'custom settings' => TRUE,
+  ];
+}

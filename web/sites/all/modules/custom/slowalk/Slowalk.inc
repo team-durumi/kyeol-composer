@@ -138,6 +138,8 @@ class Webzines extends Slowalk
 {
     public function getWebzine($category)
     {
+        global $language;
+        $lang = $language->language ?? 'und';
         $options['category'] = $this->catLabel[$category];
         $query = new EntityFieldQuery();
         $result = $query->entityCondition('entity_type', 'node')
@@ -146,7 +148,9 @@ class Webzines extends Slowalk
             ->fieldCondition('field_vol', 'tid', $this->vol)
             ->fieldCondition('field_category', 'tid', $category)
             ->propertyOrderBy('created', 'DESC')
+            ->propertyCondition('language', $lang, '=')
             ->execute();
+        kint($result);
         if(isset($result['node'])) {
             $nids = array_keys($result['node']);
             $opinion = node_load_multiple($nids);
@@ -160,7 +164,7 @@ class Webzines extends Slowalk
                     '{{ category }}' => $this->catLabel[$category],
                     '{{ node_url }}' => '/node/' . $item->nid,
                     '{{ title }}' => $item->title,
-                    '{{ summary }}' => text_summary(trim(strip_tags($item->body['und'][0]['value'])), 'plain_text', 210).'...',
+                    '{{ summary }}' => text_summary(trim(strip_tags($item->body[$lang][0]['value'])), 'plain_text', 210).'...',
                     '{{ writer }}' => $this->writer($item->field_writer['und']),
                     '{{ date }}' => format_date($item->created, 'custom', 'Y.m.d')
                 );

@@ -63,13 +63,28 @@ drush -y en i18n_select i18n_variable i18n_string i18n_block
 - RIMSS - 연구소 소개 소개 - /rimss (신규)
 - KYEOL - 웹진 결 소개 - /kyeol (신규)
 
-comfort-women
-rimss
-kyeol
+```
+/en/comfort-women
+/en/rimss
+/en/kyeol
+```
 
 ## 영문 콘텐츠 번역본
 
+- http://kyeol.durumi.io/en/node/133
 - http://kyeol.durumi.io/en/node/138
 - http://kyeol.durumi.io/en/node/139
 - http://kyeol.durumi.io/en/node/160
-- http://kyeol.durumi.io/en/node/133
+
+## 영문 홈페이지 구조
+
+- wz_main_slide - block - 메인 슬라이드
+- about-three-col2 - slowalk/modules/block/template - 소개
+- Essay 3
+- Interview 2
+- Researcher Forum 1
+
+```
+$variables['page']['content']['slider'] = $slider;
+$variables['page']['content']['about'] = $about;
+```

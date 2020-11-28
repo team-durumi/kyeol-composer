@@ -107,9 +107,39 @@ function webzine_preprocess_page(&$variables) {
       ];
       // 3단 소개
       $about_partial = file_get_contents(drupal_get_path('module', 'wz_block') . '/templates/about-three-cols.tpl.php');
-      $about = [ '#type' => 'markup', '#markup' => $about_partial ];
+
+      $terms = [
+        2 => 'Discussion',
+        3 => 'Comment',
+        4 => 'Essay',
+        5 => 'Bibliographical Explanation',
+        7 => 'Interview'
+      ];
+
+      // Essay 3
+      $essay = views_embed_view('recent_contents', 'essay', ['field_category' => 4]);
+
+      // Interview 2
+      // Researcher Forum 1
+
       $variables['page']['content']['slider'] = $slider;
-      $variables['page']['content']['about'] = $about;
+      $variables['page']['content']['about'] = [ '#type' => 'markup', '#markup' => $about_partial ];
+
+      $variables['page']['content']['body'] = [ '#type' => 'container', '#attributes' => ['class' => 'cBody inner']];
+      $variables['page']['content']['body']['box'] =  [ '#type' => 'container', '#attributes' => ['class' => 'fc_box02']];
+      $variables['page']['content']['body']['box']['recents'] = [ '#type' => 'container', '#attributes' => ['class' => 'fc03'], '#prefix' => '<h2>Essay</h2>'];
+      $variables['page']['content']['body']['box']['recents']['essay'] = [ '#type' => 'markup', '#markup' => $essay ];
+
+/*
+      $recents = [ '#type' => 'container', '#attributes' => ['class' => 'fc03 inner']];
+      $essay = [ '#type' => 'markup', '#markup' => '<h4>essay</h4>' ];
+      $interview = [ '#type' => 'markup', '#markup' => '<h4>interview</h4>' ];
+      $resources = [ '#type' => 'markup', '#markup' => '<h4>resources</h4>' ];
+      $variables['page']['content']['recents'] = $recents;
+      $variables['page']['content']['recents']['essay'] = $essay;
+      $variables['page']['content']['recents']['interview'] = $interview;
+      $variables['page']['content']['recents']['resources'] = $resources;
+*/
     }
     drupal_add_css(drupal_get_path('theme', 'webzine') . '/css/webzine_en.css', array('type' => 'file', 'group' => CSS_THEME));
     drupal_add_css('//unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css', array('type' => 'external', 'group' => CSS_THEME));
@@ -196,5 +226,20 @@ function webzine_breadcrumb($variables) {
     $output = '<h2 class="element-invisible">' . t('You are here') . '</h2>';
     $output .= '<div class="breadcrumb">' . implode(' ', $breadcrumb) . '</div>';
     return $output;
+  }
+}
+
+/**
+ * Implements hook_preprocess_node().
+ */
+function webzine_preprocess_node(&$vars) {
+  if($vars['view_mode'] == 'teaser_en') {
+    $vars['vol_name'] = $vars['field_vol'][0]['taxonomy_term']->name;
+    $vars['vol_path'] = '/taxonomy/term/' . $vars['field_vol'][0]['tid'];
+    $vars['category_name'] = $vars['field_category'][0]['taxonomy_term']->name;
+    $vars['category_path'] = '/taxonomy/term/' . $vars['field_category'][0]['tid'];
+
+    $vars['theme_hook_suggestions'][] = 'node__' . $vars['node']->type . '__teaser_en';
+    $vars['theme_hook_suggestions'][] = 'node__' . $vars['node']->nid . '__teaser_en';
   }
 }

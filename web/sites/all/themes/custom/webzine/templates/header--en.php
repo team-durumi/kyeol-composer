@@ -16,7 +16,7 @@
         <a href="/en/category/articles">Contents</a>
       </li>
       <li class="mx-6 float-left">
-        <a href="#">Resource</a>
+        <a href="/en/resources">Resource</a>
       </li>
     </ul>
     <ul class="ng01">

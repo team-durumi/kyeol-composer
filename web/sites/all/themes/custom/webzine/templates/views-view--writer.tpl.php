@@ -26,9 +26,16 @@
  *
  * @ingroup views_templates
  */
+global $language;
+$lang = $language->language;
 ?>
+
 <div class="fc_box01">
+  <?php if($lang != 'en'): ?>
     <p class="td01">총 <em><?php print countWriters();?>명</em>의 필자가 참여했습니다.</p>
+  <?php else: ?>
+    <p class="td01"><em><?php print countWriters();?></em> writers contributed.</p>
+  <?php endif; ?>
 </div>
 
 <div class="<?php print $classes; ?>">

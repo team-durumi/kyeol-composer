@@ -29,19 +29,32 @@
 
 $voca = arg(1);
 $archive = new Archive();
+global $language;
+$lang = $language->language;
 ?>
 
 <?php if(isset($_GET['search'])): ?>
 
     <div class="fc_box01 fc_box01_01 tags">
-        <p class="td01 leftF"><b>"<?php print $_GET['search'];?>"</b>에 관련된 기사는 <em><?php print $view->total_rows;?></em>건입니다.</p>
-        <a class="btn01 rightF" href="/<?php print request_path();?>">목록 보기</a>
-        <?php if($voca === 'person') : ?>
-            <a class="btn01 rightF person" href="/ajax/webzine">인물 정보</a>
-        <?php endif;?>
-        <?php if($voca === 'years') : ?>
-            <div class="tagA"><?php print $archive->getYears($voca);?></div>
-        <?php endif;?>
+    <?php if($lang != 'en'): ?>
+      <p class="td01 leftF"><b>"<?php print $_GET['search'];?>"</b>에 관련된 기사는 <em><?php print $view->total_rows;?></em>건입니다.</p>
+      <a class="btn01 rightF" href="/<?php print request_path();?>">목록 보기</a>
+      <?php if($voca === 'person') : ?>
+        <a class="btn01 rightF person" href="/ajax/webzine">인물 정보</a>
+      <?php endif;?>
+      <?php if($voca === 'years') : ?>
+        <div class="tagA"><?php print $archive->getYears($voca);?></div>
+      <?php endif;?>
+    <?php else: ?>
+      <p class="td01 leftF"><?php print $view->total_rows;?></em> related contents with<em><b>"<?php print $_GET['search'];?>"</b></p>
+      <a class="btn01 rightF" href="/<?php print request_path();?>">List</a>
+      <?php if($voca === 'person') : ?>
+        <a class="btn01 rightF person" href="/ajax/webzine">Person</a>
+      <?php endif;?>
+      <?php if($voca === 'years') : ?>
+        <div class="tagA"><?php print $archive->getYears($voca);?></div>
+      <?php endif;?>
+    <?php endif; ?>
     </div>
 
     <?php if($voca === 'location'): ?>

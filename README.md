@@ -47,6 +47,15 @@ $ drush -y en i18n_menu i18nviews
 - site_name: Webzine-KYEOL
 - site_slogan: Research Institute on Japanese Military Sexual Slavery (RIMSS) Webzine
 
+- 인터뷰: Interview
+- 에세이: Essay
+- 논평: Comment
+- 좌담: Discussion
+- 자료해제: Bibliographical Explanation
+- Sort by – Person / Subject / Region / Writer / Glossary
+- 자료실 : Resource
+- 소개 : About
+
 ## 영문 일반 페이지
 
 - "Comfort Women" - 위안부 용어 소개 - /comfort-women (신규)

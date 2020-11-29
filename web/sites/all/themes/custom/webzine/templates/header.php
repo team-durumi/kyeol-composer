@@ -18,8 +18,9 @@ if(current_path() === 'search/term') {
             <em><b><?php print $vol;?></b><i>.vol</i></em>
         </div>
         <ul class="ng01">
-            <li class="search"><a href="#" title="검색창 열기"><i class="xi-search"></i></a></li>
-            <li class="menu"><a href="#" title="메뉴 열기"><i class="xi-bars"></i></a></li>
+          <li class="translate"><a href="/" title="Translate" ><i style="font-size: 1.955rem; font-style:normal;">EN</i></a></li>
+          <li class="search"><a href="#" title="검색창 열기"><i class="xi-search"></i></a></li>
+          <li class="menu"><a href="#" title="메뉴 열기"><i class="xi-bars"></i></a></li>
         </ul>
         <nav>
             <a href="#" class="btn_icon01" title="메뉴 닫기"><i class="xi-close"></i></a>

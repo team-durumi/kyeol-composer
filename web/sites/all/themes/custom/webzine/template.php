@@ -78,7 +78,7 @@ function webzine_preprocess_page(&$variables) {
     }
     if(strpos(request_uri(), '/resources') !== false) {
       $variables['main_class'] = 'fc02';
-      $variables['page']['sidebar_first'] = ['#type' => 'markup', '#markup' => '<h2>Downloads</h2>'];
+      $variables['page']['sidebar_first'] = ['#type' => 'markup', '#markup' => '<h2>All</h2>'];
     }
   }
   drupal_add_js(array('Webzine' => array('vol' => $main->baseUrl.'/vol/'.$vol)), 'setting');

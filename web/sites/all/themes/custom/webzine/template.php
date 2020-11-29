@@ -34,6 +34,11 @@ function webzine_css_alter(&$css)
 * @param $variables
 */
 function webzine_preprocess_page(&$variables) {
+  global $base_url;
+  global $language;
+  $lang = $language->language;
+  $lang_path = ($lang == 'en') ? '/en' : '';
+
   $main = new Slowalk();
   $vol = $main->vol();
   $variables['vol'] = sprintf('%02d', $vol);  //호수 노출
@@ -45,16 +50,28 @@ function webzine_preprocess_page(&$variables) {
       $term = taxonomy_term_load(arg(2));
       $termname = sprintf('%02d', $term->name);
       drupal_set_title('#'.$termname.'년 글 다시보기');
+      if($lang == 'en') {
+        drupal_set_title('Vol #'.$termname);
+      }
     } elseif (arg(0) === 'taxonomy') {
       drupal_add_css('#page-title:before{content:"#"}', 'inline');
     }
     if(isset($variables['node'])) {
       if($variables['node']->type === 'article') {
         $main->vol = $variables['node']->field_vol['und'][0]['tid'];
-        $variables['thisVol'] = sprintf('%02d', $main->vol());  //호수 노출
+
         $variables['main_class'] = 'fc04';
+
+        $variables['thisVol'] = sprintf('%02d', $main->vol());  //호수 노출
         $cat_tid = $variables['node']->field_category['und'][0]['tid'];
         $variables['category'] = $main->catLabel[$cat_tid];
+
+        if($lang == 'en') {
+          $variables['thisVol'] = '#' . $main->vol();  //호수 노출
+          $term = $variables['node']->field_category['und'][0]['taxonomy_term'];
+          $variables['category'] = $term->name;
+        }
+
         if(isset($variables['node']->field_writer['und'])) {
           $writers = array();
           foreach($variables['node']->field_writer['und'] as $writerInfo) {
@@ -69,9 +86,11 @@ function webzine_preprocess_page(&$variables) {
         }
         $image = ($variables['node']->field_image) ? image_style_url('article', $variables['node']->field_image['und'][0]['uri']) : '';
         $variables['image'] = ($image) ? ' style="background-image:url('.$image.')"' : '';
-        $variables['vol_path'] = '/vol/' . $main->vol();
-        $variables['category_path'] = '/category/' . $main->machine_name[$cat_tid];
-        $variables['url'] = $main->baseUrl . request_uri();
+        $variables['vol_path'] = '/' . $lang . '/vol/' . $main->vol();
+        $variables['category_path'] = '/' . $lang . '/category/' . $main->machine_name[$cat_tid];
+
+        $variables['url'] = $base_url . $lang_path . '/node/' . $variables['node']->nid;
+
         $variables['created'] = $variables['node']->created;
         $variables['changed'] = $variables['node']->changed;
       }
@@ -230,6 +249,9 @@ function webzine_breadcrumb($variables) {
  * Implements hook_preprocess_node().
  */
 function webzine_preprocess_node(&$vars) {
+  global $language;
+  $lang = $language->language;
+
   if($vars['view_mode'] == 'teaser_en') {
     if(!empty($vars['field_vol']['und'][0]['tid'])) {
       $vol = $vars['field_vol']['und'][0]['tid'];
@@ -286,6 +308,10 @@ function webzine_preprocess_node(&$vars) {
     $vars['field_writer'] = 'the Editorial Team of the Webzine';
     $vars['theme_hook_suggestions'][] = 'node__' . $vars['node']->type . '__teaser';
     $vars['theme_hook_suggestions'][] = 'node__' . $vars['node']->nid . '__teaser';
+  }
+
+  if($vars['type'] == 'article' && $lang == 'en') {
+    $vars['theme_hook_suggestions'][] = 'node__article__en';
   }
 }
 

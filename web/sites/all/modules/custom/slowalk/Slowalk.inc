@@ -14,7 +14,7 @@ class Slowalk
     {
         $this->vol = variable_get('wz_main_vol', '');   //호수
         $this->featureIds = array();    //메인피쳐
-        $this->baseUrl = 'http://kyeol.kr';
+        $this->baseUrl = 'http://localhost';
 
         //기사 분류
         $this->catLabel = array(
@@ -238,12 +238,17 @@ class Archive extends Slowalk
 {
     protected function query($machine_name, $condition)
     {
+        global $language;
+        $lang = $language->language ?? 'ko';
         $start = $condition['start'];
         $end = $condition['end'];
         $vid = $this->vid($machine_name);
-        $term = db_select('taxonomy_term_data', 't')->fields('t', array('name'))->condition('vid', $vid)->condition('name', $start, '>=');
+        $term = db_select('taxonomy_term_data', 't')
+          ->fields('t', array('name'))
+          ->condition('vid', $vid)
+          ->condition('name', $start, '>=');
         if($end) {
-            $term->condition('name', $end, '<');
+          $term->condition('name', $end, '<');
         }
         $result = $term->execute()->fetchCol();
         return $result;
@@ -295,10 +300,15 @@ class Archive extends Slowalk
         return $data;
     }
 
-    public function template($machine_name)
-    {
+    public function template($machine_name) {
+        global $language;
+        $lang = $language->language ?? 'ko';
+
         $data = $this->index($machine_name);
         $html = '<div class="fc_box01"><p class="td01">총 <em>'.$data['total'].'개</em>의 태그가 있습니다.</p></div>';
+        if($lang == 'en') {
+          $html = '<div class="fc_box01"><p class="td01"><em>'.$data['total'].'</em> keywords</p></div>';
+        }
         if($machine_name === 'years') {
             $html .= '<div class="ng02"><div class="tagA">';
             foreach($data['index'] as $index) {
@@ -321,7 +331,7 @@ class Archive extends Slowalk
                     }
                     $html .= '<div class="ng02"><h3>'.$h3.'</h3><div class="tagA">';
                     foreach($index as $term) {
-                        $html .= '<a class="btn03" href="/archive/'.$machine_name.'/?search=' . $term . '">#' . $term . '</a>';
+                        $html .= '<a class="btn03" href="/' . $lang . '/archive/'.$machine_name.'/?search=' . $term . '">#' . $term . '</a>';
                     }
                     $html .= '</div></div>';
                 }
@@ -339,10 +349,10 @@ class Archive extends Slowalk
         else {$pid = key($parent);}
         $this->yearsQeury();
         $html = '';
-        $html .= '<a class="btn03" href="/archive/years/?search=' . $this->years[$pid]['name'] . '">#' . $this->years[$pid]['name'] . '</a>';
+        $html .= '<a class="btn03" href="' . $lang . '/archive/years/?search=' . $this->years[$pid]['name'] . '">#' . $this->years[$pid]['name'] . '</a>';
         asort($this->years[$pid]['child']);
         foreach($this->years[$pid]['child'] as $child) {
-            $html .= '<a class="btn03" href="/archive/years/?search=' . $child . '">#' . $child . '</a>';
+            $html .= '<a class="btn03" href="' . $lang . '/archive/years/?search=' . $child . '">#' . $child . '</a>';
         }
         return $html;
     }

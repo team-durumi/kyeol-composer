@@ -82,7 +82,7 @@
             <div class="th02"<?php print $image;?>>
                 <div class="inner">
                     <div class="category">
-                        <a class="btn02 version" href="<?php print $vol_path;?>"><?php print $thisVol;?>년</a>
+                        <a class="btn02 version" href="<?php print $vol_path;?>"><?php print $thisVol;?></a>
                         <a class="btn02 category" href="<?php print $category_path;?>"><?php print $category;?></a>
                     </div>
                     <h1><?php print $title;?></h1>

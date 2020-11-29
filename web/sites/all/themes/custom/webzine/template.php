@@ -133,7 +133,7 @@ function webzine_preprocess_page(&$variables) {
         $variables['page']['content']['body']['box']['recents'][$field] = [
           '#type' => 'markup',
           '#markup' => views_embed_view('recent_contents', $field),
-          '#prefix' => '<h2 onclick="this.style.display=\'none\'">' . ucwords(str_replace('_' , ' ', $field)) . '</h2>'
+          '#prefix' => '<h2 class="mt-5" onclick="this.style.display=\'none\'">' . ucwords(str_replace('_' , ' ', $field)) . '</h2>'
         ];
       }
     }

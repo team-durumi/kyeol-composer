@@ -224,12 +224,31 @@ function webzine_breadcrumb($variables) {
  */
 function webzine_preprocess_node(&$vars) {
   if($vars['view_mode'] == 'teaser_en') {
-    $vars['vol_name'] = $vars['field_vol'][0]['taxonomy_term']->name;
-    $vars['vol_path'] = '/taxonomy/term/' . $vars['field_vol'][0]['tid'];
-    $vars['category_name'] = $vars['field_category'][0]['taxonomy_term']->name;
-    $vars['category_path'] = '/taxonomy/term/' . $vars['field_category'][0]['tid'];
+    if(!empty($vars['field_vol']['und'][0]['tid'])) {
+      $vol = $vars['field_vol']['und'][0]['tid'];
+      $term = taxonomy_term_load($vol);
+      $vars['vol_name'] = $term->name;
+      $vars['vol_path'] = '/en/taxonomy/term/' . $vol;
+    }
+    if(!empty($vars['field_category']['und'][0]['tid'])) {
+      $category = $vars['field_category']['und'][0]['tid'];
+      $term = taxonomy_term_load($category);
+      $vars['category_name'] = $term->name;
+      $vars['category_path'] = '/en/taxonomy/term/' . $category;
+    }
 
     $vars['theme_hook_suggestions'][] = 'node__' . $vars['node']->type . '__teaser_en';
     $vars['theme_hook_suggestions'][] = 'node__' . $vars['node']->nid . '__teaser_en';
   }
+}
+
+function get_writers_und($field_writer) {
+  $writers = [];
+  if(isset($field_writer['und'])) {
+    foreach($field_writer['und'] as $writer) {
+      $term = taxonomy_term_load($writer['tid']);
+      $writers[] = $term->name;
+    }
+  }
+  return implode(', ', $writers);
 }

@@ -1,0 +1,22 @@
+diff --git a/pirate.module b/pirate.module
+index 5e685d6..e55ace7 100644
+--- a/pirate.module
++++ b/pirate.module
+@@ -25,7 +25,7 @@ function pirate_element_info_alter(&$types) {
+  * #pre_render callback for any element.
+  */
+ function pirate_pre_render($element) {
+-  foreach (array('#title', '#description', '#markup') as $property) {
++  foreach (array('#description', '#markup') as $property) {
+     if (isset($element[$property])) {
+       $element[$property] = pirate_filter_process($element[$property]);
+     }
+@@ -164,7 +164,7 @@ function pirate_captain($patterns) {
+     '/ing\b/' => "in'",
+     '/ings\b/' => "in's",
+   );
+-  return array_merge($pirate_patterns, $patterns);
++  return $patterns;
+ }
+ 
+ /**

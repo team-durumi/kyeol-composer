@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e1a428ace65f32b79f5a3a24ca152185",
+    "content-hash": "2585d09764ca99e60c59440724f7ff7c",
     "packages": [
         {
             "name": "composer/installers",
@@ -3735,8 +3735,7 @@
             "homepage": "https://www.drupal.org/project/pirate",
             "support": {
                 "source": "https://git.drupalcode.org/project/pirate"
-            },
-            "time": "2019-10-10T17:53:42+00:00"
+            }
         },
         {
             "name": "drupal/plupload",

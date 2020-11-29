@@ -58,7 +58,7 @@ $handler->display->display_options['filters']['type']['field'] = 'type';
 $handler->display->display_options['filters']['type']['value'] = array(
   'article' => 'article',
 );
-/* 필터 속성: 콘텐츠: Title (title_field:언어) */
+/* 필터 속성: 콘텐츠: 제목 (title_field:언어) */
 $handler->display->display_options['filters']['language']['id'] = 'language';
 $handler->display->display_options['filters']['language']['table'] = 'field_data_title_field';
 $handler->display->display_options['filters']['language']['field'] = 'language';
@@ -92,7 +92,7 @@ $handler->display->display_options['filters']['type']['field'] = 'type';
 $handler->display->display_options['filters']['type']['value'] = array(
   'article' => 'article',
 );
-/* 필터 속성: 콘텐츠: Title (title_field:언어) */
+/* 필터 속성: 콘텐츠: 제목 (title_field:언어) */
 $handler->display->display_options['filters']['language']['id'] = 'language';
 $handler->display->display_options['filters']['language']['table'] = 'field_data_title_field';
 $handler->display->display_options['filters']['language']['field'] = 'language';
@@ -108,6 +108,11 @@ $handler->display->display_options['filters']['field_category_tid']['value'] = a
 );
 $handler->display->display_options['filters']['field_category_tid']['type'] = 'select';
 $handler->display->display_options['filters']['field_category_tid']['vocabulary'] = 'article_category';
+/* 필터 속성: 콘텐츠: Promoted to front page status */
+$handler->display->display_options['filters']['promote']['id'] = 'promote';
+$handler->display->display_options['filters']['promote']['table'] = 'node';
+$handler->display->display_options['filters']['promote']['field'] = 'promote';
+$handler->display->display_options['filters']['promote']['value'] = '1';
 $handler->display->display_options['block_description'] = 'Essay';
 
 /* Display: interview */
@@ -134,7 +139,7 @@ $handler->display->display_options['filters']['type']['field'] = 'type';
 $handler->display->display_options['filters']['type']['value'] = array(
   'article' => 'article',
 );
-/* 필터 속성: 콘텐츠: Title (title_field:언어) */
+/* 필터 속성: 콘텐츠: 제목 (title_field:언어) */
 $handler->display->display_options['filters']['language']['id'] = 'language';
 $handler->display->display_options['filters']['language']['table'] = 'field_data_title_field';
 $handler->display->display_options['filters']['language']['field'] = 'language';
@@ -150,6 +155,11 @@ $handler->display->display_options['filters']['field_category_tid']['value'] = a
 );
 $handler->display->display_options['filters']['field_category_tid']['type'] = 'select';
 $handler->display->display_options['filters']['field_category_tid']['vocabulary'] = 'article_category';
+/* 필터 속성: 콘텐츠: Promoted to front page status */
+$handler->display->display_options['filters']['promote']['id'] = 'promote';
+$handler->display->display_options['filters']['promote']['table'] = 'node';
+$handler->display->display_options['filters']['promote']['field'] = 'promote';
+$handler->display->display_options['filters']['promote']['value'] = '1';
 $handler->display->display_options['block_description'] = 'Interview';
 
 /* Display: discussion */
@@ -176,7 +186,7 @@ $handler->display->display_options['filters']['type']['field'] = 'type';
 $handler->display->display_options['filters']['type']['value'] = array(
   'data' => 'data',
 );
-/* 필터 속성: 콘텐츠: Title (title_field:언어) */
+/* 필터 속성: 콘텐츠: 제목 (title_field:언어) */
 $handler->display->display_options['filters']['language']['id'] = 'language';
 $handler->display->display_options['filters']['language']['table'] = 'field_data_title_field';
 $handler->display->display_options['filters']['language']['field'] = 'language';
@@ -187,26 +197,14 @@ $handler->display->display_options['filters']['language']['value'] = array(
 $handler->display->display_options['filters']['field_category_tid']['id'] = 'field_category_tid';
 $handler->display->display_options['filters']['field_category_tid']['table'] = 'field_data_field_category';
 $handler->display->display_options['filters']['field_category_tid']['field'] = 'field_category_tid';
-$handler->display->display_options['filters']['field_category_tid']['operator'] = 'not';
 $handler->display->display_options['filters']['field_category_tid']['value'] = array(
   2 => '2',
 );
 $handler->display->display_options['filters']['field_category_tid']['type'] = 'select';
 $handler->display->display_options['filters']['field_category_tid']['vocabulary'] = 'article_category';
+/* 필터 속성: 콘텐츠: Promoted to front page status */
+$handler->display->display_options['filters']['promote']['id'] = 'promote';
+$handler->display->display_options['filters']['promote']['table'] = 'node';
+$handler->display->display_options['filters']['promote']['field'] = 'promote';
+$handler->display->display_options['filters']['promote']['value'] = '1';
 $handler->display->display_options['block_description'] = 'Discussion';
-$translatables['recent_contents'] = array(
-  t('Master'),
-  t('Recent contents'),
-  t('더 보기'),
-  t('적용'),
-  t('재설정'),
-  t('정렬기준'),
-  t('Asc'),
-  t('설명'),
-  t('essay'),
-  t('Essay'),
-  t('interview'),
-  t('Interview'),
-  t('discussion'),
-  t('Discussion'),
-);

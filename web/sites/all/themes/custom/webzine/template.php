@@ -269,6 +269,24 @@ function webzine_preprocess_node(&$vars) {
     $vars['theme_hook_suggestions'][] = 'node__' . $vars['node']->type . '__teaser_en';
     $vars['theme_hook_suggestions'][] = 'node__' . $vars['node']->nid . '__teaser_en';
   }
+
+  if($vars['type'] == 'resources' && $vars['view_mode'] == 'teaser') {
+    if(!empty($vars['field_image']['und'][0]['uri'])) {
+      $vars['image_uri'] = $vars['field_image']['und'][0]['uri'];
+    }
+    if(!empty($vars['field_image'][0]['uri'])) {
+      $vars['image_uri'] = $vars['field_image'][0]['uri'];
+    }
+    if(!empty($vars['body'][0]['safe_value'])) {
+      $vars['body'] = $vars['body'][0]['safe_value'];
+    }
+    if(!empty($vars['body']['und'][0]['safe_value'])) {
+      $vars['body'] = $vars['body']['und'][0]['safe_value'];
+    }
+    $vars['field_writer'] = 'the Editorial Team of the Webzine';
+    $vars['theme_hook_suggestions'][] = 'node__' . $vars['node']->type . '__teaser';
+    $vars['theme_hook_suggestions'][] = 'node__' . $vars['node']->nid . '__teaser';
+  }
 }
 
 function get_writers_und($field_writer) {

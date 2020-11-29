@@ -30,30 +30,17 @@ scp -r kyeol:/var/www/html/kyeol/sites/all/modules/ckeditor/plugins/ web/sites/a
 - drupal/drupal - [[D7] Duplicate HTML IDs are created for file_managed_file fields](https://www.drupal.org/project/drupal/issues/2594955)
 
 
-## multilingual drupal (translation, i18n)
+## Modules for multilingual drupal (entity translation, i18n)
 
-```
-# https://www.drupal.org/docs/7/multilingual
-drush -y en entity_translation title
-
-# [HowTo: Different home page (default front page) for each language](https://www.drupal.org/node/1216132)
-drush -y en i18n_select i18n_variable i18n_string i18n_block
-
-# i18n menu and views
-drush -y en i18n_menu i18nviews
-
-# [Multilingual frontpage with translation and URL alias](https://www.drupal.org/node/301587)
-
+```zsh
+$ drush -y en entity_translation title
+$ drush -y en i18n_select i18n_variable i18n_string i18n_block
+$ drush -y en i18n_menu i18nviews
 ```
 
-1. 영어 언어 추가 및 사용 /admin/config/regional/language
-2. UI, 콘텐츠 언어 인식 설정 추가 /admin/config/regional/language/configure
-3. 엔티티 번역 설정 추가 /admin/config/regional/entity_translation
-   - 기본 언어 = 기본 언어
-   - [x] Hide language selector
-   - [x] Exclude Language neutral from the available languages
-   - [x] Prevent language from being changed once the entity has been created
-   - [x] Hide shared elements on translation forms
+- https://www.drupal.org/docs/7/multilingual
+- [HowTo: Different home page (default front page) for each language](https://www.drupal.org/node/1216132)
+- [Multilingual frontpage with translation and URL alias](https://www.drupal.org/node/301587)
 
 ## 영문 사이트 정보
 
@@ -72,22 +59,78 @@ drush -y en i18n_menu i18nviews
 /en/kyeol
 ```
 
-## 영문 콘텐츠 번역본
-
-- http://kyeol.durumi.io/en/node/133
-- http://kyeol.durumi.io/en/node/138
-- http://kyeol.durumi.io/en/node/139
-- http://kyeol.durumi.io/en/node/160
-
 ## 영문 홈페이지 구조
 
 - wz_main_slide - block - 메인 슬라이드
 - about-three-col2 - slowalk/modules/block/template - 소개
-- Essay 3
-- Interview 2
-- Researcher Forum 1
+- Essay 3 - views.view.recent_contents.essay
+- Interview 2 - views.view.recent_contents.interview
+- Researcher Forum 1 - views.view.recent_contents.researcher_forum
 
+@see webzine_preprocess_page  (near bottom)
+
+## 다국어 번역 설정 작업 상세 내역
+
+### 언어 설정
+
+- /admin/config/regional/language - english 사용
+- /admin/config/regional/language/configure - 인식 방법 URL 2개 모두 체크
+
+```zsh
+$ drush -y en entity_translation title
 ```
-$variables['page']['content']['slider'] = $slider;
-$variables['page']['content']['about'] = $about;
+
+### 엔티티 번역 설정 /admin/config/regional/entity_translation
+
+- Use only enabled languages
+- Translatable entity types - content, tag
+- Pathauto - all alias
+
+### 콘텐츠 유형 수정하기 admin/structure/types/manage/article/fields
+
+- 공개 > Enabled, with field translation 엔터티 번역 설정
+- 필드 수정, title 필드 변환, body
+
+### 분류 수정하기
+
+- /admin/structure/taxonomy/article_category/edit vocab 번역 설정
+- /admin/structure/taxonomy/article_category/fields 이름, 설명 필드 번역 사용
+
+### 엔티티 번역 설정
+
+- /admin/config/regional/entity_translation content, term 모두 체크
+
+```zsh
+drush -y en i18n_block i18n_menu i18n_select i18n_string i18n_variable i18nviews
+```
+
+### 다국어 변수 설정
+
+- /admin/config/regional/i18n/variable 홈페이지 모두 선택
+
+### 문자열 번역 설정
+
+- /admin/config/regional/i18n/strings Translatable text formats 모두 선택
+
+### 사이트 정보 설정
+
+- /en/admin/config/system/site-information
+- site_name: Webzine-KYEOL
+- site_slogan: Research Institute on Japanese Military Sexual Slavery (RIMSS) Webzine
+
+### 홈페이지 슬라이드 설정
+
+- /en/admin/webzine/slide 영문용 슬라이드 정보 및 이미지 지정
+
+### 홈페이지 최신 글 블록용 뷰 추가
+
+- config/sync/views.view.recent_contents.php
+
+### 영문용 Resources 콘텐츠 유형 및 뷰 생성
+
+- 기존에 있던 관련 기록과 자료:data 유형 사용
+- config/sync/views.view.resources.php
+
+
+
 ```

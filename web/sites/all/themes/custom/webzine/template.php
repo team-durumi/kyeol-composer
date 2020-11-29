@@ -76,6 +76,10 @@ function webzine_preprocess_page(&$variables) {
         $variables['changed'] = $variables['node']->changed;
       }
     }
+    if(strpos(request_uri(), '/resources') !== false) {
+      $variables['main_class'] = 'fc02';
+      $variables['page']['sidebar_first'] = ['#type' => 'markup', '#markup' => '<h2>Downloads</h2>'];
+    }
   }
   drupal_add_js(array('Webzine' => array('vol' => $main->baseUrl.'/vol/'.$vol)), 'setting');
   drupal_add_js('https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js', array('type' => 'external', 'scope' => 'header', 'group' => JS_LIBRARY));
@@ -91,13 +95,14 @@ function webzine_preprocess_page(&$variables) {
 
   // 언어에 따라 홈페이지 템플릿 선택
   $language = $variables['language'];
-  if($language->language == 'en') {
+  $lang = $language->language;
+  if($lang == 'en') {
     $variables['theme_hook_suggestions'][] = 'page__en';
     // 홈페이지
     if($variables['is_front']) {
       $variables['theme_hook_suggestions'][] = 'page__front__en';
-      // 초기화
       $variables['page']['content'] = [];
+
       // 슬라이더
       $slides = module_invoke('wz_block', 'block_view', 'wz_main_slide');
       $slider = [
@@ -105,42 +110,34 @@ function webzine_preprocess_page(&$variables) {
         '#attributes' => [ 'class' => ['ib01'] ],
         'slides' => $slides['content']
       ];
+      $variables['page']['content']['slider'] = $slider;
+
       // 3단 소개
       $about_partial = file_get_contents(drupal_get_path('module', 'wz_block') . '/templates/about-three-cols.tpl.php');
-
-      $terms = [
-        2 => 'Discussion',
-        3 => 'Comment',
-        4 => 'Essay',
-        5 => 'Bibliographical Explanation',
-        7 => 'Interview'
-      ];
-
-      // Essay 3
-      $essay = views_embed_view('recent_contents', 'essay', ['field_category' => 4]);
-
-      // Interview 2
-      // Researcher Forum 1
-
-      $variables['page']['content']['slider'] = $slider;
       $variables['page']['content']['about'] = [ '#type' => 'markup', '#markup' => $about_partial ];
 
+      // 최신글 container
       $variables['page']['content']['body'] = [ '#type' => 'container', '#attributes' => ['class' => 'cBody inner']];
       $variables['page']['content']['body']['box'] =  [ '#type' => 'container', '#attributes' => ['class' => 'fc_box02']];
-      $variables['page']['content']['body']['box']['recents'] = [ '#type' => 'container', '#attributes' => ['class' => 'fc03'], '#prefix' => '<h2>Essay</h2>'];
-      $variables['page']['content']['body']['box']['recents']['essay'] = [ '#type' => 'markup', '#markup' => $essay ];
+      $variables['page']['content']['body']['box']['recents'] = [ '#type' => 'container', '#attributes' => ['class' => 'fc03']];
 
-/*
-      $recents = [ '#type' => 'container', '#attributes' => ['class' => 'fc03 inner']];
-      $essay = [ '#type' => 'markup', '#markup' => '<h4>essay</h4>' ];
-      $interview = [ '#type' => 'markup', '#markup' => '<h4>interview</h4>' ];
-      $resources = [ '#type' => 'markup', '#markup' => '<h4>resources</h4>' ];
-      $variables['page']['content']['recents'] = $recents;
-      $variables['page']['content']['recents']['essay'] = $essay;
-      $variables['page']['content']['recents']['interview'] = $interview;
-      $variables['page']['content']['recents']['resources'] = $resources;
-*/
+      // 최신글
+      $category_terms = [
+        'interview' => '인터뷰',
+        'essay' => '에세이',
+        'comment' => '논평',
+        'discussion' => '좌담',
+        'bibliographical_explanation' => '자료해제',
+      ];
+      foreach ($category_terms as $field => $label) {
+        $variables['page']['content']['body']['box']['recents'][$field] = [
+          '#type' => 'markup',
+          '#markup' => views_embed_view('recent_contents', $field),
+          '#prefix' => '<h2 onclick="this.style.display=\'none\'">' . ucwords(str_replace('_' , ' ', $field)) . '</h2>'
+        ];
+      }
     }
+
     drupal_add_css(drupal_get_path('theme', 'webzine') . '/css/webzine_en.css', array('type' => 'file', 'group' => CSS_THEME));
     drupal_add_css('//unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css', array('type' => 'external', 'group' => CSS_THEME));
   }
@@ -234,12 +231,58 @@ function webzine_breadcrumb($variables) {
  */
 function webzine_preprocess_node(&$vars) {
   if($vars['view_mode'] == 'teaser_en') {
-    $vars['vol_name'] = $vars['field_vol'][0]['taxonomy_term']->name;
-    $vars['vol_path'] = '/taxonomy/term/' . $vars['field_vol'][0]['tid'];
-    $vars['category_name'] = $vars['field_category'][0]['taxonomy_term']->name;
-    $vars['category_path'] = '/taxonomy/term/' . $vars['field_category'][0]['tid'];
+    if(!empty($vars['field_vol']['und'][0]['tid'])) {
+      $vol = $vars['field_vol']['und'][0]['tid'];
+    }
+    if(!empty($vars['field_vol'][0]['tid'])) {
+      $vol = $vars['field_vol'][0]['tid'];
+    }
+    if(!empty($vol)) {
+      $term = taxonomy_term_load($vol);
+      $vars['vol_name'] = $term->name;
+      $vars['vol_path'] = '/en/taxonomy/term/' . $vol;
+    }
+    if(!empty($vars['field_category']['und'][0]['tid'])) {
+      $category = $vars['field_category']['und'][0]['tid'];
+    }
+    if(!empty($vars['field_category'][0]['tid'])) {
+      $category = $vars['field_category'][0]['tid'];
+    }
+    if(!empty($category)) {
+      $term = taxonomy_term_load($category);
+      $vars['category_name'] = $term->name;
+      $vars['category_path'] = '/en/taxonomy/term/' . $category;
+    }
+    if(!empty($vars['field_image']['und'][0]['uri'])) {
+      $vars['image_uri'] = $vars['field_image']['und'][0]['uri'];
+    }
+    if(!empty($vars['field_image'][0]['uri'])) {
+      $vars['image_uri'] = $vars['field_image'][0]['uri'];
+    }
+    if(!empty($vars['body'][0]['safe_value'])) {
+      $vars['body'] = $vars['body'][0]['safe_value'];
+    }
+    if(!empty($vars['body']['und'][0]['safe_value'])) {
+      $vars['body'] = $vars['body']['und'][0]['safe_value'];
+    }
 
     $vars['theme_hook_suggestions'][] = 'node__' . $vars['node']->type . '__teaser_en';
     $vars['theme_hook_suggestions'][] = 'node__' . $vars['node']->nid . '__teaser_en';
   }
+}
+
+function get_writers_und($field_writer) {
+  $writers = [];
+  if(isset($field_writer['und'])) {
+    foreach($field_writer['und'] as $writer) {
+      $term = taxonomy_term_load($writer['tid']);
+      $writers[] = $term->name;
+    }
+  } elseif(isset($field_writer)) {
+    foreach($field_writer as $writer) {
+      $term = taxonomy_term_load($writer['tid']);
+      $writers[] = $term->name;
+    }
+  }
+  return implode(', ', $writers);
 }

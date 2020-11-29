@@ -82,19 +82,19 @@
 ?>
 <a href="<?php print $node_url;?>" class="thumb">
   <span>
-    <img src="<?php print image_style_url('article_thumbnail', $field_image['und'][0]['uri']);?>" alt="<?php print $title;?>"/>
+    <img src="<?php print image_style_url('article_thumbnail', $image_uri);?>" alt="<?php print $title;?>"/>
   </span>
 </a>
 <dl class="conA">
   <dt>
-    <span class="category">
+    <span class="category" style="display: none">
       <a class="btn02 version" href="<?php print $vol_path; ?>"><?php print $vol_name; ?></a>
       <a class="btn02 mention" href="<?php print $category_path; ?>"><?php print $category_name; ?></a>
     </span>
     <a href="<?php print $node_url;?>"><?php print $title;?></a>
   </dt>
   <dd>
-    <p class="summury"><?php print strip_tags($body['en'][0]['safe_value']);?></p>
+    <p class="summury"><?php print strip_tags($body);?></p>
     <p class="meta">
       <span><?php print get_writers_und($field_writer);?></span>
       <em><?php print format_date($created, 'custom', 'Y.m.d');?></em>

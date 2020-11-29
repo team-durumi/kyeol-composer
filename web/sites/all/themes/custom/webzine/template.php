@@ -233,15 +233,37 @@ function webzine_preprocess_node(&$vars) {
   if($vars['view_mode'] == 'teaser_en') {
     if(!empty($vars['field_vol']['und'][0]['tid'])) {
       $vol = $vars['field_vol']['und'][0]['tid'];
+    }
+    if(!empty($vars['field_vol'][0]['tid'])) {
+      $vol = $vars['field_vol'][0]['tid'];
+    }
+    if(!empty($vol)) {
       $term = taxonomy_term_load($vol);
       $vars['vol_name'] = $term->name;
       $vars['vol_path'] = '/en/taxonomy/term/' . $vol;
     }
     if(!empty($vars['field_category']['und'][0]['tid'])) {
       $category = $vars['field_category']['und'][0]['tid'];
+    }
+    if(!empty($vars['field_category'][0]['tid'])) {
+      $category = $vars['field_category'][0]['tid'];
+    }
+    if(!empty($category)) {
       $term = taxonomy_term_load($category);
       $vars['category_name'] = $term->name;
       $vars['category_path'] = '/en/taxonomy/term/' . $category;
+    }
+    if(!empty($vars['field_image']['und'][0]['uri'])) {
+      $vars['image_uri'] = $vars['field_image']['und'][0]['uri'];
+    }
+    if(!empty($vars['field_image'][0]['uri'])) {
+      $vars['image_uri'] = $vars['field_image'][0]['uri'];
+    }
+    if(!empty($vars['body'][0]['safe_value'])) {
+      $vars['body'] = $vars['body'][0]['safe_value'];
+    }
+    if(!empty($vars['body']['und'][0]['safe_value'])) {
+      $vars['body'] = $vars['body']['und'][0]['safe_value'];
     }
 
     $vars['theme_hook_suggestions'][] = 'node__' . $vars['node']->type . '__teaser_en';
@@ -253,6 +275,11 @@ function get_writers_und($field_writer) {
   $writers = [];
   if(isset($field_writer['und'])) {
     foreach($field_writer['und'] as $writer) {
+      $term = taxonomy_term_load($writer['tid']);
+      $writers[] = $term->name;
+    }
+  } elseif(isset($field_writer)) {
+    foreach($field_writer as $writer) {
       $term = taxonomy_term_load($writer['tid']);
       $writers[] = $term->name;
     }

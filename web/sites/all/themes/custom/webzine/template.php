@@ -158,6 +158,7 @@ function webzine_preprocess_page(&$variables) {
     }
 
     drupal_add_css(drupal_get_path('theme', 'webzine') . '/css/webzine_en.css', array('type' => 'file', 'group' => CSS_THEME));
+    drupal_add_css(drupal_get_path('theme', 'webzine') . '/css/responsive.css', array('type' => 'file', 'group' => CSS_THEME));
     drupal_add_css('//unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css', array('type' => 'external', 'group' => CSS_THEME));
   }
 }

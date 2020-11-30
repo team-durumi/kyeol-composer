@@ -6,7 +6,6 @@ body,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,inpu
 
 .inner{width:auto;margin:0 15px;padding:0;box-sizing:border-box}
 /*헤더*/
-header{}
 header .inner{height:70px}
 header .lg01{margin-top:17px}
 body.front header .lg01{margin-top:17px}

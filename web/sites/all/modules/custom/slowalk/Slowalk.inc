@@ -150,7 +150,7 @@ class Webzines extends Slowalk
             ->propertyOrderBy('created', 'DESC')
             ->propertyCondition('language', $lang, '=')
             ->execute();
-        kint($result);
+
         if(isset($result['node'])) {
             $nids = array_keys($result['node']);
             $opinion = node_load_multiple($nids);

@@ -310,7 +310,7 @@ function webzine_preprocess_node(&$vars) {
     $vars['theme_hook_suggestions'][] = 'node__' . $vars['node']->nid . '__teaser';
   }
 
-  if($vars['type'] == 'article' && $lang == 'en') {
+  if($vars['type'] == 'article' && $lang == 'en' && $vars['view_mode'] == 'full') {
     $vars['theme_hook_suggestions'][] = 'node__article__en';
   }
 }

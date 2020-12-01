@@ -75,6 +75,7 @@ function wz_slide_callback_validate($form, &$form_state)
       }
     }
 
+    /*
     for($i = $start; $i <= 5; $i++) {
         $form_state['values']['slide_'.$i.'_title'] = '';
         $form_state['values']['slide_'.$i.'_body'] = '';
@@ -87,4 +88,5 @@ function wz_slide_callback_validate($form, &$form_state)
         $form_state['values']['slide_'.$i.'_link'] = '';
         $form_state['values']['slide_'.$i.'_blank'] = 0;
     }
+    */
 }

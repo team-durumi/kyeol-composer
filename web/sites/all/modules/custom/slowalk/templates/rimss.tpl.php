@@ -27,4 +27,4 @@
       </section>
     </div>
 </div>
-<style>.caption p {display:none;}</style>
+

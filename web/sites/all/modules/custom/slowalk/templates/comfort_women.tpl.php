@@ -4,7 +4,7 @@
           <!-- con01 -->
           <div class="con01 postA">
             <div class="banner" style="background-image:url(/sites/all/modules/custom/slowalk/images/map.jpg);">
-              <img src="/sites/all/modules/custom/slowalk/images/map.jpg" alt="&copy; Women's Active Museum on War and Peace"/>
+              <img src="/sites/all/modules/custom/slowalk/images/map.jpg" alt="&#8220;&copy; Women's Active Museum on War and Peace&#8221; (https://wam-peace.org/ianjo/)"/>
             </div>
             <dl class="unit unit01">
               <dt>Definition</dt>

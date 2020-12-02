@@ -474,3 +474,11 @@ body.page-archive-person .ui-dialog .ui-dialog-titlebar .ui-dialog-titlebar-clos
 /* 기사 - 이미지 슬라이더 */
 .slider-nav .slick-slide{margin:0 1%;}
 .slider-nav .slick-slide.slick-current img{border:solid 3px #9f865f;box-sizing:border-box;}
+
+span.cavacnote,
+span.cavacnotify {
+    border-bottom: 2px dotted;
+    border-color: #9f865f;
+    color: #9f865f;
+    cursor: pointer;
+}

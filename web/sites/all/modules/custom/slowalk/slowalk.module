@@ -77,6 +77,15 @@ function slowalk_menu()
       'type' => MENU_CALLBACK
     ];
 
+    $items['newsletters'] = [
+      'title' => '뉴스레터',
+      'description' => '뉴스레터',
+      'page callback' => 'webzine_page_view',
+      'page arguments' => ['newsletters'],
+      'access arguments' => ['access content'],
+      'type' => MENU_CALLBACK
+    ];
+
     return $items;
 }
 
@@ -101,13 +110,19 @@ function slowalk_permission()
  * Implements hook_theme().
  */
 function slowalk_theme($existing, $type, $theme, $path) {
-  $pages = [ 'comfort_women', 'rimss', 'kyeol' ];
+  global $base_url;
+  $pages = [ 'comfort_women', 'rimss', 'kyeol', 'newsletters' ];
   $themes = [];
+  $data = [];
   foreach ($pages as $page) {
+    if($page == 'newsletters') {
+      $yaml = dirname(__FILE__) . '/templates/newsletters.yml';
+      $data['newsletters'] = yaml_parse_file($yaml);
+    }
     $themes[$page] = [
       'path' => drupal_get_path('module', 'slowalk') . '/templates',
       'template' => $page,
-      'variables' => []
+      'variables' => ['data' => $data ]
     ];
   }
   return $themes;

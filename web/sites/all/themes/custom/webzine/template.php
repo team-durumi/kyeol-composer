@@ -79,7 +79,7 @@ function webzine_preprocess_page(&$variables) {
             $writer = taxonomy_term_load($wid);
             $writers[] = array(
               'name' => $writer->name,
-              'info' => ($writer->field_position) ? strip_tags($writer->field_position['und'][0]['value']) : ''
+              'info' => ($writer->field_position) ? strip_tags($writer->field_position[$lang][0]['value']) : ''
             );
           }
           $variables['writers'] = $writers;
@@ -252,7 +252,7 @@ function webzine_breadcrumb($variables) {
  */
 function webzine_preprocess_node(&$vars) {
   global $language;
-  $lang = $language->language;
+  $lang = $vars['lang'] = $language->language;
 
   if($vars['view_mode'] == 'teaser_en') {
     if(!empty($vars['field_vol']['und'][0]['tid'])) {

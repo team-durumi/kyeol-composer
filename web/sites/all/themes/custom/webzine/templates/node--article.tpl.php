@@ -170,7 +170,7 @@
             <?php $i=1; foreach($content['field_related_article']['#items'] as $article): ?>
               <?php if(isset($article['node'])): ?>
                 <?php if($article['node']->status !== '1') continue; ?>
-                <?php $img = ($article['node']->field_image) ? image_style_url('main_article', $article['node']->field_image['und'][0]['uri']) : file_create_url(drupal_get_path('theme', 'webzine').'/images/no-image-square.png');?>
+                <?php $img = ($article['node']->field_image) ? image_style_url('main_article', $article['node']->field_image[$lang][0]['uri']) : file_create_url(drupal_get_path('theme', 'webzine').'/images/no-image-square.png');?>
                 <?php $body = field_view_field('node', $article['node'], 'body', 'teaser');?>
                 <li class="l<?php print $i++;?>">
                   <a href="/node/<?php print $article['node']->nid;?>" class="thumb"><span><img src="<?php print $img;?>" alt="<?php print $article['node']->title;?>"/></span></a>
@@ -214,7 +214,8 @@
                     <dd>
                         <p><?php print $writer['taxonomy_term']->description;?></p>
                         <?php if($writer['taxonomy_term']->field_contact): ?>
-                            <a href="mailto:<?php print $writer['taxonomy_term']->field_contact['und'][0]['value'];?>"><?php print $writer['taxonomy_term']->field_contact['und'][0]['value'];?></a>
+                            <?php echo $lang; ?>
+                            <a href="mailto:<?php print $writer['taxonomy_term']->field_contact[$lang][0]['value'];?>"><?php print $writer['taxonomy_term']->field_contact[$lang][0]['value'];?></a>
                         <?php endif;?>
                     </dd>
                 </dl>
@@ -242,7 +243,7 @@
         <dd>
           <ul>
             <?php foreach($content['field_related_file']['#items'] as $file): ?>
-              <li><a class="btn03" href="<?php print file_create_url($file['node']->field_file['und'][0]['uri']);?>"><i class="xi-paperclip"></i><?php print $file['node']->field_file['und'][0]['filename'];?></a></li>
+              <li><a class="btn03" href="<?php print file_create_url($file['node']->field_file[$lang][0]['uri']);?>"><i class="xi-paperclip"></i><?php print $file['node']->field_file[$lang][0]['filename'];?></a></li>
             <?php endforeach;?>
           </ul>
         </dd>

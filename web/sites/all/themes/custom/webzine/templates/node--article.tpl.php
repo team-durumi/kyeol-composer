@@ -170,7 +170,7 @@
             <?php $i=1; foreach($content['field_related_article']['#items'] as $article): ?>
               <?php if(isset($article['node'])): ?>
                 <?php if($article['node']->status !== '1') continue; ?>
-                <?php $img = ($article['node']->field_image) ? image_style_url('main_article', $article['node']->field_image[$lang][0]['uri']) : file_create_url(drupal_get_path('theme', 'webzine').'/images/no-image-square.png');?>
+                <?php $img = ($article['node']->field_image) ? image_style_url('main_article', $article['node']->field_image['und'][0]['uri']) : file_create_url(drupal_get_path('theme', 'webzine').'/images/no-image-square.png');?>
                 <?php $body = field_view_field('node', $article['node'], 'body', 'teaser');?>
                 <li class="l<?php print $i++;?>">
                   <a href="/node/<?php print $article['node']->nid;?>" class="thumb"><span><img src="<?php print $img;?>" alt="<?php print $article['node']->title;?>"/></span></a>

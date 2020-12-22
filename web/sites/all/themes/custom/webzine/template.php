@@ -79,7 +79,7 @@ function webzine_preprocess_page(&$variables) {
             $writer = taxonomy_term_load($wid);
             $writers[] = array(
               'name' => $writer->name,
-              'info' => ($writer->field_position) ? strip_tags($writer->field_position['und'][0]['value']) : ''
+              'info' => ($writer->field_position) ? strip_tags($writer->field_position[$lang][0]['value']) : ''
             );
           }
           $variables['writers'] = $writers;
@@ -105,6 +105,7 @@ function webzine_preprocess_page(&$variables) {
   drupal_add_js('https://cdn.jsdelivr.net/npm/jquery-validation@1.19.0/dist/jquery.validate.min.js', array('type' => 'external', 'scope' => 'header', 'group' => JS_LIBRARY ));
   drupal_add_js('https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js', array('type' => 'external', 'scope' => 'header', 'group' => JS_THEME ));
   drupal_add_js(drupal_get_path('module', 'ckeditor') . '/plugins/cavacnote/jquery/jquery.cavacnote.js', array('type' => 'file', 'scope' => 'header', 'group' => JS_LIBRARY));
+  drupal_add_js(drupal_get_path('module', 'slowalk'). '/js/cavacnotify.js', array('type' => 'file', 'scope' => 'footer', 'group' => JS_THEME));
   drupal_add_js(drupal_get_path('theme', 'webzine') . '/js/jquery.dialogOptions.js', array('type' => 'file', 'scope' => 'header', 'group' => JS_THEME));
   drupal_add_css('https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css', array('type' => 'external', 'group' => CSS_THEME));
   drupal_add_css('https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css', array('type' => 'external', 'group' => CSS_THEME));
@@ -251,7 +252,7 @@ function webzine_breadcrumb($variables) {
  */
 function webzine_preprocess_node(&$vars) {
   global $language;
-  $lang = $language->language;
+  $lang = $vars['lang'] = $language->language;
 
   if($vars['view_mode'] == 'teaser_en') {
     if(!empty($vars['field_vol']['und'][0]['tid'])) {

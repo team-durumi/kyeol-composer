@@ -154,6 +154,11 @@ section h1.title{font-size:24px;line-height:30px;padding-bottom:20px;}
 .lc03 > dl > dt a{font-size:1.2rem}
 .lc03 > dl > dd{float:none;width:auto}
 .lc03 > dl > dd .lc02_01 li dl{margin-left:0}
+
+/*00_main_04 메인 소개 노출 영역-모바일 조정*/
+.clear{float:none;clear:both;}
+.lc04 li{float:left;width:initial;margin-right:2.9%;margin-bottom:2.9%;background-color:#fff;border:solid 1px #ddd;position:relative;box-sizing:border-box;}
+
 /*로고*/
 .lg01 a{width:200px;height:36px;background-size:200px 36px}
 .lg01 em{color:#554531;line-height:17.6px;margin-top:2px;padding-top:6px;margin-left:5px;padding-left:10px;}

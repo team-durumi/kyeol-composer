@@ -5,7 +5,9 @@
         <div class="cBody">
           <!-- con01 -->
           <div class="con01 postA">
-            <div class="banner" style="background-image:url(/sites/all/modules/custom/slowalk/images/banner_introduce.png)"><img src="/sites/all/modules/custom/slowalk/images/banner_introduce.png" alt="일본군 위안부 문제연구소 사무실 입구 모습"/></div>
+            <div class="banner" style="background-image:url(/sites/all/modules/custom/slowalk/images/banner_introduce.png)">
+              <img src="/sites/all/modules/custom/slowalk/images/banner_introduce.png" alt="RIMSS office enterance" />
+            </div>
             <dl class="unit unit01">
               <dt>Research Institute on Japanese Military Sexual Slavery(RIMSS)</dt>
               <br/><br /><br />
@@ -27,4 +29,4 @@
       </section>
     </div>
 </div>
-<style>.caption p {display:none;}</style>
+

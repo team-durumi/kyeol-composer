@@ -3,7 +3,9 @@
         <div class="cBody">
           <!-- con01 -->
           <div class="con01 postA">
-            <div class="banner" style="background-image:url(/sites/all/modules/custom/slowalk/images/map.jpg)"><img src="/sites/all/modules/custom/slowalk/images/map.jpg" alt="일본군 위안부 아시아 분포지도"/></div>
+            <div class="banner" style="background-image:url(/sites/all/modules/custom/slowalk/images/map.jpg);">
+              <img src="/sites/all/modules/custom/slowalk/images/map.jpg" alt="&#8220;&copy; Women's Active Museum on War and Peace&#8221; (https://wam-peace.org/ianjo/)"/>
+            </div>
             <dl class="unit unit01">
               <dt>Definition</dt>
               <br/>
@@ -64,4 +66,3 @@
 
     </div>
 </div>
-<style>.caption p {display:none;}</style>

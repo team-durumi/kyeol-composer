@@ -6,23 +6,30 @@
           <div class="con01 postA">
             <div class="banner" style="background-image:url(/sites/all/modules/custom/slowalk/images/banner_intro_webzine.png)"><img src="/sites/all/modules/custom/slowalk/images/banner_intro_webzine.png" alt="Webzine website screenshot" /></div>
             <dl class="unit unit01">
-              <dt>Webzine KYEOL</dt>
+              <dt>The webzine <KYEOL> of RIMSS</dt>
               <br/>
               <dd>
-                <p>We have named this webzine ‘KYEOL’ to signal our intent to delve into and unravel a complex layer of intertwined issues – surrounding the military sexual slavery, such as colonial rule, armed conflict, sexual violence and human rights.</p>
+                <p>The <KYEOL> published by RIMSS is a webzine featuring various information on the Japanese Military “Comfort Women” issue in order to help the public understand the Japanese Military “Comfort Women” issue and promote relevant studies among researchers.</p>
 
-                <p>This webzine will provide an update on the research and activities of experts, who investigate the sexual slavery issue from the different perspectives of history, politics, literature, diplomacy, culture and the female rights movement. It also seeks to promote a new language for discussion based on in-depth analyses, and deliver the content in various formats, including document reviews and narrative accounts. In doing so, it intends to make the content more accessible to the general public. </p>
+                <p>The Japanese Military “Comfort Women” issue is obviously difficult to summarize in a phrase as the issue links to a variety of topics such as colonial rule, war, gender, human rights, violence, and international crimes, etc. The name of RIMSS's webzine <KYEOL><sup data-footnote-id="ownoc"><a href="#footnote-1" id="footnote-marker-1-1" rel="footnote">*</a></sup> embodies RIMSS's intention to closely examine and unfold such a diverse and complex issue that entails the Japanese Military “Comfort Women”.</p>
 
-                <p>The "Comfort Women" issue is one which many people might think they understand, yet would find it difficult to clarify when prompted. Indeed, only a careful unravelling of the intricate weave of events will achieve a greater understanding of the issue and enable us to construct a history which continues to haunt our lives in the present day.<p>
+                <section class="footnotes">
+                <ol><li data-footnote-id="ownoc" id="footnote-1"><a href="#footnote-marker-1-1">*</a> <cite> The Korean dictionary definition of 'KYEOL': 'KYEOL' refers to the condition or pattern of an arrangement in which the hard and soft parts of the fibers of trees, stones, and flesh, etc. are organized together to render regular layers.</cite></li>
+                </ol>
+                </section>  
+
+                <p>RIMSS's webzine <KYEOL> endeavors to showcase the research achievements and activities of experts from every sphere of life who have speculated the “Comfort Women” issue from the various perspectives such as history, politics, diplomacy, law, culture, literature, and women's movements, etc. <KYEOL> would explore languages that can offer a fresh understanding on the “Comfort Women” issue through detailed and in-depth studies and thereby unravel the issue through providing various forms of contents including Interviews, Essays, Reviews, Discussions, and Document Explanations.<p>
               </dd>
             </dl>
           <dl class="unit unit02">
-              <dt>Webzine Identity: Laying the foundations</dt>
+              <dt>Webzine Identity: Establishing a solid foundation</dt>
               <br/>
               <dd>
-                <p>KYEOL intends to lay the foundations for achieving a fuller understanding of the complex "Comfort Women" issue. This objective will highlight three approaches: ‘understanding the complexity of the issue’, ‘applying academic rigour’, and ‘bringing personal empathy to the subject’. Indeed, these are the core principles of this webzine.</p>
+                <p>RIMSS's webzine <KYEOL> aspires to provide a foundation for the thorough understanding and in-depth thoughts on the Japanese Military “Comfort Women” issue through the process in which facts and perspectives tightly intersect with each other. Its logo expresses this aspiration in the three progressively darkening circles. Each of the three circles represents the value of RIMSS's webzine <KYEOL>: 'Understanding the complexity of the problem', 'Thinking in detail and in depth', and 'Thinking about the issue by taking it as my own.'</p>
 
-              <p>Please note that the articles contributed by external authors reflect their personal views only. They may differ from the official position of the Institute.</p>
+              <p>RIMSS's webzine <KYEOL> seeks to inform people from all over the world about the Japanese Military “Comfort Women” issue through offering various contents on Japanese Military “Comfort Women” and thereby contribute to the promotion of women's human rights on a global scale</p>
+
+              <p>* Please note that the contents of the webzine <KYEOL> written by external writers reflect the external writers' own opinions and therefore may differ from RIMSS's official position.</p>
 
               <br/>
               <h5>Webzine Identity : Laying the foundations</h5><br/>

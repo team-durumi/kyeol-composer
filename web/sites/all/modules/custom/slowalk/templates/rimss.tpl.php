@@ -9,18 +9,13 @@
               <img src="/sites/all/modules/custom/slowalk/images/banner_introduce.png" alt="RIMSS office enterance" />
             </div>
             <dl class="unit unit01">
-              <dt>Research Institute on Japanese Military Sexual Slavery(RIMSS)</dt>
+              <dt>Research Institute on Japanese Military Sexual Slavery (RIMSS)</dt>
               <br/><br /><br />
               <dd>
-                <p>Reseach Institute on Japanese Military Sexual Slavery(RIMSS) was established in year 2018 to advance gender equality and women’s human rights. It supports projects aimed at preventing and eradicating violence against women, as well as providing victim-support. Since 2018 the Institute has been keen on conducting systematic research on the issue of Japanese military sexual slavery. </p>
+                <p>The Research Institute on Japanese Military Sexual Slavery (RIMSS) was launched in August 2018 under the Women's Human Rights Institute of Korea (WHRIK) to conduct systematic investigations and research on the Japanese Military “Comfort Women” issue and deliver education and promotion aimed at enhancing the public’s understanding on the Japanese Military “Comfort Women” issue.</p>
 
-                <p>RIMSS’s webzine, Kyeol
-                <sup data-footnote-id="ownoc"><a href="#footnote-1" id="footnote-marker-1-1" rel="footnote">[1]</a></sup>
-              , aims to provide comprehensive coverage using a variety of sources. Its mission is to actively encourage research activities and deepen public understanding of sexual slavery victims. It furnishes content in the form of articles, field reports, essays, interviews, and archive reviews, in order to raise awareness of the military sexual slavery issue in both Korea and abroad and help promote women’s human rights around the world. </p>
-                <section class="footnotes">
-                <ol><li data-footnote-id="ownoc" id="footnote-1"><a href="#footnote-marker-1-1">^</a> <cite> [Translator Note] Kyeol is a Korean word referring to the layerof a fabric, or a distinct pattern or texture which has developed on the surface of wood, stone or skin.</cite></li>
-                </ol>
-              </section>
+                <p>RIMSS, through conducting continuous investigations and research on the Japanese Military “Comfort Women” issue, intends to provide relevant data by collecting and organizing them in order to publicize the conditions of the operations of the comfort stations and offer easy access to the Japanese Military “Comfort Women” issue. Furthermore, RIMSS hopes to contribute to the improvement of awareness on the Japanese Military “Comfort Women” issue, the enhancement of women's rights, and the spread of consciousness for peace through providing education and promotion regarding this issue.</p>
+
               </dd>
             </dl>
         </div>

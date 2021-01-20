@@ -7,10 +7,6 @@
 		{
 			"name": "module-slowalk",
 			"path": "web/sites/all/modules/custom/slowalk"
-    },
-    {
-			"name": "html-en",
-			"path": "../kyeol-en"
 		},
 		{
 			"path": "."

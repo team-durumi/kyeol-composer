@@ -35,3 +35,4 @@
 .vagrant
 /dump
 *.log
+.DS_Store

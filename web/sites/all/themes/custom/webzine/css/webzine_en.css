@@ -537,3 +537,7 @@ span.cavacnotify {
     color: #9f865f;
     cursor: pointer;
 }
+
+/* 소개 페이지 메뉴 */
+.pages-nav {float: left;}
+.pages-nav li { display:inline; margin-right: 3rem; }

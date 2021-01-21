@@ -51,8 +51,8 @@ function slowalk_menu()
     );
 
     $items['comfort-women'] = [
-      'title' => 'Comfort Women',
-      'description' => 'Comfort Women',
+      'title' => 'Japanese Military “Comfort Women”',
+      'description' => 'Japanese Military “Comfort Women”',
       'page callback' => 'webzine_page_view',
       'page arguments' => ['comfort_women'],
       'access arguments' => ['access content'],

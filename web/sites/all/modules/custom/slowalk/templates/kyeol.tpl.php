@@ -26,7 +26,7 @@
 
               <br/>
               <h5>Webzine Identity : Laying the foundations</h5><br/>
-              <img src="/sites/all/modules/custom/slowalk/images/bi.png" alt="RIMSS Brand Identity"/><br/>
+              <img src="/sites/all/modules/custom/slowalk/images/bi-en.png" alt="RIMSS Brand Identity"/><br/>
               <br/>
               </dd>
             </dl>

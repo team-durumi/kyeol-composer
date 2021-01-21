@@ -71,6 +71,12 @@
  *
  * @ingroup themeable
  */
+
+$pages = [
+    'Japanese Military “Comfort Women”',
+    'RIMSS',
+    'Webzine KYEOL',
+];
 ?>
 
 <div id="main_wrap" class="mainPage">
@@ -118,7 +124,16 @@
             </section>
         <?php else: ?>
             <div class="inner">
-                <nav><?php print $breadcrumb;?></nav>
+                <nav>
+                    <?php if (in_array($title, $pages)): ?>
+                        <ul class="pages-nav">
+                            <li><a href="/en/comfort-women">Japanese Military “Comfort Women”</a></li>
+                            <li><a href="/en/rimss">RIMSS</a></li>
+                            <li><a href="/en/kyeol">Webzine KYEOL</a></li>
+                        </ul>
+                    <?php endif; ?>
+                    <?php print $breadcrumb;?>
+                </nav>
                 <!-- 사이드바 영역 -->
                 <?php if ($page['sidebar_first']): ?>
                     <aside>

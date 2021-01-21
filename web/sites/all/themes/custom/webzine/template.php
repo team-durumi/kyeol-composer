@@ -139,7 +139,7 @@ function webzine_preprocess_page(&$variables) {
       // 최신글 container
       $variables['page']['content']['body'] = [ '#type' => 'container', '#attributes' => ['class' => 'cBody inner']];
       $variables['page']['content']['body']['box'] =  [ '#type' => 'container', '#attributes' => ['class' => 'fc_box02']];
-      $variables['page']['content']['body']['box']['recents'] = [ '#type' => 'container', '#attributes' => ['class' => 'fc03']];
+      // $variables['page']['content']['body']['box']['recents'] = [ '#type' => 'container', '#attributes' => ['class' => 'fc03']];
 
       // 최신글
       $category_terms = [
@@ -153,7 +153,7 @@ function webzine_preprocess_page(&$variables) {
         $variables['page']['content']['body']['box']['recents'][$field] = [
           '#type' => 'markup',
           '#markup' => views_embed_view('recent_contents', $field),
-          '#prefix' => '<h2 class="mt-5" onclick="this.style.display=\'none\'">' . ucwords(str_replace('_' , ' ', $field)) . '</h2>'
+          '#prefix' => '<h2 class="mt-5">' . ucwords(str_replace('_' , ' ', $field)) . '</h2>'
         ];
       }
     }

@@ -2,7 +2,7 @@
 
 $view = new view();
 $view->name = 'recent_contents';
-$view->description = '최신 글 뷰 블록';
+$view->description = '최신 글 뷰 블록 (영문)';
 $view->tag = 'default';
 $view->base_table = 'node';
 $view->human_name = '최신 글';
@@ -29,7 +29,7 @@ $handler->display->display_options['pager']['options']['offset'] = '0';
 $handler->display->display_options['style_plugin'] = 'list';
 $handler->display->display_options['style_options']['default_row_class'] = FALSE;
 $handler->display->display_options['style_options']['row_class_special'] = FALSE;
-$handler->display->display_options['style_options']['wrapper_class'] = 'lc02 lc02_01';
+$handler->display->display_options['style_options']['wrapper_class'] = 'lc05 lc05_01';
 $handler->display->display_options['row_plugin'] = 'node';
 $handler->display->display_options['row_options']['view_mode'] = 'teaser_en';
 /* Field: Content: Title */
@@ -188,7 +188,7 @@ $handler->display->display_options['filters']['type']['id'] = 'type';
 $handler->display->display_options['filters']['type']['table'] = 'node';
 $handler->display->display_options['filters']['type']['field'] = 'type';
 $handler->display->display_options['filters']['type']['value'] = array(
-  'data' => 'data',
+  'article' => 'article',
 );
 /* Filter criterion: Content: 제목 (title_field:language) */
 $handler->display->display_options['filters']['language']['id'] = 'language';
@@ -235,7 +235,7 @@ $handler->display->display_options['filters']['type']['id'] = 'type';
 $handler->display->display_options['filters']['type']['table'] = 'node';
 $handler->display->display_options['filters']['type']['field'] = 'type';
 $handler->display->display_options['filters']['type']['value'] = array(
-  'data' => 'data',
+  'article' => 'article',
 );
 /* Filter criterion: Content: 제목 (title_field:language) */
 $handler->display->display_options['filters']['language']['id'] = 'language';
@@ -282,7 +282,7 @@ $handler->display->display_options['filters']['type']['id'] = 'type';
 $handler->display->display_options['filters']['type']['table'] = 'node';
 $handler->display->display_options['filters']['type']['field'] = 'type';
 $handler->display->display_options['filters']['type']['value'] = array(
-  'data' => 'data',
+  'article' => 'article',
 );
 /* Filter criterion: Content: 제목 (title_field:language) */
 $handler->display->display_options['filters']['language']['id'] = 'language';

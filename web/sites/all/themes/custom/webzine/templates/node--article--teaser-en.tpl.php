@@ -94,9 +94,8 @@
     <a href="<?php print $node_url;?>"><?php print $title;?></a>
   </dt>
   <dd>
-    <p class="summury"><?php print strip_tags($body);?></p>
     <p class="meta">
-      <span><?php print get_writers_und($field_writer);?></span>
+      <span><?php print truncate_utf8(get_writers_und($field_writer), 60, TRUE, TRUE);?></span>
       <em><?php print format_date($created, 'custom', 'Y.m.d');?></em>
     </p>
   </dd>

@@ -252,8 +252,7 @@ body.front .ng01 li a i{font-size:16px;line-height:36px}
 .th02 ul.metas li b{font-size:13px}
 .th02 p{margin-bottom:10px}
 .th02 .ng03{position:absolute;bottom:-20px;right:15px}
-
-	.th03{font-size:20px;line-height:1.2}
+.th03{font-size:20px;line-height:1.2}
 
 /*소개 페이지*/
 .con01{margin-top:20px}
@@ -263,6 +262,11 @@ body.front .ng01 li a i{font-size:16px;line-height:36px}
 .con01 > dl > dt{width:auto;float:none;font-size:26px;line-height:36px;margin-bottom:35px}
 .con01 > dl > dd{width:auto;float:none}
 
+/* 영문 초기 화면 */
+.lc05 li { float: none; width: 100%; }
+.view-recent-contents { margin-bottom: 60px; }
+.lc05 li .thumb { float: none; }
+.lc05 li dt > a { -webkit-line-clamp: 1; line-height: 18px; height: 18px; }
 }
 
 /* 모바일 대응 전용 */

@@ -87,8 +87,9 @@ function webzine_preprocess_page(&$variables) {
         $image = ($variables['node']->field_image) ? image_style_url('article', $variables['node']->field_image['und'][0]['uri']) : '';
         $variables['image'] = ($image) ? ' style="background-image:url('.$image.')"' : '';
         $variables['vol_path'] = '/' . $lang . '/vol/' . $main->vol();
-        $variables['category_path'] = '/' . $lang . '/taxonomy/term/' . $term->tid;
-
+        if($term = $variables['node']->field_category['und'][0]['taxonomy_term'] && !empty($term)) {
+          $variables['category_path'] = '/' . $lang . '/taxonomy/term/' . $term->tid;
+        }
         $variables['url'] = $base_url . $lang_path . '/node/' . $variables['node']->nid;
 
         $variables['created'] = $variables['node']->created;

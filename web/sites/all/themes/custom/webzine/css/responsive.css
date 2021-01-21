@@ -267,7 +267,11 @@ body.front .ng01 li a i{font-size:16px;line-height:36px}
 .view-recent-contents { margin-bottom: 60px; }
 .lc05 li .thumb { float: none; }
 .lc05 li dt > a { -webkit-line-clamp: 1; line-height: 18px; height: 18px; }
+.ng01 li.translate span { font-size: 1rem; color: #fff; }
+.global-nav { display: none; }
+
 }
+/* 모바일 모드 END @media screen and (max-width:768px) */
 
 /* 모바일 대응 전용 */
 @media screen and (max-width: 425px) {
@@ -298,6 +302,7 @@ footer .infoA li.l1, footer .infoA li.l3{border-right:none;}
 @media all and (min-width: 768px) and (max-width: 1170px) {
 html{font-size:13px}
 .inner{margin:0 15px;width:auto}
+.global-nav { display: none;}
 }
 
 /* 태블릿 모드 세로 */

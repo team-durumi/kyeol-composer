@@ -143,11 +143,11 @@ function webzine_preprocess_page(&$variables) {
 
       // 최신글
       $category_terms = [
-        'interview' => '인터뷰',
-        'essay' => '에세이',
-        'comment' => '논평',
-        'discussion' => '좌담',
-        'bibliographical_explanation' => '자료해제',
+        'interviews' => '인터뷰',
+        'essays' => '에세이',
+        'reviews' => '논평',
+        'discussions' => '좌담',
+        'document_explanations' => '자료해제',
       ];
       foreach ($category_terms as $field => $label) {
         $variables['page']['content']['body']['box']['recents'][$field] = [

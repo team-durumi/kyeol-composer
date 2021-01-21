@@ -30,11 +30,11 @@
       <a href="#" class="btn_icon01" title="메뉴 닫기"><i class="xi-close"></i></a>
       <h2>주 메뉴</h2>
       <ul id="main-menu" class="links inline clearfix">
-        <li class="menu-520 first"><a href="/en/taxonomy/term/7" title="">Interview</a></li>
-        <li class="menu-519"><a href="/en/taxonomy/term/4" title="">Essay</a></li>
-        <li class="menu-518"><a href="/en/taxonomy/term/3" title="">Comment</a></li>
-        <li class="menu-515"><a href="/en/taxonomy/term/2" title="">Discussion</a></li>
-        <li class="menu-516"><a href="/en/taxonomy/term/5" title="">Bibliographical Explanation</a></li>
+        <li class="menu-520 first"><a href="/en/taxonomy/term/7" title="Interviews">Interviews</a></li>
+        <li class="menu-519"><a href="/en/taxonomy/term/4" title="Essays">Essays</a></li>
+        <li class="menu-518"><a href="/en/taxonomy/term/3" title="Reviews">Reviews</a></li>
+        <li class="menu-515"><a href="/en/taxonomy/term/2" title="Discussions">Discussions</a></li>
+        <li class="menu-516"><a href="/en/taxonomy/term/5" title="Document Explanations">Document Explanations</a></li>
         <li class="menu-764 last"><a href="/en/category/articles">ALL</a></li>
       </ul>
       <h2>부 메뉴</h2>

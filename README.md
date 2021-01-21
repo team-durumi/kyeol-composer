@@ -47,11 +47,14 @@ $ drush -y en i18n_menu i18nviews
 - site_name: Webzine-KYEOL
 - site_slogan: Research Institute on Japanese Military Sexual Slavery (RIMSS) Webzine
 
-- 인터뷰: Interview
-- 에세이: Essay
-- 논평: Comment
-- 좌담: Discussion
-- 자료해제: Bibliographical Explanation
+카테고리 확정(12.17)
+
+- 인터뷰 Interviews
+- 에세이 Essays
+- 논평 Reviews
+- 좌담 Discussions
+- 자료해제 Document Explanations (한 줄로 반영 부탁드립니다.)
+
 - Sort by – Person / Subject / Region / Writer / Glossary
 - 자료실 : Resource
 - 소개 : About

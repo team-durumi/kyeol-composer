@@ -48,6 +48,7 @@ header .inner{height:100px;overflow:hidden;transition:height 0.5s}
 header .lg01{float:left;margin-top:24px}
 body.front header .lg01{margin-top:19px}
 header .ng01{float:right;margin-top:19px}
+header .ng01 .menu { display:none; }
 body.front header .ng01{float:right;margin-top:19px}
 body.front header{position:absolute;top:0;left:0;width:100%;z-index:10;border-bottom:none}
 body.front header .inner{height:100px;overflow:hidden}
@@ -165,7 +166,7 @@ footer .infoA li span, footer .infoA li a{color:#fff}
 .breadcrumb a.active:after, .breadcrumb a:last-child:after{content:none;margin:0}
 /*사이드메뉴*/
 .sidebar h2{font-size:28px;line-height:34px;padding-bottom:30px;font-family:'Iropke Batang',sans-serif;border-bottom:2px solid #ddd}
-.sidebar ul.menu li{border-bottom:1px solid #ddd;padding:10px 10px}
+.sidebar ul.menu li{border-bottom:1px solid #ddd;padding:10px 8px}
 .sidebar ul.menu li a{font-size:18px;line-height:34px;color:#444}
 .sidebar ul.menu li.active a{color:#9f865f;font-weight:500}
 .sidebar ul.menu li a:hover{color:#9f865f;text-decoration:none}

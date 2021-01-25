@@ -193,6 +193,8 @@ function get_writers($field_writer)
 */
 function get_term_link($term, $options = array())
 {
+  global $language;
+  $lang = $language->language;
   if(isset($term['#items'])) {
     $html[] = '';
     $classes = '';
@@ -211,10 +213,11 @@ function get_term_link($term, $options = array())
       if(isset($options['suffix'])) {
         $name .= $options['suffix'];
       }
+      $lang_prefix = ($lang == 'en') ? '/en' : '';
       if(isset($options['voca'])) {
-        $html[] = '<a class="'.$classes.'" href="/archive/'.$options['voca'].'?search='.$name.'">'.$name.'</a>';
+        $html[] = '<a class="'.$classes.'" href="' . $lang_prefix . '/archive/'.$options['voca'].'?search='.$name.'">'.$name.'</a>';
       } else {
-        $html[] = '<a class="'.$classes.'" href="/'.drupal_get_path_alias('taxonomy/term/'.$item['tid']).'">'.$name.'</a>';
+        $html[] = '<a class="'.$classes.'" href="' . $lang_prefix . '/'.drupal_get_path_alias('taxonomy/term/'.$item['tid']).'">'.$name.'</a>';
       }
       $first = false;
     }

@@ -77,9 +77,10 @@ function webzine_preprocess_page(&$variables) {
           foreach($variables['node']->field_writer['und'] as $writerInfo) {
             $wid = $writerInfo['tid'];
             $writer = taxonomy_term_load($wid);
+            $field_position = !empty($writer->field_position[$lang]) ? $writer->field_position[$lang][0]['value'] : '';
             $writers[] = array(
               'name' => $writer->name,
-              'info' => ($writer->field_position) ? strip_tags($writer->field_position[$lang][0]['value']) : ''
+              'info' => ($writer->field_position) ? strip_tags($field_position) : ''
             );
           }
           $variables['writers'] = $writers;

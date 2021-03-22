@@ -36,3 +36,4 @@
 /dump
 *.log
 .DS_Store
+.env

@@ -9,6 +9,9 @@ sudo service apache2 stop && sudo service php7.3-fpm stop
 echo 'user_allow_other' | sudo tee -a /etc/fuse.conf
 rclone mount drive:files /data/kyeol/files --daemon --allow-other
 sudo service apache2 start && sudo service php7.3-fpm start
+
+# 개발 시 파일 동기화
+rsync -avzn kyeol:/data/kyeol/files/ ~/Drive/kyeol/data/files/
 ```
 
 ## composerfiy fix
@@ -142,7 +145,3 @@ drush -y en i18n_block i18n_menu i18n_select i18n_string i18n_variable i18nviews
 
 - 기존에 있던 관련 기록과 자료:data 유형 사용
 - config/sync/views.view.resources.php
-
-
-
-```

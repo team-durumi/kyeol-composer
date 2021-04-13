@@ -1,13 +1,14 @@
-# 웹진결 뉴스레터 구독 관리
+# 웹진결 뉴스레터 메일링 리스트 구독 관리
 
 ## 메뉴 구성
 
-- 1. 뉴스레터 관리 /admin/newsletters (2)
-- 2. 뉴스레터 구독 관리 /admin/newsletters/list
-- 3. 뉴스레터 작업 이력 /admin/newsletters/audit-logs
-- 4. 뉴스레터 접속기록 보고서 /admin/newsletters/report
+- 1. 메일링 리스트 /admin/structure/mailing-list
+- 2. 메일링 리스트 생성 /admin/structure/mailing-list/add
+- 3. 메일링 리스트 관리 /admin/structure/mailing-list/1/ |add|import|export|edit|delete
+- 4. 메일링 리스트 작업 이력 /admin/reports/audit
+- 5. 메일링 리스트 접속기록 보고서 /admin/structure/mailing-list/report
 
-## (api) 뉴스레터 구독 취소 /newsletter/unsubscribe/{{ hash }}
+## (api) 뉴스레터 구독 취소 /api/newsletter/unsubscribe/{{ hash }}
 
 - 구독 폼 옆에 취소 버튼 추가
 - 뉴스레터 발송 시 구독 취소 링크도 위의 걸로 교체
@@ -81,3 +82,16 @@
 민감정보 보유여부
 보유기간
 보유기간 준수여부
+
+## TODO
+
+- [ ] 내역 형식 결정하기
+- [ ] 구독 신청 시 내역 기록
+- [ ] 관리자 이메일 CRUD 내역 기록
+- [ ] 관리자 메일링 리스트 import, export 기록
+- [ ] 구독 신청 및 취소 API 추가
+- [ ] 구독 신청 폼 블록 테밍
+
+## 내역 기록 형식
+
+-

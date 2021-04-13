@@ -24,6 +24,7 @@
         "ext-openssl": "*",
         "ext-pdo": "*",
         "ext-xml": "*",
+        "ext-yaml": "*",
         "composer/installers": "^1.2",
         "composer/semver": "^1.4",
         "cweagans/composer-patches": "^1.6.5",
@@ -39,7 +40,7 @@
         "drupal/context": "*",
         "drupal/ctools": "*",
         "drupal/devel": "*",
-        "drupal/drupal": "7.67",
+        "drupal/drupal": "7.78",
         "drupal/elysia_cron": "*",
         "drupal/entity": "*",
         "drupal/entity_translation": "^1.1",
@@ -71,6 +72,7 @@
         "drupal/pirate": "1.x-dev",
         "drupal/plupload": "*",
         "drupal/references": "*",
+        "drupal/restrict_ip": "^2.2",
         "drupal/search_api": "*",
         "drupal/search_api_db": "*",
         "drupal/term_reference_tree": "*",
@@ -119,7 +121,7 @@
         "installer-paths": {
             "web/": ["type:drupal-core"],
             "web/profiles/{$name}/": ["type:drupal-profile"],
-            "web/sites/all/drush/{$name}/": ["type:drupal-drush"],
+            "drush/contrib": ["type:drupal-drush"],
             "web/sites/all/libraries/{$name}/": ["type:drupal-library"],
             "web/sites/all/modules/contrib/{$name}/": ["type:drupal-module"],
             "web/sites/all/themes/contrib/{$name}/": ["type:drupal-theme"]
@@ -146,6 +148,7 @@
         ]
     },
     "require-dev": {
+        "drupal-code-builder/drupal-code-builder-drush": "^8",
         "drupal/kint": "^1.0"
     }
 }

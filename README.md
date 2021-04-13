@@ -7,11 +7,14 @@
 ```
 sudo service apache2 stop && sudo service php7.3-fpm stop
 echo 'user_allow_other' | sudo tee -a /etc/fuse.conf
-rclone mount drive:files /data/kyeol/files --daemon --allow-other
+rclone mount drive-kyeol:/ /data/kyeol/ --daemon --allow-other
 sudo service apache2 start && sudo service php7.3-fpm start
 
 # 개발 시 파일 동기화
 rsync -avzn kyeol:/data/kyeol/files/ ~/Drive/kyeol/data/files/
+
+# 파일 디렉토리 심볼릭 링크
+ln -s /data/kyeol/files /vagrant/web/sites/default/
 ```
 
 ## composerfiy fix

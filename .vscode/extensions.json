@@ -1,5 +1,7 @@
 {
   "recommendations": [
+    "GitHub.vscode-pull-request-github",
+    "mrmlnc.vscode-duplicate",
     "bbeversdorf.drupal-check",
     "bmewburn.vscode-intelephense-client",
     "dmitrydorofeev.empty-indent",
@@ -7,7 +9,6 @@
     "ikappas.phpcs",
     "marcostazi.vs-code-drupal",
     "mblode.twig-language-2",
-    "mrmlnc.vscode-duplicate",
     "neilbrayfield.php-docblocker"
   ],
 }

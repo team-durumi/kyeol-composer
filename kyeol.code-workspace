@@ -1,62 +1,74 @@
 {
-	"folders": [
-		{
-			"name": "theme-webzine",
-			"path": "web/sites/all/themes/custom/webzine"
-		},
-		{
-			"name": "module-slowalk",
-			"path": "web/sites/all/modules/custom/slowalk"
-		},
-		{
-			"path": "."
-		}
-	],
-	"settings": {
-		"breadcrumbs.enabled": true,
-		"css.validate": true,
-		"diffEditor.ignoreTrimWhitespace": false,
-		"editor.tabSize": 2,
-		"editor.autoIndent": "keep",
-		"editor.insertSpaces": true,
-		"editor.formatOnPaste": true,
-		"editor.formatOnSave": false,
-		"editor.renderWhitespace": "boundary",
-		"editor.wordWrapColumn": 80,
-		"editor.wordWrap": "off",
-		"editor.detectIndentation": true,
-		"editor.rulers": [
-			80
-		],
-		"files.associations": {
-			"*.inc": "php",
-			"*.module": "php",
-			"*.install": "php",
-			"*.theme": "php",
-			"*.tpl.php": "php",
-			"*.test": "php",
-			"*.php": "php",
-			"*.info": "ini",
-			"*.twig": "twig",
-		},
-		"files.trimTrailingWhitespace": true,
-		"files.insertFinalNewline": true,
-		"html.format.enable": true,
-		"html.format.wrapLineLength": 80,
-		"telemetry.enableTelemetry": false,
-		"emptyIndent.removeIndent": true,
-		"emptyIndent.highlightIndent": false,
-		"emptyIndent.highlightColor": "rgba(246,36,89,0.6)",
-		"emmet.includeLanguages": {
-			"twig": "html"
-		},
-		"php.suggest.basic": false,
-		"intelephense.environment.documentRoot": "web/core/index.php",
-		"php-docblocker.gap": true,
-		"php-docblocker.useShortNames": true,
-		"phpcs.enable": true,
-		"phpcs.executablePath": "/home/vagrant/.config/composer/vendor/bin/phpcs",
-		"phpcs.standard": "Drupal,DrupalPractice",
-		"remote.autoForwardPorts": false
-	}
+    "folders": [
+        {
+            "name": "theme-webzine",
+            "path": "web/sites/all/themes/custom/webzine"
+        },
+        {
+            "name": "module-custom",
+            "path": "web/sites/all/modules/custom"
+        },
+        {
+            "name": "module-contrib",
+            "path": "web/sites/all/modules/contrib"
+        },
+        {
+            "name": "project-root",
+            "path": "."
+        }
+    ],
+    "settings": {
+        "breadcrumbs.enabled": true,
+        "css.validate": true,
+        "diffEditor.ignoreTrimWhitespace": false,
+        "editor.tabSize": 2,
+        "editor.autoIndent": "keep",
+        "editor.insertSpaces": true,
+        "editor.formatOnPaste": true,
+        "editor.formatOnSave": false,
+        "editor.renderWhitespace": "boundary",
+        "editor.wordWrapColumn": 80,
+        "editor.wordWrap": "off",
+        "editor.detectIndentation": true,
+        "editor.rulers": [
+            80
+        ],
+        "files.associations": {
+            "*.inc": "php",
+            "*.module": "php",
+            "*.install": "php",
+            "*.theme": "php",
+            "*.tpl.php": "php",
+            "*.test": "php",
+            "*.php": "php",
+            "*.info": "ini",
+            "*.twig": "twig",
+        },
+        "files.trimTrailingWhitespace": true,
+        "files.insertFinalNewline": true,
+        "html.format.enable": true,
+        "html.format.wrapLineLength": 80,
+        "telemetry.enableTelemetry": false,
+        "emptyIndent.removeIndent": true,
+        "emptyIndent.highlightIndent": false,
+        "emptyIndent.highlightColor": "rgba(246,36,89,0.6)",
+        "emmet.includeLanguages": {
+            "twig": "html"
+        },
+        "php.suggest.basic": false,
+        "intelephense.environment.documentRoot": "web/core/index.php",
+        "php-docblocker.gap": true,
+        "php-docblocker.useShortNames": true,
+        "phpcs.enable": true,
+        "phpcs.executablePath": "/home/vagrant/.config/composer/vendor/bin/phpcs",
+        "phpcs.standard": "Drupal,DrupalPractice",
+        "remote.autoForwardPorts": false,
+        "remote.SSH.defaultForwardedPorts": [
+            {
+                "localPort": 8080,
+                "remotePort": 80,
+                "name": "apache2"
+            }
+        ]
+    }
 }

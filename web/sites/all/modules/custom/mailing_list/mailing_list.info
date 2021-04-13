@@ -1,0 +1,7 @@
+name = Mailing List
+description = Minimalistic mailing list module
+package = Mail
+core = 7.x
+files[] = mailing_list.module
+files[] = mailing_list.install
+files[] = mailing_list.log.inc

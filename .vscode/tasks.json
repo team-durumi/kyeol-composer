@@ -1,0 +1,16 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Echo vars",
+            "type": "shell",
+            "command": "echo",
+            "args": [
+                "${env:USERNAME}",
+                "workspaceFolder = ${workspaceFolder}",
+                "workspaceFolder:theme-webzine = ${workspaceFolder:theme-webzine}",
+                "workspaceFolder:project-root = ${workspaceFolder:project-root}"
+            ],
+        }
+    ]
+}

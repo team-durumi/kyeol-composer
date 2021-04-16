@@ -56,12 +56,15 @@
             "twig": "html"
         },
         "php.suggest.basic": false,
-        "intelephense.environment.documentRoot": "web/core/index.php",
         "php-docblocker.gap": true,
         "php-docblocker.useShortNames": true,
-        "phpcs.enable": true,
+        "phpcs.enable": false,
         "phpcs.executablePath": "/home/vagrant/.config/composer/vendor/bin/phpcs",
         "phpcs.standard": "Drupal,DrupalPractice",
+        "phpcbf.enable": false,
+        "phpcbf.executablePath": "phpcbf",
+        "phpcbf.documentFormattingProvider": true,
+        "phpcbf.standard": "Drupal,DrupalPractice",
         "remote.autoForwardPorts": false,
         "remote.SSH.defaultForwardedPorts": [
             {

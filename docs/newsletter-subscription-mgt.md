@@ -85,13 +85,25 @@
 
 ## TODO
 
-- [ ] 내역 형식 결정하기
-- [ ] 구독 신청 시 내역 기록
-- [ ] 관리자 이메일 CRUD 내역 기록
-- [ ] 관리자 메일링 리스트 import, export 기록
-- [ ] 구독 신청 및 취소 API 추가
-- [ ] 구독 신청 폼 블록 테밍
+- [x] 내역 형식 결정하기
+- [x] 구독 신청 시 내역 기록
+- [x] 관리자 이메일 CRUD 내역 기록
+- [x] 관리자 메일링 리스트 import, export 기록
+- [ ] 구독 취소 API 추가
+- [ ] 구독 신청 폼 연결
 
-## 내역 기록 형식
+```
+mailing_list (mailing_list.admin.inc)
+- [x] create:   mailing_list_form_submit
+- [-] read:
+- [x] update:   mailing_list_form_submit
+- [x] delete:   mailing_list_delete_confirm_submit
+- [x] import:   mailing_list_import_form_submit
+- [x] export:   mailing_list_export
 
--
+mailing_list_email (mailing_list.module)
+- [x] create:       mailing_list_subscription_form_submit
+- [-] read:
+- [x] update:       mailing_list_subscription_form_submit
+- [x] delete:       mailing_list_email_delete_multiple_confirm_form_submit
+```

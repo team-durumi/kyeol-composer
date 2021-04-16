@@ -487,9 +487,13 @@ function mailing_list_export($list) {
 
   // Create string with all the emails.
   foreach ($result as $row) {
-    $emails[] = '"' . trim($row->mail) . '","' . trim($row->name) . '"';
+    $data = [$row->mlid, $row->mail, $row->created];
+    $token = base64_encode(serialize(implode('|',$data)));
+    $emails[] = '"' . trim($row->mail) . '","' . trim($row->name)
+      . '","' . trim($token) .'"';
   }
 
+  $emails = "이메일 주소,이름,token\n";
   $emails = implode("\n", $emails) . "\n";
 
   // Write resultant string to file.

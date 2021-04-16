@@ -19,7 +19,8 @@ function mailing_list_uninstall() {
  * Implementation of hook_schema().
  */
 function mailing_list_schema() {
-  $schema = array();
+  $schema = [];
+
   $schema['mailing_list'] = array(
     'description' => t('A mailing list consisting of names and e-mails.'),
     'fields' => array(
@@ -35,12 +36,25 @@ function mailing_list_schema() {
         'length' => 255,
         'not null' => TRUE,
       ),
+      'created' => array(
+        'description' => 'The Unix timestamp when the node was created.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'changed' => array(
+        'description' => 'The Unix timestamp when the node was most recently saved.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
     ),
     'primary key' => array('mlid'),
     'indexes' => array(
       'name' => array('name'),
     ),
   );
+
   $schema['mailing_list_emails'] = array(
     'description' => t('An e-mail in a mailing list.'),
     'fields' => array(
@@ -70,12 +84,31 @@ function mailing_list_schema() {
         'length' => 255,
         'not null' => TRUE,
       ),
+      'source' => array(
+        'description' => t('The source of this subscription.'),
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ),
+      'created' => array(
+        'description' => 'The Unix timestamp when the node was created.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'changed' => array(
+        'description' => 'The Unix timestamp when the node was most recently saved.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
     ),
     'primary key' => array('eid'),
     'indexes' => array(
       'mlid' => array('mlid'),
       'name' => array('name'),
       'mail' => array('mail'),
+      'source' => array('source'),
       'ml_changed' => array('changed'),
       'ml_created' => array('created'),
     ),
@@ -91,7 +124,7 @@ function mailing_list_schema() {
  * Update mailing lists to allow subscriber names (not just e-mails), and clean
  * up field names.
  */
-function mailing_list_update_7000() {
+function mailing_list_update_6000() {
   $ret = array();
 
   db_change_field($ret, 'mailing_list', 'id', 'mlid',

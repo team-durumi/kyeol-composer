@@ -1,6 +1,6 @@
 name = Mailing List
 description = Minimalistic mailing list module
-package = Mail
+package = team-durumi
 core = 7.x
 files[] = mailing_list.module
 files[] = mailing_list.install

@@ -23,7 +23,7 @@ function obfuscate_email_address($email) {
 /**
  * Log an audit log.
  */
-function mailing_list_log($id, $type, $action = 'view', $account = NULL, $url = NULL, $timestamp = REQUEST_TIME, $params = array()) {
+function mailing_list_log($id, $type, $action = 'view', $params = array()) {
   $label = $bundle = '';
   $types = ['mailing_list', 'mailing_list_email'];
 
@@ -37,9 +37,6 @@ function mailing_list_log($id, $type, $action = 'view', $account = NULL, $url = 
       $mailing_list = mailing_list_get($email->mlid);
       $bundle = reset($mailing_list)->name;
     }
-    else {
-      return;
-    }
   }
   elseif ($type == 'mailing_list') {
     $mailing_list = current(mailing_list_get($id));
@@ -47,26 +44,18 @@ function mailing_list_log($id, $type, $action = 'view', $account = NULL, $url = 
       $label = $mailing_list->name;
       $bundle = NULL;
     }
-    else {
-      return;
-    }
   }
 
-  if (!$account) {
-    global $user;
-    $account = $user;
-  }
-  if (!$url) {
-    $url = request_path();
-  }
+  global $user;
   $values = array(
     'entity_id' => $id,
     'entity_type' => $type,
     'entity_label' => $label,
     'bundle' => $bundle,
-    'uid' => $account ? $account->uid : NULL,
-    'url' => $url,
-    'timestamp' => $timestamp,
+    'uid' => $user->uid,
+    'url' => request_path(),
+    'timestamp' => REQUEST_TIME,
+    'ip' => $_SERVER['REMOTE_ADDR'],
     'audit_action' => $action,
   );
 
@@ -80,3 +69,4 @@ function mailing_list_log($id, $type, $action = 'view', $account = NULL, $url = 
   // Log the object.
   $log->log();
 }
+?>

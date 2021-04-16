@@ -89,8 +89,8 @@
 - [x] 구독 신청 시 내역 기록
 - [x] 관리자 이메일 CRUD 내역 기록
 - [x] 관리자 메일링 리스트 import, export 기록
-- [ ] 구독 취소 API 추가
-- [ ] 구독 신청 폼 연결
+- [x] 구독 취소 API 추가
+- [x] 구독 신청 폼 연결
 
 ```
 mailing_list (mailing_list.admin.inc)

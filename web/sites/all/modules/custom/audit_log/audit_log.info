@@ -1,0 +1,6 @@
+name = Audit log
+description = Provides a framework with swappable storage for logging entity audit events.
+package = Audit log
+core = 7.x
+
+files[] = AuditLog.php

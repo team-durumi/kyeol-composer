@@ -233,6 +233,11 @@ function wz_main_newsletter_block_view()
                     '#name' => 'type',
                     '#value' => 'newsletter'
                 ),
+                'mailing_list' => [
+                  '#type' => 'hidden',
+                  '#name' => 'mailing_list',
+                  '#value' => '1',
+                ],
                 'agreed' => array(
                   '#type' => 'hidden',
                   '#name' => 'agreed',
@@ -240,9 +245,9 @@ function wz_main_newsletter_block_view()
                   '#attributes' => ['id' => ['agreed']]
                 ),
                 'submit' => array(
-                    '#type' => 'submit',
-                    '#value' => '뉴스레터 신청하기',
-                    '#attributes' => array('class' => array('btn'))
+                  '#type' => 'submit',
+                  '#value' => '뉴스레터 신청하기',
+                  '#attributes' => array('class' => array('btn'))
                 )
             ),
             '#attributes' => array(

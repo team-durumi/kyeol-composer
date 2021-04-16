@@ -21,9 +21,15 @@
         return $(form).valid();
     }
 
-    function showResponse(responseText, statusText, xhr, $form) {
+    function showResponse(response, statusText, xhr, $form) {
         let newsletterDiv = $('<div />');
-        newsletterDiv.append(responseText);
+        if (response.status == 'success') {
+          newsletterDiv.append(response.message);
+        }
+        if (response.status == 'failed') {
+          let errors = response.errors.map(a => a.message);
+          newsletterDiv.append(errors.join('<br/>'));
+        }
         newsletterDiv.dialog({
             modal: true,
             title:"뉴스레터 신청",
@@ -34,7 +40,7 @@
             clickOut: true,
             fluid: true, //new option
             position: { my: "center", at: "center", of: window },
-            close:function(event,ui) {
+            close: function(event, ui) {
                 $('#newsletter-form input[type=text]').val('');
             }
         });

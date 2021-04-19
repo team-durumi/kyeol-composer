@@ -493,11 +493,11 @@ function mailing_list_export($list) {
       . '","' . trim($token) .'"';
   }
 
-  $emails = "이메일 주소,이름,token\n";
-  $emails = implode("\n", $emails) . "\n";
+  $rows = "이메일 주소,이름,token\n";
+  $rows .= implode("\n", $emails) . "\n";
 
   // Write resultant string to file.
-  file_unmanaged_save_data($emails, $full_path, FILE_EXISTS_REPLACE);
+  file_unmanaged_save_data($rows, $full_path, FILE_EXISTS_REPLACE);
 
   // Set headers for file transfer.
   $headers = [

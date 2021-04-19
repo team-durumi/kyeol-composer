@@ -2692,26 +2692,30 @@
         },
         {
             "name": "drupal/link",
-            "version": "1.7.0",
+            "version": "1.8.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/link.git",
-                "reference": "7.x-1.7"
+                "reference": "7.x-1.8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/link-7.x-1.7.zip",
-                "reference": "7.x-1.7",
-                "shasum": "b18da8e72f499ad738f971026cbd90bcfef95ff4"
+                "url": "https://ftp.drupal.org/files/projects/link-7.x-1.8.zip",
+                "reference": "7.x-1.8",
+                "shasum": "ffda540b11f538aef845acf8eb59d3079c8215ec"
             },
             "require": {
                 "drupal/drupal": "~7.0"
             },
+            "require-dev": {
+                "drupal/entity": "*",
+                "drupal/token": "*"
+            },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "7.x-1.7",
-                    "datestamp": "1573731186",
+                    "version": "7.x-1.8",
+                    "datestamp": "1618587669",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"

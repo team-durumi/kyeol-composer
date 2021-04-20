@@ -107,3 +107,9 @@ mailing_list_email (mailing_list.module)
 - [x] update:       mailing_list_subscription_form_submit
 - [x] delete:       mailing_list_email_delete_multiple_confirm_form_submit
 ```
+
+### 이메일 내 구독 취소 요청 링크 형식
+
+```
+http://kyeol.kr/mailing-list/unsubscribe/?token=czoyNzoiM3x0ZWFtQGR1cnVtaS5pb3wxNjE4NTU5NTMzIjs=
+```

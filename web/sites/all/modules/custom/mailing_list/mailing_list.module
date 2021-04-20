@@ -673,15 +673,16 @@ function mailing_list_ajax_subscribe() {
  * token = base64_encode()
  */
 function mailing_list_ajax_unsubscribe() {
-  $payloads = $_GET;
-  if (!empty($payloads['token'])) {
-    $data =  explode('|', unserialize(base64_decode($token)));
+  if (!empty($_GET['token'])) {
+    $data =  explode('|', unserialize(base64_decode($_GET['token'])));
     if (!empty($data) && count($data) == 3) {
       $email = mailing_list_email_get_by_email($data[0], $data[1]);
+      $email = reset($email);
       if (!empty($email->eid) && mailing_list_email_delete($email->eid)) {
         // 삭제 성공
         mailing_list_log($email->eid, 'mailing_list_email', 'delete', [
           'entity_label' => obfuscate_email_address($email->mail),
+          'message' => '구독 취소',
         ]);
         return '<h1>구독 취소 완료</h1><p>이메일을 삭제했습니다.</p>';
       }

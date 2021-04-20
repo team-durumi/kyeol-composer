@@ -495,6 +495,7 @@ function mailing_list_export($list) {
 
   $rows = "이메일 주소,이름,token\n";
   $rows .= implode("\n", $emails) . "\n";
+  $rows = iconv("UTF-8", "EUC-KR", $rows);
 
   // Write resultant string to file.
   file_unmanaged_save_data($rows, $full_path, FILE_EXISTS_REPLACE);

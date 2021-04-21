@@ -214,7 +214,6 @@
                     <dd>
                         <p><?php print $writer['taxonomy_term']->description;?></p>
                         <?php if($writer['taxonomy_term']->field_contact): ?>
-                            <?php echo $lang; ?>
                             <a href="mailto:<?php print $writer['taxonomy_term']->field_contact[$lang][0]['value'];?>"><?php print $writer['taxonomy_term']->field_contact[$lang][0]['value'];?></a>
                         <?php endif;?>
                     </dd>

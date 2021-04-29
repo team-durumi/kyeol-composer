@@ -121,7 +121,8 @@ function audit_log_db_views_data() {
         'handler' => 'views_handler_sort',
       ),
       'filter' => array(
-        'handler' => 'views_handler_filter_string',
+        'handler' => 'views_handler_filter_in_operator',
+        'options callback' => 'audit_log_entity_options',
       ),
       'argument' => array(
         'handler' => 'views_handler_argument_string',
@@ -208,6 +209,23 @@ function audit_log_db_views_data() {
       ),
       'filter' => array(
         'handler' => 'views_handler_filter_string',
+      ),
+      'argument' => array(
+        'handler' => 'views_handler_argument_string',
+      ),
+    ),
+    'ip' => array(
+      'title' => 'ip',
+      'help' => 'The ip on which the action was performed.',
+      'field' => array(
+        'handler' => 'views_handler_field',
+        'click sortable' => FALSE,
+      ),
+      'filter' => array(
+        'handler' => 'views_handler_filter_string',
+      ),
+      'sort' => array(
+        'handler' => 'views_handler_sort',
       ),
       'argument' => array(
         'handler' => 'views_handler_argument_string',

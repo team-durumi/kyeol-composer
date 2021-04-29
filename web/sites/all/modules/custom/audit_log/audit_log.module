@@ -128,5 +128,12 @@ function audit_log_action_options() {
  * Provide actions implemented by default.
  */
 function audit_log_audit_log_action_options() {
-  return drupal_map_assoc(['view', 'insert', 'update', 'delete'], 'ucwords');
+  return drupal_map_assoc(['read', 'create', 'update', 'delete', 'export', 'import'], 'ucwords');
+}
+
+/**
+ * Provide entity types implemented by default.
+ */
+function audit_log_entity_options() {
+  return drupal_map_assoc(['mailing_list', 'mailing_list_email'], 'ucwords');
 }

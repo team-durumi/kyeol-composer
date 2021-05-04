@@ -103,7 +103,7 @@ function webzine_preprocess_page(&$variables) {
       $variables['page']['sidebar_first'] = ['#type' => 'markup', '#markup' => '<h2>All</h2>'];
     }
   }
-  drupal_add_js(array('Webzine' => array('vol' => $main->baseUrl.'/vol/'.$vol)), 'setting');
+  drupal_add_js(array('Webzine' => array('vol' => '/vol/' . $vol)), 'setting');
   drupal_add_js('//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js', array('type' => 'external', 'scope' => 'header', 'group' => JS_LIBRARY));
   drupal_add_js('//cdn.jsdelivr.net/npm/jquery-validation@1.19.0/dist/jquery.validate.min.js', array('type' => 'external', 'scope' => 'header', 'group' => JS_LIBRARY ));
   drupal_add_js('//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js', array('type' => 'external', 'scope' => 'header', 'group' => JS_THEME ));
@@ -338,3 +338,5 @@ function get_writers_und($field_writer) {
   }
   return implode(', ', $writers);
 }
+
+?>

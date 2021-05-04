@@ -8,13 +8,12 @@
 
 class Slowalk
 {
-    public $vol, $catLabel, $category, $years, $featureIds, $featureLabel, $baseUrl, $machine_name;
+    public $vol, $catLabel, $category, $years, $featureIds, $featureLabel, $machine_name;
 
     public function __construct()
     {
         $this->vol = variable_get('wz_main_vol', '');   //호수
         $this->featureIds = array();    //메인피쳐
-        $this->baseUrl = '//localhost';
 
         //기사 분류
         $this->catLabel = array(
@@ -46,17 +45,105 @@ class Slowalk
         $this->years = array();
     }
 
-    protected function getData($data)
+    protected function getData($payloads)
     {
-        $request = drupal_http_request($this->baseUrl . '/ajax/webzine', array(
-            'headers' => array('Content-Type' => 'application/x-www-form-urlencoded'),
-            'method' => 'POST',
-            'data' => http_build_query($data)
-        ));
-        if(isset($request->data)) {
-            return drupal_json_decode($request->data);
+        extract($payloads);
+        $catLabel = array(
+            2 => '좌담',
+            3 => '논평',
+            4 => '에세이',
+            5 => '자료해제',
+            6 => '연구자와 지원단체',
+            7 => '인터뷰'
+        );
+        switch ($type) {
+            case 'features':
+                $query = new EntityFieldQuery();
+                $result = $query->entityCondition('entity_type', 'node')
+                    ->entityCondition('bundle', 'article')
+                    ->propertyCondition('status', 1)
+                    ->fieldCondition('field_vol', 'tid', $vol)
+                    ->fieldCondition('field_category', 'tid', $category)
+                    ->propertyOrderBy('created', 'DESC')
+                    ->range(0,1)
+                    ->execute();
+                if($result['node']) {
+                    $nid = key($result['node']);
+                    $node = node_load($nid);
+                    $output = field_view_field('node', $node, 'body', 'teaser');
+                    $body = render($output);
+                    $body = strip_tags($body);
+                    $output2 = field_view_field('node', $node, 'field_writer', ['label' => 'hidden']);
+                    $writer = render($output2);
+                    return array(
+                        'nid' => $nid,
+                        'url' => '/node/'.$nid,
+                        'title' => $node->title,
+                        'img' => ($node->field_image) ? image_style_url('main_feature', $node->field_image['und'][0]['uri']) : file_create_url(drupal_get_path('theme', 'webzine').'/images/no-image-square.png'),
+                        'body' => $body,
+                        'writer' => $writer,
+                    );
+                }
+                break;
+            case 'articles':
+                $query = new EntityFieldQuery();
+                $result = $query->entityCondition('entity_type', 'node')
+                    ->entityCondition('bundle', 'article')
+                    ->propertyCondition('status', 1)
+                    ->propertyCondition('promote', 1)
+                    ->propertyCondition('nid', $nid, 'NOT IN')
+                    ->fieldCondition('field_vol', 'tid', $vol)
+                    // ->fieldOrderBy('field_category', 'tid', 'ASC')
+                    ->propertyOrderBy('changed', 'DESC')
+                    ->range(0,6)
+                    ->execute();
+                $articles = [];
+                if($result['node']) {
+                    $nids = array_keys($result['node']);
+                    $nodes = entity_load('node', $nids);
+                    foreach($nodes as $node) {
+                        $nid = $node->nid;
+                        $output_category = field_view_field('node', $node, 'field_category', ['label' => 'hidden']);
+                        $category = render($output_category );
+                        $img_uri = ($node->field_image) ? image_style_url('main_article', $node->field_image['und'][0]['uri']) : file_create_url(drupal_get_path('theme', 'webzine').'/images/no-image-square.png');
+                        $output_body = field_view_field('node', $node, 'body', 'teaser');
+                        $body = strip_tags(render($output_body));
+                        $output_writer = field_view_field('node', $node, 'field_writer', ['label' => 'hidden']);
+                        $writer = render($writer);
+                        $articles[] = array(
+                            'nid' => $nid,
+                            'url' => '/node/'.$nid,
+                            'title' => $node->title,
+                            'category' => $category,
+                            'img' => $img_uri,
+                            'body' => $body,
+                            'writer' => $writer,
+                        );
+                    }
+                    return $articles;
+                }
+                break;
+            case 'search':
+                if(isset($key)) {
+                    $keyword = _slowalk_search('search', 'page', $key);
+                    $term = _slowalk_search('search_term', 'page', $key);
+                    return array('keyword' => $keyword, 'term' => $term);
+                }
+                break;
+            case 'person':
+                $archive = new Archive();
+                return $archive->getPerson();
+                break;
+            case 'term':
+                if(!empty($href)) {
+                    $explode = explode('/', $href);
+                    $tid = $explode[2];
+                    $term = taxonomy_term_load($tid);
+                    return $term;
+                }
+            break;
         }
-        return array();
+        return [];
     }
 
     public function vol()
@@ -389,3 +476,4 @@ class Search extends Slowalk
         }
     }
 }
+?>

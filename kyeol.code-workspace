@@ -13,6 +13,10 @@
             "path": "web/sites/all/modules/contrib"
         },
         {
+            "name": "drive",
+            "path": "/data/kyeol"
+        },
+        {
             "name": "project-root",
             "path": "."
         }

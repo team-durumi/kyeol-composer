@@ -6,7 +6,7 @@ Vagrant.configure("2") do |config|
   config.vm.define "kyeol-composer" do |node|
     node.vm.box = "ubuntu/focal64"
     node.vm.hostname = "kyeol-composer"
-    node.vm.network "public_network", ip: "192.168.21.60", bridge: "en0: 이더넷"
+    node.vm.network "private_network", ip: "192.168.60.12"
     node.vm.provider "virtualbox" do |vb|
       vb.name = "kyeol-composer"
       vb.cpus = 1

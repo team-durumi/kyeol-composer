@@ -1,3 +1,3 @@
 #!/bin/bash
 
-rclone mount drive:files /data/kyeol/files --allow-other --daemon -vvv
+rclone mount drive-kyeol: /data/kyeol/ --allow-other --daemon -vvv

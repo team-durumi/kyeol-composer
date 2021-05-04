@@ -40,3 +40,4 @@
 .DS_Store
 .env
 /drush/prod.aliases.drushrc.php
+kyeol.config

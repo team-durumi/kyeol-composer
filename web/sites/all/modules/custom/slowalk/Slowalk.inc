@@ -14,7 +14,7 @@ class Slowalk
     {
         $this->vol = variable_get('wz_main_vol', '');   //호수
         $this->featureIds = array();    //메인피쳐
-        $this->baseUrl = 'http://localhost';
+        $this->baseUrl = '//localhost';
 
         //기사 분류
         $this->catLabel = array(

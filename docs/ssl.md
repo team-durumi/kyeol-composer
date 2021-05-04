@@ -27,38 +27,40 @@ sudo mv /data/kyeol/210503-ssl/www_kyeol_kr.key /etc/apache2/ssl/private/
 sudo chown -R root:root /etc/apache2/ssl/
 sudo chown -R root:ssl-cert /etc/apache2/ssl/private/
 sudo chmod 644 /etc/apache2/ssl/*.crt
-sudo chmod 640 /etc/apache2/ssl/private/*.key
+sudo chmod 640 /etc/apache2/ssl/private/www_kyeol_kr.key
 ```
 
 # 2. virtualhost 설정 추가
 
 ```
-<IfModule mod_ssl.c>
-  <VirtualHost *:443>
-    ServerName kyeol.kr
-    ServerAlias www.kyeol.kr
-    ServerAdmin hark@durumi.io
+<VirtualHost *:443>
+  SSLEngine On
+  SSLCertificateFile /etc/apache2/ssl/www_kyeol_kr.crt
+  SSLCertificateKeyFile /etc/apache2/ssl/private/www_kyeol_kr.key
+  SSLCertificateChainFile /etc/apache2/ssl/Chain_RootCA_Bundle.crt
 
-    DocumentRoot /var/www/kyeol-composer/web
-    <Directory "/var/www/kyeol-composer/web">
-      Options Indexes FollowSymLinks
-      AllowOverride All
-      Require all granted
-    </Directory>
+  ServerName kyeol.kr
+  ServerAlias www.kyeol.kr
+  ServerAdmin hark@durumi.io
 
-    ErrorLog /data/kyeol/logs/error.log
-    CustomLog /data/kyeol/logs/access.log combined
+  DocumentRoot /var/www/kyeol-composer/web
+  <Directory "/var/www/kyeol-composer/web">
+    Options Indexes FollowSymLinks
+    AllowOverride All
+    Require all granted
+  </Directory>
 
-    SSLCertificateFile /etc/apache2/ssl/www_kyeol_kr.crt
-    SSLCertificateKeyFile /etc/apache2/ssl/private/www_kyeol_kr.key
-    SSLCertificateChainFile /etc/apache2/ssl/Chain_RootCA_Bundle.crt
-  </VirtualHost>
-</IfModule>
+  ErrorLog /data/kyeol/logs/error.log
+  CustomLog /data/kyeol/logs/access.log combined
+</VirtualHost>
 
 <VirtualHost *:80>
   ServerName kyeol.kr
   ServerAlias www.kyeol.kr
-  Redirect permanent / https://kyeol.kr
+  SSLProxyEngine On
+  RewriteEngine On
+  RewriteCond %{HTTPS} off
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [P,R,L]
 </VirtualHost>
 
 ```
@@ -66,6 +68,12 @@ sudo chmod 640 /etc/apache2/ssl/private/*.key
 # 3. 아파치 모듈 활성화 및 재시작
 
 ```shell
-sudo a2enmod ssl
+sudo a2enmod ssl proxy-http
+
+cd /etc/apache2/sites-available/
+sudo cp /var/www/kyeol-composer/provision/config/kyeol-ssl.conf ./
+sudo a2dissite 000-default && sudo a2ensite kyeol-ssl
+# sudo a2dissite kyeol-ssl && sudo a2ensite 000-default
+
 sudo service apache2 restart
 ```

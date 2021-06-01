@@ -17,13 +17,6 @@ Vagrant.configure("2") do |config|
     node.vm.provision "file", source: "~/.ssh/id_rsa", destination: ".ssh/"
     node.vm.provision "file", source: "~/.ssh/id_rsa.pub", destination: ".ssh/"
     node.vm.provision "file", source: "./.env", destination: ".env"
-
-    node.vm.provision "shell", path: "~/Drive/provision/ubuntu/bootstrap.sh"
-    node.vm.provision "shell", path: "~/Drive/provision/ubuntu/vagrant.sh", privileged: false
-    node.vm.provision "shell", path: "~/Drive/provision/ubuntu/rclone.sh", privileged: false
-    node.vm.provision "shell", path: "~/Drive/provision/ubuntu/mariadb.sh", privileged: false
-    node.vm.provision "shell", path: "~/Drive/provision/ubuntu/php.sh", privileged: false
-    node.vm.provision "shell", path: "~/Drive/provision/ubuntu/nodejs.sh", privileged: false
   end
 
 end

@@ -16,8 +16,8 @@ function webzine_ajax_callback()
                 $payloads[$param] = $_POST[$param];
             }
         }
-        // $data = _webzine_data($payloads);
-        drupal_json_output([]);
+        $data = Slowalk::getData($payloads);
+        drupal_json_output($data);
     } else {
         drupal_json_output(array('error' => '정상적인 접근이 아닙니다.'));
     }

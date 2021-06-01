@@ -45,7 +45,7 @@ class Slowalk
         $this->years = array();
     }
 
-    protected function getData($payloads)
+    public static function getData($payloads)
     {
         extract($payloads);
         $catLabel = array(

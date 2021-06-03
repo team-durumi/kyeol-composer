@@ -1,94 +1,83 @@
-- origin_url: https://stib.ee/KRR3
-  title: "영문 웹진 <KYEOL(결)> 소식이 찾아왔어요!"
-  date: "2021. 05. 20."
-  directory: "20210520"
+2021:
+  - origin_url: https://stib.ee/KCT3
+    title: "🧶[웹진 결] 함께 달릴 준비 됐나요?"
+    date: "2021. 05. 28."
+    directory: "20210528"
+  - origin_url: https://stib.ee/KRR3
+    title: "🧶영문 웹진 <KYEOL(결)> 소식이 찾아왔어요!"
+    date: "2021. 05. 20."
+    directory: "20210520"
+  - origin_url: https://stib.ee/0Cl2
+    title: "🧶[웹진 결] 2020년 '위안부' 이슈 돌아보기"
+    date: "2021. 01. 06."
+    directory: "20210106"
 
-- origin_url: https://stib.ee/0Cl2
-  title: "[웹진 결] 2020년 '위안부' 이슈 돌아보기"
-  date: "2021. 01. 06."
-  directory: "20210106"
-
-- origin_url: https://stib.ee/O0i2
-  title: "[웹진 결] 나눔의 집 할머니의 방 - 어제와 오늘, 오늘과 내일"
-  date: "2020. 12. 30."
-  directory: "20201230"
-
-- origin_url: https://stib.ee/Uch2
-  title: "[웹진 결] 증언의 씨앗, 배봉기 이야기"
-  date: "2020. 12. 23."
-  directory: "20201223"
-
-- origin_url: https://stib.ee/h6l2
-  title: "[웹진 결] 2000년 여성법정의 울림들"
-  date: "2020. 12. 16."
-  directory: "20201216"
-
-- origin_url: https://stib.ee/Twg2
-  title: "[웹진 '결'] 책과 함께하는 한 해의 마무리는 어떠세요?"
-  date: "2020. 11. 25."
-  directory: "20201125"
-
-- origin_url: https://stib.ee/3Wc2
-  title: "[웹진 결] '위안부'의 삶을 기억하고 기록하는 오키나와 사람들"
-  date: "2020. 11. 11."
-  directory: "20201111"
-
-- origin_url: https://stib.ee/j4a2
-  title: "[웹진 결] 독일 '평화의 소녀상' 이야기"
-  date: "2020. 10. 28."
-  directory: "20201028"
-
-- origin_url: https://stib.ee/CIY2
-  title: "[웹진 결] 나눔의집 할머니의 방 - 나의 방, 나의 역사"
-  date: "2020. 10. 14."
-  directory: "20201014"
-
-- origin_url: https://stib.ee/X1W2
-  title: "[웹진 결] 평화의 소녀상과 아큐파이 운동"
-  date: "2020. 9. 30."
-  directory: "20200930"
-
-- origin_url: https://stib.ee/3fT2
-  title: "[웹진 결] 송신도 이야기"
-  date: "2020. 9. 16."
-  directory: "20200916"
-
-- origin_url: https://stib.ee/94R2
-  title: "[웹진 결] 교실에서 만난 일본군'위안부'"
-  date: "2020. 9. 2."
-  directory: "20200902"
-
-- origin_url: https://stib.ee/SjM2
-  title: "[웹진 결] 8.14 기림의 날 특집 - 김복동을 향한 우리의 기억"
-  date: "2020. 8. 13."
-  directory: "20200813"
-
-- origin_url: https://stib.ee/GaN2
-  title: "[웹진 결] 할머니의 방을 기록하다"
-  date: "2020. 8. 5."
-  directory: "20200805"
-
-- origin_url: https://stib.ee/CPK2
-  title: "[웹진 결] 명부 자료를 통해 '위안부'의 지워진 과거를 상상하다"
-  date: "2020. 7. 22."
-  directory: "20200722"
-
-- origin_url: https://stib.ee/KFI2
-  title: "[웹진 결] 당신의 이야기에서 우리의 이야기로"
-  date: "2020. 7. 8."
-  directory: "20200708"
-
-- origin_url: https://stib.ee/tCF2
-  title: "당신의 곁에도 소녀상이 있나요?"
-  date: "2020. 6. 24."
-  directory: "20200624"
-
-- origin_url: https://stib.ee/laB2
-  title: "지금 우리에게 무엇보다 필요한 건 바로,"
-  date: "2020. 6. 10."
-  directory: "20200610"
-
-- origin_url: https://stib.ee/blB2
-  title: "좋아하는 음악이 있으신가요?"
-  date: "2020. 5. 27."
-  directory: "20200527"
+2020:
+  - origin_url: https://stib.ee/O0i2
+    title: "🧶[웹진 결] 나눔의 집 할머니의 방 - 어제와 오늘, 오늘과 내일"
+    date: "2020. 12. 30."
+    directory: "20201230"
+  - origin_url: https://stib.ee/Uch2
+    title: "🧶[웹진 결] 증언의 씨앗, 배봉기 이야기"
+    date: "2020. 12. 23."
+    directory: "20201223"
+  - origin_url: https://stib.ee/h6l2
+    title: "🧶[웹진 결] 2000년 여성법정의 울림들"
+    date: "2020. 12. 16."
+    directory: "20201216"
+  - origin_url: https://stib.ee/Twg2
+    title: "🧶[웹진 '결'] 책과 함께하는 한 해의 마무리는 어떠세요?"
+    date: "2020. 11. 25."
+    directory: "20201125"
+  - origin_url: https://stib.ee/3Wc2
+    title: "🧶[웹진 결] '위안부'의 삶을 기억하고 기록하는 오키나와 사람들"
+    date: "2020. 11. 11."
+    directory: "20201111"
+  - origin_url: https://stib.ee/j4a2
+    title: "🧶[웹진 결] 독일 '평화의 소녀상' 이야기"
+    date: "2020. 10. 28."
+    directory: "20201028"
+  - origin_url: https://stib.ee/CIY2
+    title: "🧶[웹진 결] 나눔의집 할머니의 방 - 나의 방, 나의 역사"
+    date: "2020. 10. 14."
+    directory: "20201014"
+  - origin_url: https://stib.ee/X1W2
+    title: "🧶[웹진 결] 평화의 소녀상과 아큐파이 운동"
+    date: "2020. 9. 30."
+    directory: "20200930"
+  - origin_url: https://stib.ee/3fT2
+    title: "🧶[웹진 결] 송신도 이야기"
+    date: "2020. 9. 16."
+    directory: "20200916"
+  - origin_url: https://stib.ee/94R2
+    title: "🧶[웹진 결] 교실에서 만난 일본군'위안부'"
+    date: "2020. 9. 2."
+    directory: "20200902"
+  - origin_url: https://stib.ee/SjM2
+    title: "🧶[웹진 결] 8.14 기림의 날 특집 - 김복동을 향한 우리의 기억"
+    date: "2020. 8. 13."
+    directory: "20200813"
+  - origin_url: https://stib.ee/GaN2
+    title: "🧶[웹진 결] 할머니의 방을 기록하다"
+    date: "2020. 8. 5."
+    directory: "20200805"
+  - origin_url: https://stib.ee/CPK2
+    title: "🧶[웹진 결] 명부 자료를 통해 '위안부'의 지워진 과거를 상상하다"
+    date: "2020. 7. 22."
+    directory: "20200722"
+  - origin_url: https://stib.ee/KFI2
+    title: "🧶[웹진 결] 당신의 이야기에서 우리의 이야기로"
+    date: "2020. 7. 8."
+    directory: "20200708"
+  - origin_url: https://stib.ee/tCF2
+    title: "🧶당신의 곁에도 소녀상이 있나요?"
+    date: "2020. 6. 24."
+    directory: "20200624"
+  - origin_url: https://stib.ee/laB2
+    title: "🧶지금 우리에게 무엇보다 필요한 건 바로,"
+    date: "2020. 6. 10."
+    directory: "20200610"
+  - origin_url: https://stib.ee/blB2
+    title: "🧶좋아하는 음악이 있으신가요?"
+    date: "2020. 5. 27."
+    directory: "20200527"

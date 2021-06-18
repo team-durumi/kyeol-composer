@@ -41,3 +41,4 @@
 .env
 /drush/prod.aliases.drushrc.php
 kyeol.config
+/drive

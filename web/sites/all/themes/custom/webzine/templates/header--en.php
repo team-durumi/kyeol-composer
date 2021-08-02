@@ -15,11 +15,9 @@
       <li class="mx-6 float-left">
         <a href="/en/category/articles">Contents</a>
       </li>
-      <!--
       <li class="mx-6 float-left">
-        <a href="/en/resources">Resource</a>
+        <a href="/en/resources">Resources</a>
       </li>
-      -->
     </ul>
     <ul class="ng01">
       <li class="search"><a href="#" title="Open search box"><i class="xi-search"></i></a></li>

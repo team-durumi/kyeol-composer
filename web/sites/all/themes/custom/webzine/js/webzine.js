@@ -65,21 +65,34 @@ $(document).ready(function() {
 		dots:true
 	});
 	//검색창 열기/닫기
-	$('header .ng01 .search a').click(function(){
-		$('header').addClass('searchOpened');
+	$('header .ng01 .search a').click(function(){ //2021.8.3 웹접근성 작업
+		$('.cf01').removeClass('displayNone');
+    window.setTimeout(function(){
+      $('header').addClass('searchOpened');
+    },50)
+
 		return false;
 	});
-	$('header .cf01 a.btn_icon01').click(function(){
+	$('header .cf01 a.btn_icon01').click(function(){  //2021.8.3 웹접근성 작업
 		$('header').removeClass('searchOpened');
+    window.setTimeout(function(){
+      $('.cf01').addClass('displayNone');
+    },600)
 		return false;
 	});
 	//menu 열기/닫기
-	$('header .ng01 .menu a').click(function(){
-		$('header').addClass('menuOpened');
+	$('header .ng01 .menu a').click(function(){ //2021.8.3 웹접근성 작업
+    $('header nav').removeClass('displayNone');
+    window.setTimeout(function(){
+      $('header').addClass('menuOpened');
+    },50)
 		return false;
 	});
-	$('header nav a.btn_icon01').click(function(){
+	$('header nav a.btn_icon01').click(function(){  //2021.8.3 웹접근성 작업
 		$('header').removeClass('menuOpened');
+    window.setTimeout(function(){
+      $('header nav').addClass('displayNone');
+    },600)
 		return false;
 	});
 	//뷰화면 툴팁 오브제 효과

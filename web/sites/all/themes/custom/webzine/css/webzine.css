@@ -30,6 +30,8 @@ input::-webkit-input-placeholder {font-family:'Noto Sans KR',sans-serif}
 input:-ms-input-placeholder {font-family:'Noto Sans KR',sans-serif}
 textarea.error{border-color:#e31919;color:#e31919}
 .feed-icon{display:none;}
+.displayNone{display:none}
+
 /**** Layout ****/
 
 body{position:relative;overflow-x:hidden}

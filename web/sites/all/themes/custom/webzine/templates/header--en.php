@@ -42,7 +42,7 @@
         <!-- <li class="menu-935 last"><a href="/en/newsletters" title="">뉴스레터</a></li> -->
       </ul>
     </nav>
-    <form class="cf01" method="post" action="/en/search">
+    <form class="cf01 displayNone" method="post" action="/en/search">
       <a href="#" class="btn_icon01" title="Close search box"><i class="xi-close"></i></a>
       <fieldset>
         <label for="search_query">Search Keyword</label>

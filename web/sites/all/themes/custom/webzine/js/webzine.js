@@ -86,6 +86,7 @@ $(document).ready(function() {
 		$('.cf01').removeClass('displayNone');
     window.setTimeout(function(){
       $('header').addClass('searchOpened');
+      $('.cf01 input').focus();
     },50)
 
 		return false;

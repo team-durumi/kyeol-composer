@@ -28,12 +28,12 @@ if(current_path() === 'search/term') {
             <?php print theme('links__system_secondary_menu', array('links' => $secondary_menu, 'attributes' => array('id' => 'secondary-menu', 'class' => array('links', 'inline', 'clearfix')), 'heading' => t('Secondary menu'))); ?>
         </nav>
         <form class="cf01 displayNone" method="get" action="<?php print $action;?>">
-            <a href="#" class="btn_icon01" title="검색창 닫기"><i class="xi-close"></i></a>
             <fieldset>
                 <label for="search_query">검색어</label>
                 <input type="text" name="key" id="search_query" placeholder="검색어를 입력해 주세요" value="<?php print ($_GET['key']) ?? '';?>"/>
                 <button><i class="xi-search"></i></button>
             </fieldset>
+            <a href="#" class="btn_icon01" title="검색창 닫기"><i class="xi-close"></i></a>
         </form>
     </div>
     <?php print render($page['header']); ?>

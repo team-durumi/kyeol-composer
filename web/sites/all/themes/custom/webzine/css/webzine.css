@@ -230,6 +230,13 @@ section h1.title{font-size:38px;line-height:40px;padding-bottom:24px;font-family
 .ib01 .slick-dots li{background-color:transparent;display:block;margin-bottom:15px}
 .ib01 .slick-dots li button{width:20px;height:20px;border-radius:10px;padding:0;border:1px solid #fff;text-indent:-9999px}
 .ib01 .slick-dots li.slick-active button{background-color:#fff}
+.ib01 .slick-dots li.pause{width:24px;margin: 0 3px;}
+.ib01 .slick-dots li.pause a{background:transparent;color:#fff;text-decoration:none;}
+.ib01 .slick-dots li.pause a i{font-size:24px}
+.ib01 .slick-dots li.pause a.pause i.xi-pause{display:inline}
+.ib01 .slick-dots li.pause a.pause i.xi-play{display:none}
+.ib01 .slick-dots li.pause a.play i.xi-pause{display:none}
+.ib01 .slick-dots li.pause a.play i.xi-play{display:inline}
 .ib01 .slick-dotted.slick-slider{margin-bottom:0}
 .ib01:after{content:"";display:block;width:311px;height:307px;;background:url(../images/bg_pattern_main01.png) no-repeat 0 0;position:absolute;right:0;bottom:-230px}
 /*메인 두번째 헤드라인 리스트*/

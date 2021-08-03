@@ -56,6 +56,9 @@ $(document).ready(function() {
 		$(this).css({'background-image':'url('+$('img',$(this)).attr('src')+')'});
 		//$('img',$(this)).remove();
 	});
+  $('.ib01 .slide').on('init', function(){
+    $('.slick-dots').append($('<li class="pause"><a href="#" title="일시정지/재생" class="pause"><i class="xi-pause"></i><i class="xi-play"></i></a></li>'));
+  });
 	$('.ib01 .slide').slick({
 		autoplay:true,
 		fade:true,
@@ -64,6 +67,20 @@ $(document).ready(function() {
 		arrows:false,
 		dots:true
 	});
+
+  $('.slick-dots .pause a').click(function(){  //2021.8.3 웹접근성 작업
+    if($(this).hasClass('play')){
+      $('.ib01 .slide').slick('slickPlay');
+      $(this).removeClass('play');
+      $(this).addClass('pause');
+    }else{
+      $('.ib01 .slide').slick('slickPause');
+      $(this).addClass('play');
+      $(this).removeClass('pause');
+    }
+  });
+
+
 	//검색창 열기/닫기
 	$('header .ng01 .search a').click(function(){ //2021.8.3 웹접근성 작업
 		$('.cf01').removeClass('displayNone');

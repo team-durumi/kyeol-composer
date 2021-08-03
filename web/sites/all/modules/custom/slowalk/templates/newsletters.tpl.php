@@ -17,6 +17,7 @@
                     </a>
                   </li>
                 <?php endforeach; ?>
+                </ul>
               </dd>
             </dl>
             <?php endforeach; ?>

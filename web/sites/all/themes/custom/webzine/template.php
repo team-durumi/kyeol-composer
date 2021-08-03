@@ -30,9 +30,9 @@ function webzine_css_alter(&$css)
 }
 
 /**
-* hook_preprocess_page().
-* @param $variables
-*/
+ * hook_preprocess_page().
+ * @param $variables
+ */
 function webzine_preprocess_page(&$variables) {
   global $base_url;
   global $language;
@@ -339,4 +339,9 @@ function get_writers_und($field_writer) {
   return implode(', ', $writers);
 }
 
-?>
+/**
+ * Implements template_preprocess_views_view_fields().
+ */
+function webzine_preprocess_views_view_fields(&$vars) {
+  dpm($vars);
+}

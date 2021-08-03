@@ -13,7 +13,7 @@
                   <li>
                     <span class="date"><?php print $newsletter['date']; ?></span>
                     <a target="_blank" href="/sites/default/files/newsletters/<?php print $newsletter['directory'] ?>/">
-                      <?php echo $newsletter['title']; ?>
+                      <?php echo htmlspecialchars($newsletter['title']); ?>
                     </a>
                   </li>
                 <?php endforeach; ?>

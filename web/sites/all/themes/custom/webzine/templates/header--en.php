@@ -24,7 +24,7 @@
       <li class="translate"><a href="/" title="Translate" ><span>KR</span></a></li>
       <li class="menu"><a href="#" title="메뉴 열기"><i class="xi-bars"></i></a></li>
     </ul>
-    <nav>
+    <nav class="displayNone">
       <a href="#" class="btn_icon01" title="메뉴 닫기"><i class="xi-close"></i></a>
       <h2>주 메뉴</h2>
       <ul id="main-menu" class="links inline clearfix">

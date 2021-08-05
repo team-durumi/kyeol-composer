@@ -229,6 +229,7 @@ section h1.title{font-size:38px;line-height:40px;padding-bottom:24px;font-family
 .ib01 .slick-dots{width:auto;top:50%;right:50%;margin-top:-40px;margin-right:-540px}
 .ib01 .slick-dots li{background-color:transparent;display:block;margin-bottom:15px}
 .ib01 .slick-dots li button{width:20px;height:20px;border-radius:10px;padding:0;border:1px solid #fff;text-indent:-9999px}
+.ib01 .slick-dots li button:focus{border-color:blue}
 .ib01 .slick-dots li.slick-active button{background-color:#fff}
 .ib01 .slick-dots li.pause{width:24px;margin: 0 3px;}
 .ib01 .slick-dots li.pause a{background:transparent;color:#fff;text-decoration:none;}

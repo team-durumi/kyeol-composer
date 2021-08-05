@@ -58,8 +58,16 @@ $(document).ready(function() {
 	});
   $('.ib01 .slide').on('init', function(){
     $('.slick-dots').append($('<li class="pause"><a href="#" title="일시정지/재생" class="pause"><i class="xi-pause"></i><i class="xi-play"></i></a></li>'));
+    setTimeout(function(){
+      $('.slick-dots li button').attr('tabindex','0');
+    },300);
+});
+  $('.ib01 .slide').on('afterChange', function(event,slick,currentSlide,nextSlide){
+      setTimeout(function(){
+        $('.slick-dots li button').attr('tabindex','0');
+      },300);
   });
-	$('.ib01 .slide').slick({
+  $('.ib01 .slide').slick({
 		autoplay:true,
 		fade:true,
 		speed:1400,

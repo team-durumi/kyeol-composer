@@ -98,7 +98,7 @@
                       <li><b>최종수정일</b><span><?php print format_date($changed, 'custom', 'Y.m.d');?></span></li>
                     </ul>
                     <div class="ng03">
-                        <a href="#" class="share"><i class="xi-share-alt-o"></i></a>
+                        <a href="#" class="share" title="공유하기"><i class="xi-share-alt-o"></i></a>
                         <dl>
                             <dt><label for="share_url">게시글을 공유해보세요</label></dt>
                             <dd>

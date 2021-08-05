@@ -204,7 +204,7 @@ section h1.title{font-size:38px;line-height:40px;padding-bottom:24px;font-family
 .cf01 input:-ms-input-placeholder {color:#d7c3a4}
 .cf01 input::-webkit-input-placeholder {color:#d7c3a4}
 .cf01 input:-ms-input-placeholder {color:#d7c3a4}
-.cf01 button{float:right;border:none;background-color:transparent;margin-top:15px;cursor:pointer}
+.cf01 button{float:right;border:none;background-color:transparent;margin-top:15px;cursor:pointer;font-size:0;color:transparent}
 .cf01 button i{font-size:32px;font-weight:bold;color:#fff}
 /*뉴스레터 신청*/
 .cf02{position:relative}

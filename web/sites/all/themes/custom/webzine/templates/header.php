@@ -31,7 +31,7 @@ if(current_path() === 'search/term') {
             <fieldset>
                 <label for="search_query">검색어</label>
                 <input type="text" name="key" id="search_query" placeholder="검색어를 입력해 주세요" value="<?php print ($_GET['key']) ?? '';?>"/>
-                <button><i class="xi-search"></i></button>
+                <button><i class="xi-search"></i>검사하기</button>
             </fieldset>
             <a href="#" class="btn_icon01" title="검색창 닫기"><i class="xi-close"></i></a>
         </form>

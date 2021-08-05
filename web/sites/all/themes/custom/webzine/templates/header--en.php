@@ -46,7 +46,7 @@
       <fieldset>
         <label for="search_query">Search Keyword</label>
         <input type="text" name="key" id="search_query" placeholder="Type in here ..."/>
-        <button><i class="xi-search"></i></button>
+        <button><i class="xi-search"></i>search</button>
       </fieldset>
       <a href="#" class="btn_icon01" title="Close search box"><i class="xi-close"></i></a>
     </form>

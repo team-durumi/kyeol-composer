@@ -154,7 +154,9 @@ $(document).ready(function() {
 		document.execCommand('copy');
 		$(this).text('완료');
 		$(this).append($('<i class="xi-check-min"></i>'));
-
+    setTimeout(function(){
+      $('.ng03 dl').hide();
+    },1500)
 	});
 
 	form_validation();

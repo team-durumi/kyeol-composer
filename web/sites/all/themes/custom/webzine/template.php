@@ -182,7 +182,7 @@ function get_writers($field_writer)
     foreach($field_writer['und'] as $Arr) {
       $tid = $Arr['tid'];
       $term = taxonomy_term_load($tid);
-      $writers[] = $term->name;
+      $writers[] = htmlspecialchars($term->name);
     }
   }
   return implode(', ', $writers);
@@ -333,7 +333,7 @@ function get_writers_und($field_writer) {
   } elseif(isset($field_writer)) {
     foreach($field_writer as $writer) {
       $term = taxonomy_term_load($writer['tid']);
-      $writers[] = $term->name;
+      $writers[] = htmlspecialchars($term->name);
     }
   }
   return implode(', ', $writers);

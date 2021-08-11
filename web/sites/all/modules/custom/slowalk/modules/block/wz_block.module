@@ -116,10 +116,10 @@ function wz_main_slide_block_view()
           $target = ($item['blank']) ? ' target="_blank"' : '';
           $html .= '<li class="type01">
               <a href="'.$item['link'].'"'.$target.'>
-                  <img src="'.$img.'" alt="'.$item['title'].'"/>
+                  <img src="'.$img.'" alt="'. htmlspecialchars(strip_tags($item['title'])) .'"/>
                   <dl>
-                      <dt>'.$item['title'].'</dt>
-                      <dd>'.nl2br($item['body']).'</dd>
+                      <dt>' . $item['title'] . '</dt>
+                      <dd>' . str_replace('</br>', '', nl2br($item['body'])) . '</dd>
                   </dl>
               </a>
           </li>';

@@ -89,7 +89,7 @@
                     <div class="writers">
                       <p><b>글</b>
                       <?php foreach($writers as $writer): ?>
-                        <b><?php print $writer['name'];?></b><em><?php print $writer['info'];?></em>
+                        <b><?php print htmlspecialchars($writer['name']);?></b><em><?php print $writer['info'];?></em>
                       <?php endforeach;?>
                       </p>
                     </div>

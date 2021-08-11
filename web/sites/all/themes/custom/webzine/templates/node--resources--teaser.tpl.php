@@ -80,21 +80,11 @@
  * @ingroup themeable
  */
 ?>
-<a href="<?php print $node_url;?>" class="thumb">
-  <span>
-  <?php if(!empty($image_uri)): ?>
-    <img src="<?php print image_style_url('article_thumbnail', $image_uri);?>" alt="<?php print $title;?>"/>
-  <?php else: ?>
-    <img src="/sites/default/files/styles/main_feature/public/field/image/%EB%AC%B8%ED%99%94%EB%B9%84%ED%8F%89%EC%86%8C%EB%85%80%EC%83%81-01%EB%B3%B8%EB%AC%B8.jpg" alt="<?php print $title;?>"/>
-  <?php endif; ?>
-  </span>
-</a>
 <dl class="conA">
   <dt>
     <a href="<?php print $node_url;?>"><?php print $title;?></a>
   </dt>
   <dd>
-    <p class="summury"><?php print strip_tags($body);?></p>
     <p class="meta">
       <span><?php print $field_writer;?></span>
       <em><?php print format_date($created, 'custom', 'Y.m.d');?></em>

@@ -1,6 +1,6 @@
 /* ==========================================================================
    Print styles.
-   모바일 페이지를 기준으로 프린트 스타일을 잡았습니다. 
+   모바일 페이지를 기준으로 프린트 스타일을 잡았습니다.
    ========================================================================== */
 
 header, nav, aside, body.front, body.scrolling.mobile, footer, button, .cf01, .cf02, .ng03, .fc01_03, .th02 .inner{
@@ -13,7 +13,7 @@ header, nav, aside, body.front, body.scrolling.mobile, footer, button, .cf01, .c
 
 @media print {
 
-body,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,input,textarea,button,select,menu,a{font-size:14px;line-height:1.6;font-color:#000;font-family: 'Noto Sans KR';}
+body,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,input,textarea,button,select,menu,a{font-size:14px;line-height:1.6;color:#000;font-family: 'Noto Sans KR';}
 
 .inner{width:auto;margin:0 15px;padding:0;box-sizing:border-box}
 

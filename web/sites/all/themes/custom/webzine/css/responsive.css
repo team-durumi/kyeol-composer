@@ -113,6 +113,9 @@ section h1.title{font-size:24px;line-height:30px;padding-bottom:20px;}
 .ib01 .slick-dots{width:100%;top:inherit;bottom:25px;left:0;margin-top:0;margin-left:0;text-align:left;padding-left:12px}
 .ib01 .slick-dots li{display:inline-block;width:10px;height:10px;margin:0 4px}
 .ib01 .slick-dots li button{width:10px;height:10px;border-radius:5px}
+.ib01 .slick-dots li.pause{width:10px;margin: 0 4px;vertical-align:middle;}
+.ib01 .slick-dots li.pause a{height:10px}
+.ib01 .slick-dots li.pause a i{font-size:16px}
 .ib01:after{width:155px;height:153px;background-size:cover;position:absolute;right:0;bottom:-114px}
 /*메인 두번째 헤드라인 리스트*/
 .lc01 li{float:left;width:48%;margin-right:4%;margin-bottom:4%}

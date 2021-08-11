@@ -104,7 +104,7 @@ $pages = [
                       <li><b>Updated at</b><span><?php print format_date($changed, 'custom', 'Y.m.d');?></span></li>
                     </ul>
                     <div class="ng03">
-                        <a href="#" class="share"><i class="xi-share-alt-o"></i></a>
+                        <a href="#" class="share" title="share"><i class="xi-share-alt-o"></i></a>
                         <dl>
                             <dt><label for="share_url">Share post</label></dt>
                             <dd>

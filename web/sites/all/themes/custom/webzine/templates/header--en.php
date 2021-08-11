@@ -24,7 +24,7 @@
       <li class="translate"><a href="/" title="Translate" ><span>KR</span></a></li>
       <li class="menu"><a href="#" title="메뉴 열기"><i class="xi-bars"></i></a></li>
     </ul>
-    <nav>
+    <nav class="displayNone">
       <a href="#" class="btn_icon01" title="메뉴 닫기"><i class="xi-close"></i></a>
       <h2>주 메뉴</h2>
       <ul id="main-menu" class="links inline clearfix">
@@ -42,13 +42,13 @@
         <!-- <li class="menu-935 last"><a href="/en/newsletters" title="">뉴스레터</a></li> -->
       </ul>
     </nav>
-    <form class="cf01" method="post" action="/en/search">
-      <a href="#" class="btn_icon01" title="Close search box"><i class="xi-close"></i></a>
+    <form class="cf01 displayNone" method="post" action="/en/search">
       <fieldset>
         <label for="search_query">Search Keyword</label>
         <input type="text" name="key" id="search_query" placeholder="Type in here ..."/>
-        <button><i class="xi-search"></i></button>
+        <button><i class="xi-search"></i>search</button>
       </fieldset>
+      <a href="#" class="btn_icon01" title="Close search box"><i class="xi-close"></i></a>
     </form>
   </div>
   <?php print render($page['header']); ?>

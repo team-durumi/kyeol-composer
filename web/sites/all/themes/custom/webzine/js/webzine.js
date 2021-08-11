@@ -56,7 +56,18 @@ $(document).ready(function() {
 		$(this).css({'background-image':'url('+$('img',$(this)).attr('src')+')'});
 		//$('img',$(this)).remove();
 	});
-	$('.ib01 .slide').slick({
+  $('.ib01 .slide').on('init', function(){  //2021.8.3 웹접근성 작업
+    $('.slick-dots').append($('<li class="pause"><a href="#" title="일시정지/재생" class="pause"><i class="xi-pause"></i><i class="xi-play"></i></a></li>'));
+    setTimeout(function(){
+      $('.slick-dots li button').attr('tabindex','0');
+    },300);
+});
+  $('.ib01 .slide').on('afterChange', function(event,slick,currentSlide,nextSlide){ //2021.8.3 웹접근성 작업
+      setTimeout(function(){
+        $('.slick-dots li button').attr('tabindex','0');
+      },300);
+  });
+  $('.ib01 .slide').slick({
 		autoplay:true,
 		fade:true,
 		speed:1400,
@@ -64,22 +75,51 @@ $(document).ready(function() {
 		arrows:false,
 		dots:true
 	});
+
+  $('.slick-dots .pause a').click(function(){  //2021.8.3 웹접근성 작업
+    if($(this).hasClass('play')){
+      $('.ib01 .slide').slick('slickPlay');
+      $(this).removeClass('play');
+      $(this).addClass('pause');
+    }else{
+      $('.ib01 .slide').slick('slickPause');
+      $(this).addClass('play');
+      $(this).removeClass('pause');
+    }
+  });
+
+
 	//검색창 열기/닫기
-	$('header .ng01 .search a').click(function(){
-		$('header').addClass('searchOpened');
+	$('header .ng01 .search a').click(function(){ //2021.8.3 웹접근성 작업
+		$('.cf01').removeClass('displayNone');
+    window.setTimeout(function(){
+      $('header').addClass('searchOpened');
+      $('.cf01 input').focus();
+    },50)
+
 		return false;
 	});
-	$('header .cf01 a.btn_icon01').click(function(){
+	$('header .cf01 a.btn_icon01').click(function(){  //2021.8.3 웹접근성 작업
 		$('header').removeClass('searchOpened');
+    window.setTimeout(function(){
+      $('.cf01').addClass('displayNone');
+    },600)
+    $('header .ng01 .menu a').focus();
 		return false;
 	});
 	//menu 열기/닫기
-	$('header .ng01 .menu a').click(function(){
-		$('header').addClass('menuOpened');
+	$('header .ng01 .menu a').click(function(){ //2021.8.3 웹접근성 작업
+    $('header nav').removeClass('displayNone');
+    window.setTimeout(function(){
+      $('header').addClass('menuOpened');
+    },50)
 		return false;
 	});
-	$('header nav a.btn_icon01').click(function(){
+	$('header nav a.btn_icon01').click(function(){  //2021.8.3 웹접근성 작업
 		$('header').removeClass('menuOpened');
+    window.setTimeout(function(){
+      $('header nav').addClass('displayNone');
+    },600)
 		return false;
 	});
 	//뷰화면 툴팁 오브제 효과
@@ -114,7 +154,9 @@ $(document).ready(function() {
 		document.execCommand('copy');
 		$(this).text('완료');
 		$(this).append($('<i class="xi-check-min"></i>'));
-
+    setTimeout(function(){
+      $('.ng03 dl').hide();
+    },1500)
 	});
 
 	form_validation();

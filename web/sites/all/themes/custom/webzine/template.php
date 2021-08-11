@@ -345,3 +345,63 @@ function get_writers_und($field_writer) {
 function webzine_preprocess_views_view_fields(&$vars) {
   dpm($vars);
 }
+
+/**
+ * Implements template_preprocess_views_view_summary().
+ */
+function webzine_preprocess_views_view_summary(&$vars) {
+  $view = $vars['view'];
+  $argument = $view->argument[$view->build_info['summary_level']];
+  $vars['row_classes'] = array();
+  $url_options = array();
+  if (!empty($view->exposed_raw_input)) {
+    $url_options['query'] = $view->exposed_raw_input;
+  }
+  $count = 0;
+  $active_urls = drupal_map_assoc(array(
+    url($_GET['q'], array(
+      'alias' => TRUE,
+    )),
+    url($_GET['q'], $url_options + array(
+      'alias' => TRUE,
+    )),
+    url($_GET['q']),
+    url($_GET['q'], $url_options),
+  ));
+
+  $row_args = array();
+  foreach ($vars['rows'] as $id => $row) {
+    $row_args[$id] = $argument->summary_argument($row);
+  }
+  $argument->process_summary_arguments($row_args);
+  foreach ($vars['rows'] as $id => $row) {
+    if ($count++ && !empty($vars['options']['separator'])) {
+      $vars['rows'][$id]->separator = filter_xss_admin($vars['options']['separator']);
+    }
+    if ($view->name == 'resources' && $view->current_display == 'block_1') {
+      $term = taxonomy_term_load($row->field_data_field_resource_terms_field_resource_terms_tid);
+      if (!$term) {
+        $vars['rows'][$id]->link = '';
+      }
+      else {
+        $vars['rows'][$id]->link = $term->name;
+      }
+    }
+    else {
+      $vars['rows'][$id]->link = $argument->summary_name($row);
+    }
+
+    $args = $view->args;
+    $args[$argument->position] = $row_args[$id];
+    $base_path = NULL;
+    if (!empty($argument->options['summary_options']['base_path'])) {
+      $base_path = $argument->options['summary_options']['base_path'];
+    }
+    $vars['rows'][$id]->url = url($view->get_url($args, $base_path), $url_options);
+    $vars['rows'][$id]->count = intval($row->{$argument->count_alias});
+    if (isset($active_urls[$vars['rows'][$id]->url])) {
+      $vars['row_classes'][$id] = 'active';
+    }
+  }
+}
+?>

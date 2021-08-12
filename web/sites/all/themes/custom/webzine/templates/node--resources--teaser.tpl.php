@@ -84,10 +84,4 @@
   <dt>
     <a href="<?php print $node_url;?>"><?php print $title;?></a>
   </dt>
-  <dd>
-    <p class="meta">
-      <span><?php print $field_writer;?></span>
-      <em><?php print format_date($created, 'custom', 'Y.m.d');?></em>
-    </p>
-  </dd>
 </dl>

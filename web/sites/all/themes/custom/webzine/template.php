@@ -340,13 +340,6 @@ function get_writers_und($field_writer) {
 }
 
 /**
- * Implements template_preprocess_views_view_fields().
- */
-function webzine_preprocess_views_view_fields(&$vars) {
-  dpm($vars);
-}
-
-/**
  * Implements template_preprocess_views_view_summary().
  */
 function webzine_preprocess_views_view_summary(&$vars) {
@@ -403,5 +396,12 @@ function webzine_preprocess_views_view_summary(&$vars) {
       $vars['row_classes'][$id] = 'active';
     }
   }
+  // 순서를 정렬합니다.
+  $rows_sorted = [];
+  $rows_sorted[] = $vars['rows'][1];
+  $rows_sorted[] = $vars['rows'][0];
+  $rows_sorted[] = $vars['rows'][2];
+  $rows_sorted[] = $vars['rows'][3];
+  $vars['rows'] = $rows_sorted;
 }
 ?>

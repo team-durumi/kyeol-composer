@@ -16,7 +16,7 @@ ul,ol,menu{list-style:none}
 em,address{font-style:normal}
 a{text-decoration:none;color:#111111}
 a:hover,a:active{text-decoration:underline}
-:focus {outline: none !important;}
+a:focus, button:focus{outline:auto !important;}
 input[type=text],
 input[type=password],
 input[type=date],

@@ -176,7 +176,7 @@
                   <a href="/node/<?php print $article['node']->nid;?>" class="thumb"><span><img src="<?php print $img;?>" alt="<?php print $article['node']->title;?>"/></span></a>
                   <dl class="conA">
                     <dt>
-                      <a href="/node/<?php print $article['node']->nid;?>"><?php print $article['node']->title;?></a>
+                      <a href="/en/node/<?php print $article['node']->nid;?>"><?php print $article['node']->title;?></a>
                     </dt>
                     <dd>
                       <p class="summury"><?php print strip_tags(render($body));?></p>

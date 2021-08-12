@@ -13,10 +13,10 @@ if(current_path() === 'search/term') {
 ?>
 <header>
     <div class="inner">
-        <div class="lg01">
+        <h1 class="lg01">
             <a href="<?php print $front_page;?>"><?php print $site_name;?></a>
             <em><b><?php print $vol;?></b><i>.vol</i></em>
-        </div>
+        </h1>
         <ul class="ng01">
           <li class="search"><a href="#" title="검색창 열기"><i class="xi-search"></i></a></li>
           <li class="menu"><a href="#" title="메뉴 열기"><i class="xi-bars"></i></a></li>
@@ -31,7 +31,7 @@ if(current_path() === 'search/term') {
             <fieldset>
                 <label for="search_query">검색어</label>
                 <input type="text" name="key" id="search_query" placeholder="검색어를 입력해 주세요" value="<?php print ($_GET['key']) ?? '';?>"/>
-                <button><i class="xi-search"></i>검사하기</button>
+                <button><i class="xi-search"></i>검색하기</button>
             </fieldset>
             <a href="#" class="btn_icon01" title="검색창 닫기"><i class="xi-close"></i></a>
         </form>

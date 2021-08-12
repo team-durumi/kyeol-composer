@@ -57,7 +57,7 @@ $(document).ready(function() {
 		//$('img',$(this)).remove();
 	});
   $('.ib01 .slide').on('init', function(){  //2021.8.3 웹접근성 작업
-    $('.slick-dots').append($('<li class="pause"><a href="#" title="일시정지/재생" class="pause"><i class="xi-pause"></i><i class="xi-play"></i></a></li>'));
+    $('.slick-dots').append($('<li class="pause"><a href="#" title="일시정지하기" class="pause"><i class="xi-pause"></i></a><a href="#" title="재생하기" class="play"><i class="xi-play"></i></a></li>'));
     setTimeout(function(){
       $('.slick-dots li button').attr('tabindex','0');
     },300);
@@ -77,14 +77,12 @@ $(document).ready(function() {
 	});
 
   $('.slick-dots .pause a').click(function(){  //2021.8.3 웹접근성 작업
-    if($(this).hasClass('play')){
+    if($(this).parent().hasClass('play')){
       $('.ib01 .slide').slick('slickPlay');
-      $(this).removeClass('play');
-      $(this).addClass('pause');
+      $(this).parent().removeClass('play');
     }else{
       $('.ib01 .slide').slick('slickPause');
-      $(this).addClass('play');
-      $(this).removeClass('pause');
+      $(this).parent().addClass('play');
     }
   });
 

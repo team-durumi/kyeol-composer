@@ -209,12 +209,12 @@
                 <dl class="tc02 inner">
                     <dt>
                         <i>글쓴이</i>
-                        <b><?php print $writer['taxonomy_term']->name;?></b>
+                        <b><?php print htmlspecialchars($writer['taxonomy_term']->name);?></b>
                     </dt>
                     <dd>
                         <p><?php print $writer['taxonomy_term']->description;?></p>
                         <?php if($writer['taxonomy_term']->field_contact): ?>
-                            <a href="mailto:<?php print $writer['taxonomy_term']->field_contact[$lang][0]['value'];?>"><?php print $writer['taxonomy_term']->field_contact[$lang][0]['value'];?></a>
+                            <a href="mailto:<?php print $writer['taxonomy_term']->field_contact[$lang][0]['value'];?>"><?php print htmlspecialchars($writer['taxonomy_term']->field_contact[$lang][0]['value']);?></a>
                         <?php endif;?>
                     </dd>
                 </dl>
@@ -229,7 +229,7 @@
         <dd>
           <ul>
             <?php foreach($content['field_url']['#items'] as $link): ?>
-              <li><a href="<?php print $link['url'];?>"><?php print $link['title'];?></a></li>
+              <li><a href="<?php print $link['url'];?>"><?php print htmlspecialchars($link['title']);?></a></li>
             <?php endforeach;?>
           </ul>
         </dd>
@@ -242,7 +242,12 @@
         <dd>
           <ul>
             <?php foreach($content['field_related_file']['#items'] as $file): ?>
-              <li><a class="btn03" href="<?php print file_create_url($file['node']->field_file[$lang][0]['uri']);?>"><i class="xi-paperclip"></i><?php print $file['node']->field_file[$lang][0]['filename'];?></a></li>
+              <li>
+                <a class="btn03" href="<?php print file_create_url($file['node']->field_file[$lang][0]['uri']);?>">
+                  <i class="xi-paperclip"></i>
+                  <?php print htmlspecialchars($file['node']->field_file[$lang][0]['filename']);?>
+                </a>
+              </li>
             <?php endforeach;?>
           </ul>
         </dd>

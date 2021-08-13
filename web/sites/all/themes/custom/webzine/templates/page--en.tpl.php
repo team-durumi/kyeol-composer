@@ -83,7 +83,7 @@ $pages = [
     <?php include_once 'header--en.php';?>
 
     <!-- 서브 컨텐츠 영역 -->
-    <div class="<?php print $main_class;?>" id="main-content">
+    <div class="<?php print $main_class;?>">
         <?php if($main_class === 'fc04') : ?>
             <div class="th02"<?php print $image;?>>
                 <div class="inner">
@@ -115,7 +115,7 @@ $pages = [
                     </div>
                 </div>
             </div>
-            <section>
+            <section id="main-content">
                 <div class="inner">
                     <?php if ($tabs): ?><div class="tabs"><?php print render($tabs); ?></div><?php endif; ?>
                     <?php print $messages;?>
@@ -145,7 +145,7 @@ $pages = [
                     </aside>
                 <?php endif; ?>
                 <!-- //사이드바 영역 -->
-                <section>
+                <section id="main-content">
                     <div class="header">
                         <?php print render($title_prefix); ?>
                         <?php if ($title): ?><h1 class="title" id="page-title"><?php print $title; ?></h1><?php endif; ?>

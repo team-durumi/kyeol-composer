@@ -108,6 +108,7 @@ $pages = [
                         <dl>
                             <dt><label for="share_url">Share post</label></dt>
                             <dd>
+                                <label for="share_url">URL</label>
                                 <input id="share_url" type="text" name="share_url" value="<?php print $url;?>"/>
                                 <button>copy</button>
                             </dd>

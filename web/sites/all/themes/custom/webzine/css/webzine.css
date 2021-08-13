@@ -351,6 +351,7 @@ body.front .ng01 li a i{font-size:2rem;line-height:73px}
 	margin-right: -2px;
 }
 .ng03 dl dt{color:#444;margin-bottom:10px}
+.ng03 dl dd label{height:0;font-size:0;color:transparent;position:absolute}
 .ng03 dl dd input{height:36px;color:#9f865f;font-size:0.875rem;float:left;width:75%}
 .ng03 dl dd button{height:36px;border:none;background-color:#9f865f;color:#fff;font-size:0.875rem;float:left;width:25%;cursor:pointer}
 /*뷰화면 참고문헌, 도움이되는 자료*/

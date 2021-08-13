@@ -16,6 +16,7 @@ ul,ol,menu{list-style:none}
 em,address{font-style:normal}
 a{text-decoration:none;color:#111111}
 a:hover,a:active{text-decoration:underline}
+a:focus, button:focus{outline:auto !important;}
 input[type=text],
 input[type=password],
 input[type=date],
@@ -110,7 +111,7 @@ footer .infoA li span, footer .infoA li a{color:#fff}
 .fc01_02 .inner{padding:65px 0 35px}
 .fc01_03{background:url(../images/bg_pattern_comb02.png);position:relative}
 .fc01_03 .inner{padding:58px 0;overflow:hidden}
-.fc01_03 h2{float:left;width:50%;font-size:28px;line-height:40px;color:#fff;font-family:'Iropke Batang',sans-serif}
+.fc01_03 h2{float:left;width:50%;font-size:28px;line-height:40px;color:#2d1900;font-family:'Iropke Batang',sans-serif}
 .fc01_03 .cf02{float:right;width:50%;margin-top:6px}
 /*서브페이지-사이드메뉴형 프레임*/
 .fc02 .inner{overflow:hidden;padding-bottom:100px}
@@ -234,10 +235,10 @@ section h1.title{font-size:38px;line-height:40px;padding-bottom:24px;font-family
 .ib01 .slick-dots li.pause{width:24px;margin: 0 3px;}
 .ib01 .slick-dots li.pause a{background:transparent;color:#fff;text-decoration:none;}
 .ib01 .slick-dots li.pause a i{font-size:24px}
-.ib01 .slick-dots li.pause a.pause i.xi-pause{display:inline}
-.ib01 .slick-dots li.pause a.pause i.xi-play{display:none}
-.ib01 .slick-dots li.pause a.play i.xi-pause{display:none}
-.ib01 .slick-dots li.pause a.play i.xi-play{display:inline}
+.ib01 .slick-dots li.pause a.pause{display:inline}
+.ib01 .slick-dots li.pause a.play{display:none}
+.ib01 .slick-dots li.pause.play a.play{display:inline}
+.ib01 .slick-dots li.pause.play a.pause{display:none}
 .ib01 .slick-dotted.slick-slider{margin-bottom:0}
 .ib01:after{content:"";display:block;width:311px;height:307px;;background:url(../images/bg_pattern_main01.png) no-repeat 0 0;position:absolute;right:0;bottom:-230px}
 /*메인 두번째 헤드라인 리스트*/

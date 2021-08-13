@@ -1,10 +1,10 @@
 <header>
   <div class="inner">
-    <div class="lg01">
+    <h1 class="lg01">
       <!-- Research Institute on Japanese Military Sexual Slavery-Webzine-KYEOL -->
       <a href="<?php print $front_page;?>"><?php print $site_name;?></a>
       <em><b><?php print $vol;?></b><i>.vol</i></em>
-    </div>
+    </h1>
     <ul class="global-nav ml-4 mt-10 float-left" style="margin-left: 3rem;">
       <li class="mx-6 float-left">
         <a href="/en/comfort-women">"Comfort Women"</a>

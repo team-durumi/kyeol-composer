@@ -126,7 +126,8 @@ $(document).ready(function() {
 		return false;
 	});
 	$('#main-content a, #main-content button').focus(function(){  //2021.8.13 웹접근성 작업
-		$(this)[0].scrollIntoView({block: "center"});
+		//$(this)[0].scrollIntoView({behavior: "smooth", block: "center"});
+    window.scrollTo( 0, $(this).offset().top - ($(window).height() / 2 ) );
 	});
 
 

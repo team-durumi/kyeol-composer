@@ -120,6 +120,14 @@ $(document).ready(function() {
     },600)
 		return false;
 	});
+
+  /*
+	$('#skip-link').click(function(){  //2021.8.13 웹접근성 작업
+		$('#main-content a, #main-content button').not('[tabindex="-1"]').first().focus();
+		return false;
+	});
+  */
+
 	//뷰화면 툴팁 오브제 효과
 	$(".tt01").click(function(){
 		$(".tooltip",$(this)).toggle();

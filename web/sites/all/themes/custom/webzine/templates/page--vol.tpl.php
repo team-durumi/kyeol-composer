@@ -80,7 +80,7 @@ $webzine->vol = arg(2);
     <?php include_once 'header.php';?>
 
     <!-- 서브 컨텐츠 영역 -->
-    <div class="<?php print $main_class;?>" id="main-content">
+    <div class="<?php print $main_class;?>">
         <div class="inner">
             <nav></nav>
             <!-- 사이드바 영역 -->
@@ -94,7 +94,7 @@ $webzine->vol = arg(2);
                 </aside>
             <?php endif; ?>
             <!-- //사이드바 영역 -->
-            <section>
+            <section id="main-content">
                 <div class="header">
                     <?php print render($title_prefix); ?>
                     <?php if ($title): ?><h1 class="title" id="page-title"><?php print $title; ?></h1><?php endif; ?>

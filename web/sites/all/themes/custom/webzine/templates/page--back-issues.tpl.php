@@ -77,11 +77,11 @@
     <?php include_once 'header.php';?>
 
     <!-- 서브 컨텐츠 영역 -->
-    <div class="fc03" id="main-content">
+    <div class="fc03">
         <div class="inner">
             <nav>
             </nav>
-            <section>
+            <section id="main-content">
                 <div class="header">
                     <?php print render($title_prefix); ?>
                     <?php if ($title): ?><h1 class="title"><?php print $title;?></h1><?php endif; ?>

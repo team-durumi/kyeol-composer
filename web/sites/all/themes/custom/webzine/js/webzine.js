@@ -125,9 +125,9 @@ $(document).ready(function() {
 		$('#main-content a, #main-content button').not('[tabindex="-1"]').first().focus();
 		return false;
 	});
-	$('#main-content a, #main-content button').focus(function(){  //2021.8.13 웹접근성 작업
-		//$(this)[0].scrollIntoView({behavior: "smooth", block: "center"});
-    window.scrollTo( 0, $(this).offset().top - ($(window).height() / 2 ) );
+	$(window).keyup(function(){  //2021.8.13 웹접근성 작업
+		//$(':focus')[0].scrollIntoView({behavior: "smooth", block: "center"});
+    window.scrollTo( 0, $(':focus').offset().top - ($(window).height() / 2 ) );
 	});
 
 

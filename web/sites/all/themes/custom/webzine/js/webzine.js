@@ -125,6 +125,9 @@ $(document).ready(function() {
 		$('#main-content a, #main-content button').not('[tabindex="-1"]').first().focus();
 		return false;
 	});
+	$('#main-content a, #main-content button').focus(function(){  //2021.8.13 웹접근성 작업
+		$(this)[0].scrollIntoView({block: "center"});
+	});
 
 
 	//뷰화면 툴팁 오브제 효과

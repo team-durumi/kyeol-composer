@@ -123,7 +123,7 @@ $(document).ready(function() {
 
 	$('#skip-link').click(function(){  //2021.8.13 웹접근성 작업
 		$('#main-content a, #main-content button').not('[tabindex="-1"]').first().focus();
-		//return false;
+		return false;
 	});
 
 

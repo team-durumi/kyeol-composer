@@ -11,7 +11,7 @@
           <?php foreach($newsletters as $newsletter): ?>
             <li>
               <span class="date"><?php print $newsletter['date']; ?></span>
-              <a target="_blank" href="/sites/default/files/newsletters/<?php print $newsletter['directory'] ?>/">
+              <a target="_blank" href="<?php print $newsletter['origin_url'] ?>">
                 <?php echo htmlspecialchars($newsletter['title']); ?>
               </a>
             </li>

@@ -102,8 +102,7 @@
                     <dl>
                         <dt><label for="share_url">게시글을 공유해보세요</label></dt>
                         <dd>
-                            <label for="share_url">URL</label>
-                            <input id="share_url" type="text" name="share_url" value="<?php print $url;?>"/>
+                            <input id="share_url" type="text" title="게시글 주소 링크" name="share_url" value="<?php print $url;?>"/>
                             <button>링크복사</button>
                         </dd>
                     </dl>

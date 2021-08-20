@@ -43,6 +43,8 @@
 .cke_editable hr, .postA hr{display:block;height:0;border:none;border-top:1px solid #ccc;margin:3rem 0}
 .cke_editable iframe, .postA iframe{max-width:100%}
 
+.file-image h2.element-invisible{display:none}
+
 @media all and (max-width:767px){
   .cke_editable p, .postA p{font-size:13px;line-height:21px;margin-bottom:1rem;word-break:keep-all;}
   .cke_editable p.origin, .postA p.origin{font-size:13px;line-height:16px}

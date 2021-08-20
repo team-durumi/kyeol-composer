@@ -1,8 +1,7 @@
 <header>
   <div class="inner">
     <h1 class="lg01">
-      <!-- Research Institute on Japanese Military Sexual Slavery-Webzine-KYEOL -->
-      <a href="<?php print $front_page;?>"><?php print $site_name;?></a>
+      <a href="<?php print $front_page;?>">KYEOL|Research Institute on Japanese Military Sexual Slavery</a>
       <em><b><?php print $vol;?></b><i>.vol</i></em>
     </h1>
     <ul class="global-nav ml-4 mt-10 float-left" style="margin-left: 3rem;">

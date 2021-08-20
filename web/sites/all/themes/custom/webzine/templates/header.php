@@ -14,7 +14,7 @@ if(current_path() === 'search/term') {
 <header>
     <div class="inner">
         <h1 class="lg01">
-            <a href="<?php print $front_page;?>"><?php print $site_name;?></a>
+            <a href="<?php print $front_page;?>">결|일본군'위안부'문제연구소 웹진</a>
             <em><b><?php print $vol;?></b><i>.vol</i></em>
         </h1>
         <ul class="ng01">

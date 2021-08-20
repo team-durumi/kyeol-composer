@@ -74,90 +74,93 @@
 ?>
 
 <div id="main_wrap" class="mainPage">
-    <?php include_once 'header.php';?>
+  <?php include_once 'header.php';?>
 
-    <!-- 서브 컨텐츠 영역 -->
-    <?php if($main_class === 'fc04') : ?>
-      <div class="<?php print $main_class;?>" id="main-content">
-        <div class="th02"<?php print $image;?>>
-            <div class="inner">
-                <div class="category">
-                    <a class="btn02 version" href="<?php print $vol_path;?>"><?php print $thisVol;?>년</a>
-                    <a class="btn02 category" href="<?php print $category_path;?>"><?php print $category;?></a>
-                </div>
-                <h1><?php print $title;?></h1>
-                <div class="writers">
-                  <p><b>글</b>
-                  <?php foreach($writers as $writer): ?>
-                    <b><?php print htmlspecialchars($writer['name']);?></b><em><?php print $writer['info'];?></em>
-                  <?php endforeach;?>
-                  </p>
-                </div>
-                <ul class="metas">
-                  <li><b>게시일</b><span><?php print format_date($created, 'custom', 'Y.m.d');?></span></li>
-                  <li><b>최종수정일</b><span><?php print format_date($changed, 'custom', 'Y.m.d');?></span></li>
-                </ul>
-                <div class="ng03">
-                    <a href="#" class="share" title="공유하기"><i class="xi-share-alt-o"></i></a>
-                    <dl>
-                        <dt><label for="share_url">게시글을 공유해보세요</label></dt>
-                        <dd>
-                            <label for="share_url">URL</label>
-                            <input id="share_url" type="text" name="share_url" value="<?php print $url;?>"/>
-                            <button>링크복사</button>
-                        </dd>
-                    </dl>
-                </div>
-            </div>
+  <!-- 서브 컨텐츠 영역 -->
+  <?php if($main_class === 'fc04') : ?>
+  <div class="<?php print $main_class;?>" id="main-content">
+    <div class="th02"<?php print $image;?>>
+      <div class="inner">
+        <div class="category">
+          <a class="btn02 version" href="<?php print $vol_path;?>"><?php print $thisVol;?>년</a>
+          <a class="btn02 category" href="<?php print $category_path;?>"><?php print $category;?></a>
         </div>
-        <section>
-            <div class="inner">
-                <?php if ($tabs): ?><div class="tabs"><?php print render($tabs); ?></div><?php endif; ?>
-                <?php print $messages;?>
-            </div>
-            <?php print render($page['content']);?>
-        </section>
-      </div>
-    <?php else: ?>
-      <div class="<?php print $main_class;?>" >
-        <div class="inner">
-            <nav><?php print $breadcrumb;?></nav>
-            <!-- 사이드바 영역 -->
-            <?php if ($page['sidebar_first']): ?>
-                <aside>
-                    <div id="sidebar-first" class="column sidebar">
-                        <div class="section">
-                            <?php print render($page['sidebar_first']); ?>
-                        </div>
-                    </div>
-                </aside>
-            <?php endif; ?>
-            <!-- //사이드바 영역 -->
-            <section id="main-content">
-                <div class="header">
-                    <?php print render($title_prefix); ?>
-                    <?php if ($title): ?><h1 class="title" id="page-title"><?php print $title; ?></h1><?php endif; ?>
-                    <?php print render($title_suffix); ?>
-                </div>
-                <div class="cBody">
-                    <?php print $messages;?>
-                    <?php if ($tabs): ?><div class="tabs"><?php print render($tabs); ?></div><?php endif; ?>
-                    <?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
-                    <?php print render($page['content']); ?>
-                    <?php print $feed_icons; ?>
-                </div>
-            </section>
+        <h1><?php print $title;?></h1>
+        <div class="writers">
+          <p><b>글</b>
+          <?php foreach($writers as $writer): ?>
+            <b><?php print htmlspecialchars($writer['name']);?></b><em><?php print $writer['info'];?></em>
+          <?php endforeach;?>
+          </p>
+        </div>
+        <ul class="metas">
+          <li><b>게시일</b><span><?php print format_date($created, 'custom', 'Y.m.d');?></span></li>
+          <li><b>최종수정일</b><span><?php print format_date($changed, 'custom', 'Y.m.d');?></span></li>
+        </ul>
+        <div class="ng03">
+          <a href="#" class="share" title="공유하기"><i class="xi-share-alt-o"></i></a>
+          <dl>
+            <dt><label for="share_url">게시글을 공유해보세요</label></dt>
+            <dd>
+              <label for="share_url">URL</label>
+              <input id="share_url" type="text" name="share_url" value="<?php print $url;?>"/>
+              <button>링크복사</button>
+            </dd>
+          </dl>
         </div>
       </div>
-    <?php endif;?>
-    <div class="fc01_03">
-      <?php print render($page['sidebar_second']);?>
     </div>
-    <!-- //서브 컨텐츠 영역 -->
-    <footer>
-        <div class="inner">
-            <?php print render($page['footer']);?>
+    <section>
+      <div class="inner">
+        <?php if ($tabs): ?><div class="tabs"><?php print render($tabs); ?></div><?php endif; ?>
+        <?php print $messages;?>
+      </div>
+      <?php print render($page['content']);?>
+    </section>
+  </div>
+  <?php else: ?>
+  <div class="<?php print $main_class;?>" >
+    <div class="inner">
+      <nav><?php print $breadcrumb;?></nav>
+      <!-- 사이드바 영역 -->
+      <?php if ($page['sidebar_first']): ?>
+      <aside>
+        <div id="sidebar-first" class="column sidebar">
+          <div class="section">
+            <?php print render($page['sidebar_first']); ?>
+          </div>
         </div>
-    </footer>
+      </aside>
+      <?php endif; ?>
+      <!-- //사이드바 영역 -->
+      <section id="main-content">
+          <div class="header">
+            <?php print render($title_prefix); ?>
+            <?php $keyword = ($_GET['search']) ? '<small> - ' . htmlspecialchars($_GET['search']) . '</samll>' : ''; ?>
+            <?php if ($title): ?>
+            <h1 class="title" id="page-title"><?php print $title . $keyword; ?></h1>
+            <?php endif; ?>
+            <?php print render($title_suffix); ?>
+          </div>
+          <div class="cBody">
+            <?php print $messages;?>
+            <?php if ($tabs): ?><div class="tabs"><?php print render($tabs); ?></div><?php endif; ?>
+            <?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
+            <?php print render($page['content']); ?>
+            <?php print $feed_icons; ?>
+          </div>
+      </section>
+    </div>
+  </div>
+  <?php endif;?>
+  <div class="fc01_03">
+    <?php print render($page['sidebar_second']);?>
+  </div>
+  <!-- //서브 컨텐츠 영역 -->
+  <footer>
+    <div class="inner">
+      <?php print render($page['footer']);?>
+    </div>
+  </footer>
 </div>
 <!-- //main_wrap -->

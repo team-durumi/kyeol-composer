@@ -149,7 +149,10 @@ $pages = [
                 <section id="main-content">
                     <div class="header">
                         <?php print render($title_prefix); ?>
-                        <?php if ($title): ?><h1 class="title" id="page-title"><?php print $title; ?></h1><?php endif; ?>
+                        <?php $keyword = ($_GET['search']) ? '<small> - ' . htmlspecialchars($_GET['search']) . '</samll>' : ''; ?>
+                        <?php if ($title): ?>
+                        <h1 class="title" id="page-title"><?php print $title . $keyword; ?></h1>
+                        <?php endif; ?>
                         <?php print render($title_suffix); ?>
                     </div>
                     <div class="cBody">

@@ -44,26 +44,21 @@
  */
 ?><!DOCTYPE html>
 <html lang="ko">
-
 <head>
-    <?php print $head; ?>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" />
-	<meta name="google-site-verification" content="NnfLR0jiAgl9MAW7jzw6HuyyqHQrEalkMHimZTKo6m4" />
-    <title><?php print $head_title; ?></title>
-    <?php print $styles; ?>
-    <?php print $scripts; ?>
+  <?php print $head; ?>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" />
+  <meta name="google-site-verification" content="NnfLR0jiAgl9MAW7jzw6HuyyqHQrEalkMHimZTKo6m4" />
+  <title><?php print $head_title; ?></title>
+  <?php print $styles; ?>
+  <?php print $scripts; ?>
 </head>
-
 <body class="<?php print $classes; ?>" <?php print $attributes;?>>
-
 <div id="skip-link">
-    <a href="#main-content" class="element-invisible element-focusable"><?php print t('Skip to main content'); ?></a>
+  <a href="#main-content" class="element-invisible element-focusable">본문 바로가기</a>
 </div>
-
 <?php print $page_top; ?>
 <?php print $page; ?>
 <?php print $page_bottom; ?>
-
 <button onclick="topFunction()" id="toTop" title="맨위로"><i class="xi xi-2x xi-arrow-top"></i></button>
 </body>
 </html>

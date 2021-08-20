@@ -129,7 +129,11 @@ $(document).ready(function() {
 		//$(':focus')[0].scrollIntoView({behavior: "smooth", block: "center"});
     window.scrollTo( 0, $(':focus').offset().top - ($(window).height() / 2 ) );
 	});
-
+  //컨테츠 링크이동 효과 - 2021.8.20 웹접근성 작업
+  $(".postA sup > a, .postA .footnotes ol > li > a").click(function(event){     
+    $('html,body').animate({scrollTop:$(this.hash).offset().top - 150}, 500,"linear");
+		return false;
+  });
 
 	//뷰화면 툴팁 오브제 효과
 	$(".tt01").click(function(){

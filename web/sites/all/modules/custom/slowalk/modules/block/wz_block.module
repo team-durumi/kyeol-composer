@@ -152,7 +152,7 @@ function wz_main_features_block_view()
                 <dd><a href="/'.$url.'" class="btn_icon02" title="더보기"><i class="xi-plus"></i></a></dd>
             </dl>
             <div class="tc01">
-                <a href="/node/'.$item['nid'].'" class="thumb"><img src="'.$item['img'].'" alt=""/></a>
+                <a href="/node/'.$item['nid'].'" class="thumb"><img src="'.$item['img'].'" alt="'.htmlspecialchars($item['title']).'"/></a>
                 <dl class="conA">
                     <dt><a href="/node/'.$item['nid'].'">'.$item['title'].'</a></dt>
                     <dd>'.$item['writer'].'</dd>
@@ -182,7 +182,7 @@ function wz_main_articles_block_view()
     $i = 1;
     foreach($articles as $item) {
         $html .= '<li class="l'.$i++.'">
-            <a href="/node/'.$item['nid'].'" class="thumb"><span><img src="'.$item['img'].'" alt="'.$item['title'].'"/></span></a>
+            <a href="/node/'.$item['nid'].'" class="thumb"><span><img src="'.$item['img'].'" alt="'.htmlspecialchars($item['title']).'"/></span></a>
             <dl class="conA">
                 <dt>
                     <i>'.$item['category'].'</i>

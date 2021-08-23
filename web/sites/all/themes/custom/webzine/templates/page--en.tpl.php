@@ -148,7 +148,7 @@ $pages = [
                 <section id="main-content">
                     <div class="header">
                         <?php print render($title_prefix); ?>
-                        <?php $keyword = ($_GET['search']) ? '<small> - ' . htmlspecialchars($_GET['search']) . '</samll>' : ''; ?>
+                        <?php $keyword = (!empty($_GET['search'])) ? '<small> - ' . htmlspecialchars($_GET['search']) . '</samll>' : ''; ?>
                         <?php if ($title): ?>
                         <h1 class="title" id="page-title"><?php print $title . $keyword; ?></h1>
                         <?php endif; ?>

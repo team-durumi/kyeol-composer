@@ -102,7 +102,7 @@ $(document).ready(function() {
     window.setTimeout(function(){
       $('.cf01').addClass('displayNone');
     },600)
-    $('header .ng01 .menu a').focus();
+    $('header .ng01 .search a').focus();
 		return false;
 	});
 	//menu 열기/닫기
@@ -110,6 +110,7 @@ $(document).ready(function() {
     $('header nav').removeClass('displayNone');
     window.setTimeout(function(){
       $('header').addClass('menuOpened');
+      $('header nav > .btn_icon01').focus();
     },50)
 		return false;
 	});
@@ -118,6 +119,7 @@ $(document).ready(function() {
     window.setTimeout(function(){
       $('header nav').addClass('displayNone');
     },600)
+    $('header .ng01 .menu a').focus();
 		return false;
 	});
 

@@ -28,7 +28,38 @@ function isMobile() {
           }
         }
       });
-
+      $(obj).on({
+        click: function(e) {
+          if (isMobile()) {
+            $('#' + dialogid).dialog("option", "position", {
+              my: "center",
+              at: "center",
+              of: window
+            });
+          } else {
+            $('#' + dialogid).dialog("option", "position", {
+              my: "left top",
+              at: "left bottom",
+              of: e,
+              offset: "5 30"
+            });
+          }
+          // console.log(e);
+          $('#' + dialogid).dialog('open');
+          //return false;
+        },
+        keyup: function(e) {
+          if (e.keyCode === 13) {
+            $('#' + dialogid).dialog("option", "position", {
+              my: "center",
+              at: "center",
+              of: window
+            });
+            $('#' + dialogid).dialog('open');
+          }
+        }
+      });
+      /*
       $(obj).on('click keyup',function (e) {
         if (isMobile()) {
           $('#' + dialogid).dialog("option", "position", {
@@ -48,7 +79,7 @@ function isMobile() {
         $('#' + dialogid).dialog('open');
         //return false;
       });
-
+      */
     });
   };
 })(jQuery);

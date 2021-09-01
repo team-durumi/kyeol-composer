@@ -51,9 +51,10 @@ function isMobile() {
         keypress: function(e) {
           if (e.keyCode === 13) {
             $('#' + dialogid).dialog("option", "position", {
-              my: "center",
-              at: "center",
-              of: window
+              my: "left top",
+              at: "left bottom",
+              of: e,
+              offset: "5 30"
             });
             $('#' + dialogid).dialog('open');
           }

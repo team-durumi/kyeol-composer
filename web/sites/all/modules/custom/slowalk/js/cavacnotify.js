@@ -8,6 +8,7 @@ function isMobile() {
   $.fn.cavacnotify = function (options) {
     return this.each(function () {
       var obj = $(this);
+      $(this).attr("tabIndex", "0");
       var popuptitle = $(this).attr("popuptitle");
       var popuptext = $(this).attr("popuptext");
       popuptext = popuptext.replace(/#BR#/gm, "<br/>");
@@ -28,7 +29,7 @@ function isMobile() {
         }
       });
 
-      $(obj).click(function (e) {
+      $(obj).on('click keyup',function (e) {
         if (isMobile()) {
           $('#' + dialogid).dialog("option", "position", {
             my: "center",

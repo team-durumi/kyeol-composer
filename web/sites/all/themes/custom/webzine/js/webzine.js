@@ -127,7 +127,7 @@ $(document).ready(function() {
 		$('#main-content a, #main-content button').not('[tabindex="-1"]').first().focus();
 		return false;
 	});
-	$(window).keyup(function(){  //2021.8.13 웹접근성 작업
+	$('a').keyup(function(){  //2021.8.13 웹접근성 작업
 		//$(':focus')[0].scrollIntoView({behavior: "smooth", block: "center"});
     if($(':focus').length > 0){
       window.scrollTo( 0, $(':focus').offset().top - ($(window).height() / 2 ) );

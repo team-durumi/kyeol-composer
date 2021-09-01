@@ -48,7 +48,7 @@ function isMobile() {
           $('#' + dialogid).dialog('open');
           //return false;
         },
-        keyup: function(e) {
+        keypress: function(e) {
           if (e.keyCode === 13) {
             $('#' + dialogid).dialog("option", "position", {
               my: "center",

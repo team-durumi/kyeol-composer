@@ -16,7 +16,7 @@ ul,ol,menu{list-style:none}
 em,address{font-style:normal}
 a{text-decoration:none;color:#111111}
 a:hover,a:active{text-decoration:underline}
-a:focus, button:focus{outline:#fff dashed 1px !important;}
+a:focus, button:focus{outline:auto !important;}
 input[type=text],
 input[type=password],
 input[type=date],
@@ -100,6 +100,7 @@ footer .infoA li strong{color:#c7c7c7;margin-right:5px}
 footer .infoA li span, footer .infoA li a{color:#fff}
 
 body > button#toTop:focus{outline:#fff dashed 1px !important}
+
 /**** container ****/
 
 /*메인페이지 프레임*/

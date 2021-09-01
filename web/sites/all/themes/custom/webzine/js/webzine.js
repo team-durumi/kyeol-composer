@@ -147,9 +147,7 @@ $(document).ready(function() {
     var target = $(this.hash);
     $('html,body').animate({scrollTop:$(this.hash).offset().top - 150}, 500,"linear", function() {
       //target[0].scrollIntoView();
-      setTimeout(function(){
-        target.find('a').focus();
-      },100)
+        target.focus();
     });
 		//return false;
   });

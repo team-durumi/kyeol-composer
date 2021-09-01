@@ -53,7 +53,7 @@ function isMobile() {
             $('#' + dialogid).dialog("option", "position", {
               my: "left top",
               at: "left bottom",
-              of: e,
+              of: button,
               offset: "5 30"
             });
             $('#' + dialogid).dialog('open');

@@ -48,15 +48,14 @@ function isMobile() {
           $('#' + dialogid).dialog('open');
           //return false;
         },
-        keypress: function(e) {
+        keyup: function(e) {
           if (e.keyCode === 13) {
             $('#' + dialogid).dialog("option", "position", {
-              my: "left top",
-              at: "left bottom",
-              of: button,
-              offset: "5 30"
+              my: "center",
+              at: "center",
+              of: window
             });
-            $('#' + dialogid).dialog('open');
+          $('#' + dialogid).dialog('open');
           }
         }
       });

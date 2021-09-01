@@ -129,7 +129,9 @@ $(document).ready(function() {
 	});
 	$(window).keyup(function(){  //2021.8.13 웹접근성 작업
 		//$(':focus')[0].scrollIntoView({behavior: "smooth", block: "center"});
-    window.scrollTo( 0, $(':focus').offset().top - ($(window).height() / 2 ) );
+    if($(':focus').length > 0){
+      window.scrollTo( 0, $(':focus').offset().top - ($(window).height() / 2 ) );
+    }
 	});
 
   //컨테츠 링크이동 효과 - 2021.8.20 웹접근성 작업

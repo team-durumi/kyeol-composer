@@ -50,13 +50,16 @@ function isMobile() {
         },
         keypress: function(e) {
           if (e.keyCode === 13) {
-            $('#' + dialogid).dialog("option", "position", {
-              my: "center",
-              at: "center",
-              of: window
-            });
-          $('#' + dialogid).dialog('open');
+            setTimeout(function(){
+              $('#' + dialogid).dialog("option", "position", {
+                my: "center",
+                at: "center",
+                of: window
+              });
+              $('#' + dialogid).dialog('open');
+            },100)
           }
+          return false;
         }
       });
       /*

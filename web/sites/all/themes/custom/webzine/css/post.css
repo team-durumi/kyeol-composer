@@ -44,7 +44,7 @@
 .cke_editable iframe, .postA iframe{max-width:100%}
 
 .file-image h2.element-invisible{display:none}
-.file-image .content a:focus{outline:#999 dashed 1px !important}
+.file-image .content a:focus{outline:#999 dashed 1px !important;display:block}
 
 @media all and (max-width:767px){
   .cke_editable p, .postA p{font-size:13px;line-height:21px;margin-bottom:1rem;word-break:keep-all;}

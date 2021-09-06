@@ -25,7 +25,7 @@ footer .addrA .cpr{font-size:11px;line-height:13px}
 footer .infoA{float:none;width:auto}
 footer .infoA li{padding:4px 10px;font-size:13px}
 footer .infoA li strong{margin-right:3px}
-footer a.wa-mark{position:static;float:right;margin-top:10px}
+footer a.wa-mark{position:static;float:left;margin-top:15px}
 footer a.wa-mark img{width:90px}
 
 /*메인페이지 프레임*/

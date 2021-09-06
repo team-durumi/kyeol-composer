@@ -148,7 +148,7 @@ function wz_main_features_block_view()
         $class = ($i === 0) ? 'leftA' : 'rightA';
         $html .= '<div class="'.$class.'">
             <dl class="th01">
-                <dt>'.$main->featureLabel[$i].'</dt>
+                <dt><h3>'.$main->featureLabel[$i].'</h3></dt>
                 <dd><a href="/'.$url.'" class="btn_icon02" title="더보기"><i class="xi-plus"></i></a></dd>
             </dl>
             <div class="tc01">

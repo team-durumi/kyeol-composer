@@ -16,4 +16,7 @@
   <a href="https://www.archive814.or.kr/" style="float:right; margin-top: 1.5rem;" target="_blank">
     <img alt="814 일본군'위안부'문제연구소 아카이브814" src="/sites/all/themes/custom/webzine/images/814-logo.png" style="width: 260px;">
   </a>
+  <a title="새창" href="http://www.wa.or.kr/board/list.asp?BoardID=0006" target="_blank" class="wa-mark">
+    <img class="wa" alt="(사)한국장애인단체총연합회 한국웹접근성인증평가원 웹 접근성 우수사이트 인증마크(WA인증마크)" src="/sites/all/themes/custom/webzine/images/wa-mark.png" />
+  </a>􀀁
 </div>

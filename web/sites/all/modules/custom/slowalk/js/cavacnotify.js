@@ -8,6 +8,7 @@ function isMobile() {
   $.fn.cavacnotify = function (options) {
     return this.each(function () {
       var obj = $(this);
+      $(this).attr("tabIndex", "0");
       var popuptitle = $(this).attr("popuptitle");
       var popuptext = $(this).attr("popuptext");
       popuptext = popuptext.replace(/#BR#/gm, "<br/>");
@@ -27,8 +28,42 @@ function isMobile() {
           }
         }
       });
-
-      $(obj).click(function (e) {
+      $(obj).on({
+        click: function(e) {
+          if (isMobile()) {
+            $('#' + dialogid).dialog("option", "position", {
+              my: "center",
+              at: "center",
+              of: window
+            });
+          } else {
+            $('#' + dialogid).dialog("option", "position", {
+              my: "left top",
+              at: "left bottom",
+              of: e,
+              offset: "5 30"
+            });
+          }
+          // console.log(e);
+          $('#' + dialogid).dialog('open');
+          //return false;
+        },
+        keypress: function(e) {
+          if (e.keyCode === 13) {
+            setTimeout(function(){
+              $('#' + dialogid).dialog("option", "position", {
+                my: "center",
+                at: "center",
+                of: window
+              });
+              $('#' + dialogid).dialog('open');
+            },100)
+          }
+          return false;
+        }
+      });
+      /*
+      $(obj).on('click keyup',function (e) {
         if (isMobile()) {
           $('#' + dialogid).dialog("option", "position", {
             my: "center",
@@ -47,7 +82,7 @@ function isMobile() {
         $('#' + dialogid).dialog('open');
         //return false;
       });
-
+      */
     });
   };
 })(jQuery);

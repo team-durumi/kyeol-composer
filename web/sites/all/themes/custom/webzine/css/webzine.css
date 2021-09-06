@@ -99,6 +99,8 @@ footer .infoA li.l1, footer .infoA li.l3{border-right:1px solid #7d7d7d}
 footer .infoA li strong{color:#c7c7c7;margin-right:5px}
 footer .infoA li span, footer .infoA li a{color:#fff}
 
+body > button#toTop:focus{outline:#fff dashed 1px !important}
+
 /**** container ****/
 
 /*메인페이지 프레임*/

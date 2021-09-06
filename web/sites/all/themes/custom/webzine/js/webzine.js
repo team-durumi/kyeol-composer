@@ -102,7 +102,7 @@ $(document).ready(function() {
     window.setTimeout(function(){
       $('.cf01').addClass('displayNone');
     },600)
-    $('header .ng01 .menu a').focus();
+    $('header .ng01 .search a').focus();
 		return false;
 	});
 	//menu 열기/닫기
@@ -110,6 +110,7 @@ $(document).ready(function() {
     $('header nav').removeClass('displayNone');
     window.setTimeout(function(){
       $('header').addClass('menuOpened');
+      $('header nav > .btn_icon01').focus();
     },50)
 		return false;
 	});
@@ -118,6 +119,7 @@ $(document).ready(function() {
     window.setTimeout(function(){
       $('header nav').addClass('displayNone');
     },600)
+    $('header .ng01 .menu a').focus();
 		return false;
 	});
 
@@ -125,9 +127,11 @@ $(document).ready(function() {
 		$('#main-content a, #main-content button').not('[tabindex="-1"]').first().focus();
 		return false;
 	});
-	$(window).keyup(function(){  //2021.8.13 웹접근성 작업
+	$('a, span, input').keyup(function(){  //2021.8.13 웹접근성 작업
 		//$(':focus')[0].scrollIntoView({behavior: "smooth", block: "center"});
-    window.scrollTo( 0, $(':focus').offset().top - ($(window).height() / 2 ) );
+    if($(':focus').length > 0){
+      window.scrollTo( 0, $(':focus').offset().top - ($(window).height() / 2 ) );
+    }
 	});
 
   //컨테츠 링크이동 효과 - 2021.8.20 웹접근성 작업
@@ -143,6 +147,7 @@ $(document).ready(function() {
     var target = $(this.hash);
     $('html,body').animate({scrollTop:$(this.hash).offset().top - 150}, 500,"linear", function() {
       //target[0].scrollIntoView();
+        target.focus();
     });
 		//return false;
   });

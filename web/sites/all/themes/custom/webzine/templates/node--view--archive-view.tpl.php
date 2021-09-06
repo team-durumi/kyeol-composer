@@ -14,8 +14,9 @@ if($lang == 'en') {
     unset($vol_params['suffix']);
 }
 ?>
-
+<?php if ($node_url): ?>
 <a href="<?php print $node_url;?>" class="thumb"><span><img src="<?php print image_style_url('article_thumbnail', $content['field_image'][0]['#item']['uri']);?>" alt="<?php print $title;?>" alt="<?php print $title;?>"/></span></a>
+<?php endif ?>
 <dl class="conA">
     <dt>
         <span class="category">

@@ -35,12 +35,12 @@ class ScriptHandler {
     }
 
     // Prepare the settings file for installation
-    if (!$fs->exists($drupalRoot . '/sites/default/settings.php') && $fs->exists($drupalRoot . '/sites/default/default.settings.php')) {
-      $fs->copy($drupalRoot . '/../provision/config/settings.php', $drupalRoot . '/sites/default/settings.php');
-      $fs->chmod($drupalRoot . '/sites/default/settings.php', 0666);
-      $fs->chmod($drupalRoot . '/sites/default/settings.local.php', 0666);
-      $event->getIO()->write("Created a sites/default/settings.php and settings.local.php file with chmod 0666");
-    }
+    // if (!$fs->exists($drupalRoot . '/sites/default/settings.php') && $fs->exists($drupalRoot . '/sites/default/default.settings.php')) {
+    //   $fs->copy($drupalRoot . '/../provision/config/settings.php', $drupalRoot . '/sites/default/settings.php');
+    //   $fs->chmod($drupalRoot . '/sites/default/settings.php', 0666);
+    //   $fs->chmod($drupalRoot . '/sites/default/settings.local.php', 0666);
+    //   $event->getIO()->write("Created a sites/default/settings.php and settings.local.php file with chmod 0666");
+    // }
 
     // Create the files directory with chmod 0777
     // if (!$fs->exists($drupalRoot . '/sites/default/files')) {

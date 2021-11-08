@@ -40,7 +40,7 @@
         "drupal/context": "*",
         "drupal/ctools": "*",
         "drupal/devel": "*",
-        "drupal/drupal": "7.78",
+        "drupal/drupal": "^7",
         "drupal/elysia_cron": "*",
         "drupal/entity": "*",
         "drupal/entity_translation": "^1.1",

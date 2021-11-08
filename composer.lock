@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1e670c126e53ef30e9d045e4f1e16be3",
+    "content-hash": "ab920b1879fa11f2d28c2674e6a364e6",
     "packages": [
         {
             "name": "composer/installers",
@@ -1353,23 +1353,23 @@
         },
         {
             "name": "drupal/drupal",
-            "version": "7.78.0",
+            "version": "7.82.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/drupal.git",
-                "reference": "7.78"
+                "reference": "7.82"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/drupal-7.78.zip",
-                "reference": "7.78",
-                "shasum": "1358a9b8022877fc692b62eb19d7efb0d3f85ee4"
+                "url": "https://ftp.drupal.org/files/projects/drupal-7.82.zip",
+                "reference": "7.82",
+                "shasum": "a51bba09bc194c712fa1fcd349d1bc52a5c9998f"
             },
             "type": "drupal-core",
             "extra": {
                 "drupal": {
-                    "version": "7.78",
-                    "datestamp": "1611163112",
+                    "version": "7.82",
+                    "datestamp": "1626895840",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -1402,8 +1402,16 @@
                     "homepage": "https://www.drupal.org/user/157725"
                 },
                 {
+                    "name": "bnjmnm",
+                    "homepage": "https://www.drupal.org/user/2369194"
+                },
+                {
                     "name": "catch",
                     "homepage": "https://www.drupal.org/user/35733"
+                },
+                {
+                    "name": "ckrina",
+                    "homepage": "https://www.drupal.org/user/1206650"
                 },
                 {
                     "name": "drumm",
@@ -1424,6 +1432,14 @@
                 {
                     "name": "mcdruid",
                     "homepage": "https://www.drupal.org/user/255969"
+                },
+                {
+                    "name": "mlhess",
+                    "homepage": "https://www.drupal.org/user/102818"
+                },
+                {
+                    "name": "quietone",
+                    "homepage": "https://www.drupal.org/user/2572884"
                 },
                 {
                     "name": "webchick",
@@ -6335,5 +6351,5 @@
         "ext-yaml": "*"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.0.0"
+    "plugin-api-version": "2.1.0"
 }

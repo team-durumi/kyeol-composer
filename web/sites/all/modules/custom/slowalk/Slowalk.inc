@@ -429,24 +429,39 @@ class Archive extends Slowalk
 
     public function getYears($machine_name)
     {
-        $term = taxonomy_get_term_by_name($_GET['search'], $machine_name);
+        $search = '';
+        if (!empty($_GET['search'])) {
+            $search = filter_xss($_GET['search']);
+        }
+        $term = taxonomy_get_term_by_name($search, $machine_name);
         $tid = key($term);
         $parent = taxonomy_get_parents($tid);
-        if(empty($parent)) {$pid = $tid;}
-        else {$pid = key($parent);}
+        if (empty($parent)) {
+            $pid = $tid;
+        }
+        else {
+            $pid = key($parent);
+        }
         $this->yearsQeury();
         $html = '';
-        $html .= '<a class="btn03" href="' . $lang . '/archive/years/?search=' . $this->years[$pid]['name'] . '">#' . $this->years[$pid]['name'] . '</a>';
-        asort($this->years[$pid]['child']);
-        foreach($this->years[$pid]['child'] as $child) {
-            $html .= '<a class="btn03" href="' . $lang . '/archive/years/?search=' . $child . '">#' . $child . '</a>';
+        if (!empty($this->years[$pid])) {
+            $html .= '<a class="btn03" href="' . $lang . '/archive/years/?search=' . $this->years[$pid]['name'] . '">#' . $this->years[$pid]['name'] . '</a>';
+            asort($this->years[$pid]['child']);
+            foreach($this->years[$pid]['child'] as $child) {
+                $html .= '<a class="btn03" href="' . $lang . '/archive/years/?search=' . $child . '">#' . $child . '</a>';
+            }
         }
+
         return $html;
     }
 
     public function getMap()
     {
-        $term = taxonomy_get_term_by_name($_GET['search'], 'location');
+        $search = '';
+        if (!empty($_GET['search'])) {
+            $search = filter_xss($_GET['search']);
+        }
+        $term = taxonomy_get_term_by_name($search, 'location');
         $term = array_shift($term);
         $view = taxonomy_term_view($term);
         return render($view);
@@ -454,8 +469,11 @@ class Archive extends Slowalk
 
     public function getPerson()
     {
-        $person = str_replace('"', '', $_POST['search']);
-        $term = taxonomy_get_term_by_name($person, 'person');
+        $search = str_replace('"', '', $_POST['search']);
+        if (!empty($_GET['search'])) {
+            $search = filter_xss($_GET['search']);
+        }
+        $term = taxonomy_get_term_by_name($search, 'person');
         $info = array_shift($term);
         return array(
             'name' => $info->name,

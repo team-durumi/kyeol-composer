@@ -24,8 +24,8 @@ ln -s /data/kyeol/data/files /var/www/kyeol-composer/web/sites/default/
 
 ```
 cd {{ project-dir }}
-scp -r kyeol:/var/www/html/kyeol/sites/all/libraries web/sites/all/
-scp -r kyeol:/var/www/html/kyeol/sites/all/modules/ckeditor/plugins/ web/sites/all/modules/contrib/ckeditor/
+scp -r kyeol:/var/www/kyeol-composer/web/sites/all/libraries web/sites/all/
+scp -r kyeol:/var/www/kyeol-composer/web/sites/all/modules/ckeditor/plugins/ web/sites/all/modules/contrib/ckeditor/
 
 # http://localhost:8080/admin/config/content/ckeditor/edit/Full
 # 편집기 모양 > Support for Linkit module => 껏다 켜기

@@ -10,11 +10,14 @@ echo 'user_allow_other' | sudo tee -a /etc/fuse.conf
 rclone mount drive-kyeol:/ /data/kyeol/ --daemon --allow-other
 sudo service apache2 start && sudo service php7.3-fpm start
 
+# 프로젝트에 구글 드라이브 추가
+ln -s /data/kyeol/ /var/www/kyeol-composer/drive
+
 # 개발 시 파일 동기화
-rsync -avzn kyeol:/data/kyeol/files/ ~/Drive/kyeol/data/files/
+rsync -avzn kyeol:/data/kyeol/ ./drive/data/
 
 # 파일 디렉토리 심볼릭 링크
-ln -s /data/kyeol/files /vagrant/web/sites/default/
+ln -s /data/kyeol/data/files /var/www/kyeol-composer/web/sites/default/
 ```
 
 ## composerfiy fix
@@ -26,7 +29,14 @@ scp -r kyeol:/var/www/html/kyeol/sites/all/modules/ckeditor/plugins/ web/sites/a
 
 # http://localhost:8080/admin/config/content/ckeditor/edit/Full
 # 편집기 모양 > Support for Linkit module => 껏다 켜기
+```
 
+##  mysql 8 error fix
+
+```sql
+sudo mysql -uroot
+ALTER USER 'ubuntu'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
+FLUSH PRIVILEGES;
 ```
 
 ## patches

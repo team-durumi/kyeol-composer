@@ -9,5 +9,6 @@ $databases['default']['default'] = array(
   'collation' => 'utf8mb4_general_ci',
 );
 
-$conf['theme_debug'] = TRUE;
-$base_url = 'http://localhost:8080';
+// $conf['theme_debug'] = TRUE;
+$base_url = 'https://kyeol.kr';
+$conf['x_frame_options'] = 'DENY';

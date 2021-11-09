@@ -37,7 +37,7 @@ $lang = $language->language;
 
     <div class="fc_box01 fc_box01_01 tags">
     <?php if($lang != 'en'): ?>
-      <p class="td01 leftF"><b>"<?php print $_GET['search'];?>"</b>에 관련된 기사는 <em><?php print $view->total_rows;?></em>건입니다.</p>
+      <p class="td01 leftF"><b>"<?php print filter_xss($_GET['search']);?>"</b>에 관련된 기사는 <em><?php print $view->total_rows;?></em>건입니다.</p>
       <a class="btn01 rightF" href="/<?php print request_path();?>">목록 보기</a>
       <?php if($voca === 'person') : ?>
         <a class="btn01 rightF person" href="/ajax/webzine">인물 정보</a>

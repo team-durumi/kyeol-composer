@@ -14,8 +14,8 @@ define('__WZ__', drupal_get_path('theme', 'webzine'));
 */
 function webzine_js_alter(&$javascript)
 {
-  $javascript['misc/jquery.js']['version'] = '3.3.1';
-  $javascript['misc/jquery.js']['data'] = '//cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js';
+  $javascript['misc/jquery.js']['version'] = '3.5.0';
+  $javascript['misc/jquery.js']['data'] = '//cdn.jsdelivr.net/npm/jquery@3.5.0/dist/jquery.min.js';
 }
 
 

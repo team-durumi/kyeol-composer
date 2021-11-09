@@ -96,16 +96,11 @@
         </dd>
     </dl>
 <?php else: ?>
-    <!-- cBody -->
     <div class="cBody <?php print $classes;?>">
-        <!-- postA -->
         <div class="postA"><?php print render($content['body']);?></div>
-        <!-- //postA -->
-        <!-- attachA -->
         <div class="attachA">
             <?php if(render($content['field_slide'])):?>
                 <dl class="slide">
-                    <!--dt>이미지</dt-->
                     <dd>
                         <ul class="slider">
                             <?php foreach($content['field_slide']['#items'] as $slide): ?>

@@ -103,28 +103,38 @@ function wz_block_block_view($delta = '')
     return $block;
 }
 
-function wz_main_slide_block_view()
-{
+function wz_main_slide_block_view() {
+    global $language;
+    $lang = $language->language ?? 'und';
     $main = new Main();                 //메인페이지
     $slide = $main->slide();            //슬라이드
+    $vol = $main->vol();
+    $vol = sprintf('%02d', $vol);  //호수 노출
     $html = '<ul class="slide">';
     foreach($slide as $item) {
-      if(!empty($item['fid'])) {
-        $file = file_load($item['fid']);
-        if(!empty($file)) {
-          $img = image_style_url('main_slide', $file->uri);
-          $target = ($item['blank']) ? ' target="_blank"' : '';
-          $html .= '<li class="type01">
-              <a href="'.$item['link'].'"'.$target.'>
-                  <img src="'.$img.'" alt="'. htmlspecialchars(strip_tags($item['title'])) .'"/>
-                  <dl>
-                      <dt>' . $item['title'] . '</dt>
-                      <dd>' . str_replace('</br>', '', nl2br($item['body'])) . '</dd>
-                  </dl>
-              </a>
-          </li>';
+        if (!empty($item['fid'])) {
+            $file = file_load($item['fid']);
+            if(!empty($file)) {
+                $img = image_style_url('main_slide', $file->uri);
+                $target = ($item['blank']) ? ' target="_blank"' : '';
+                $html .= '<li class="type01">
+                    <a class="relative" href="'.$item['link'].'"'.$target.'>
+                        <img class="max-w-none" src="'.$img.'" alt="'. htmlspecialchars(strip_tags($item['title'])) .'"/>
+                        <dl>
+                            <dt>' . $item['title'] . '</dt>
+                            <dd>' .
+                            str_replace('</br>', '', nl2br($item['body']));
+                if ($lang == 'ko') {
+                    $html .= '<p class="mt-3">-<br>웹진결 vol. ' . $vol . '</p>
+                    <p>글 ' . $item['authors'] . '</p>
+                    <p>게시일 ' . $item['created'] . '</p>';
+                }
+                $html .='    </dd>
+                        </dl>
+                    </a>
+                </li>';
+            }
         }
-      }
     }
     $html .='</ul>';
 
@@ -143,7 +153,7 @@ function wz_main_features_block_view()
     $main = new Main();
     $features = $main->features();
     $html = '<div class="inner">';
-    foreach($features as $i => $item) {
+    foreach ($features as $i => $rows) {
         $url = drupal_get_path_alias('taxonomy/term/' . $main->category[$i], 'ko');
         $class = ($i === 0) ? 'leftA' : 'rightA';
         $category_name = str_replace("category/", '', $url);
@@ -151,25 +161,26 @@ function wz_main_features_block_view()
             <dl class="th01">
                 <dt><h3>'.$main->featureLabel[$i].'</h3></dt>
                 <dd><a href="/'.$url.'" class="btn_icon02" title="' . $category_name . ' 더보기"><i class="xi-plus"></i></a></dd>
-            </dl>
-            <div class="tc01">
+            </dl>';
+        foreach ($rows as $item) {
+            $html .= '<div class="tc01 my-3">
                 <a href="/node/'.$item['nid'].'" class="thumb"><img src="'.$item['img'].'" alt="'.htmlspecialchars($item['title']).'"/></a>
                 <dl class="conA">
                     <dt><a href="/node/'.$item['nid'].'">'.$item['title'].'</a></dt>
                     <dd>'.$item['writer'].'</dd>
                 </dl>
-
-            </div>
-        </div>';
+            </div>';
+        }
+        $html .= '</div>';
     }
     $html .= '</div>';
 
-    $block = array(
-        'features' => array(
+    $block = [
+        'features' => [
             '#type' => 'markup',
             '#markup' => $html
-        )
-    );
+        ]
+    ];
 
     return $block;
 }
@@ -196,14 +207,12 @@ function wz_main_articles_block_view()
     $html .= '</ul>';
     $html .= '<div class="clear"></div>';
     $html .= '</div>';
-    $block = array(
-        'articles' => array(
+    return [
+        'articles' => [
             '#type' => 'markup',
             '#markup' => $html
-        )
-    );
-
-    return $block;
+        ]
+    ];
 }
 
 function wz_main_newsletter_block_view()

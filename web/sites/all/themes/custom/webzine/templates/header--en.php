@@ -4,7 +4,7 @@
       <a href="<?php print $front_page;?>">KYEOL|Research Institute on Japanese Military Sexual Slavery</a>
       <em><b><?php print $vol;?></b><i>.vol</i></em>
     </h1>
-    <ul class="global-nav ml-4 mt-10 float-left" style="margin-left: 3rem;">
+    <ul class="global-nav ml-4 mt-10 float-left">
       <li class="mx-6 float-left">
         <a href="/en/comfort-women">"Comfort Women"</a>
       </li>

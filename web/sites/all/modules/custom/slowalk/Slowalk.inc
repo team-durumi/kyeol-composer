@@ -13,51 +13,47 @@ class Slowalk
     public function __construct()
     {
         $this->vol = variable_get('wz_main_vol', '');   //호수
-        $this->featureIds = array();    //메인피쳐
+        $this->featureIds = [];    //메인피쳐
 
         //기사 분류
-        $this->catLabel = array(
+        $this->catLabel = [
             2 => '좌담',
             3 => '논평',
             4 => '에세이',
             5 => '자료해제',
             6 => '연구자와 지원단체',
             7 => '인터뷰'
-        );
-        $this->machine_name = array(
+        ];
+        $this->machine_name = [
             2 => 'opinion',
             3 => 'review',
             4 => 'essay',
             5 => 'annotation',
             6 => 'personnel',
             7 => 'interview'
-        );
-        $this->category = array(
+        ];
+        $this->category = [
             variable_get('wz_main_first_feature', ''),
             variable_get('wz_main_second_feature', '')
-        );
-        $this->featureLabel = array(
+        ];
+        $this->featureLabel = [
             $this->catLabel[$this->category[0]],
             $this->catLabel[$this->category[1]]
-        );
-
+        ];
         //시기
-        $this->years = array();
+        $this->years = [];
     }
 
     public static function getData($payloads)
     {
         extract($payloads);
-        $catLabel = array(
-            2 => '좌담',
-            3 => '논평',
-            4 => '에세이',
-            5 => '자료해제',
-            6 => '연구자와 지원단체',
-            7 => '인터뷰'
-        );
         switch ($type) {
             case 'features':
+                $features = [];
+                $feature_terms = [
+                    variable_get('wz_main_first_feature', ''),
+                    variable_get('wz_main_second_feature', '')
+                ];
                 $query = new EntityFieldQuery();
                 $result = $query->entityCondition('entity_type', 'node')
                     ->entityCondition('bundle', 'article')
@@ -65,25 +61,29 @@ class Slowalk
                     ->fieldCondition('field_vol', 'tid', $vol)
                     ->fieldCondition('field_category', 'tid', $category)
                     ->propertyOrderBy('created', 'DESC')
-                    ->range(0,1)
+                    ->range(0,2)
                     ->execute();
-                if($result['node']) {
-                    $nid = key($result['node']);
-                    $node = node_load($nid);
-                    $output = field_view_field('node', $node, 'body', 'teaser');
-                    $body = render($output);
-                    $body = strip_tags($body);
-                    $output2 = field_view_field('node', $node, 'field_writer', ['label' => 'hidden']);
-                    $writer = render($output2);
-                    return array(
-                        'nid' => $nid,
-                        'url' => '/node/'.$nid,
-                        'title' => $node->title,
-                        'img' => ($node->field_image) ? image_style_url('main_feature', $node->field_image['und'][0]['uri']) : file_create_url(drupal_get_path('theme', 'webzine').'/images/no-image-square.png'),
-                        'body' => $body,
-                        'writer' => $writer,
-                    );
+                $index = array_search($category, $feature_terms);
+                if ($result['node']) {
+                    foreach ($result['node'] as $key => $value) {
+                        $nid = $key;
+                        $node = node_load($nid);
+                        $output = field_view_field('node', $node, 'body', 'teaser');
+                        $body = render($output);
+                        $body = strip_tags($body);
+                        $output2 = field_view_field('node', $node, 'field_writer', ['label' => 'hidden']);
+                        $writer = render($output2);
+                        $features[] = [
+                            'nid' => $nid,
+                            'url' => '/node/' . $nid,
+                            'title' => $node->title,
+                            'img' => ($node->field_image) ? image_style_url('main_feature', $node->field_image['und'][0]['uri']) : file_create_url(drupal_get_path('theme', 'webzine').'/images/no-image-square.png'),
+                            'body' => $body,
+                            'writer' => $writer,
+                        ];
+                    }
                 }
+                return $features;
                 break;
             case 'articles':
                 $query = new EntityFieldQuery();
@@ -167,12 +167,26 @@ class Main extends Slowalk
         $slide = array();
         if($total) {
             for($i=1; $i<=$total; $i++) {
+                $link = variable_get('slide_'.$i.'_link', '');
+                $nid = preg_replace('/\D/', '', $link);
+                $authors = [];
+                $created = '';
+                if ($node = node_load($nid)) {
+                    $wrapper = entity_metadata_wrapper('node', $node);
+                    $writers = $wrapper->field_writer->value();
+                    foreach ($writers as $user) {
+                        $authors[] = $user->name;
+                    }
+                    $created = date('Y.m.d', $node->created);
+                }
                 $slide[] = array(
                     'title' => variable_get('slide_'.$i.'_title', ''),
                     'body' => variable_get('slide_'.$i.'_body', ''),
                     'fid' => variable_get('slide_'.$i.'_image', ''),
-                    'link' => variable_get('slide_'.$i.'_link', ''),
-                    'blank' => variable_get('slide_'.$i.'_blank', '')
+                    'link' => $link,
+                    'blank' => variable_get('slide_'.$i.'_blank', ''),
+                    'authors' => implode(', ', $authors),
+                    'created' => $created,
                 );
             }
         }
@@ -184,18 +198,21 @@ class Main extends Slowalk
      */
     public function features(): array
     {
-        $features = array();
+        $features = [];
         if($this->vol) {
             for($i = 0; $i < 2; $i++) {
-                $data = array(
+                $data = [
                     'vol' => $this->vol,
                     'category' => $this->category[$i],
                     'type' => 'features'
-                );
-                $request = $this->getData($data);
-                if($request) {
-                    $this->featureIds[] = $request['nid'];
-                    $features[] = $request;
+                ];
+                $features[$i] = $this->getData($data);
+                if($features) {
+                    foreach ($features as $key => $rows) {
+                        foreach ($rows as $row) {
+                            $this->featureIds[] = $row['nid'];
+                        }
+                    }
                 }
             }
         }

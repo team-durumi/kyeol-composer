@@ -53,8 +53,8 @@ body.front header .ng01{float:right;margin-top:19px}
 body.front header{position:absolute;top:0;left:0;width:100%;z-index:10;border-bottom:none}
 body.front header .inner{height:100px;overflow:hidden}
 
-body.front header .global-nav li { color: #fff;}
-body.front.scrolling header .global-nav li { color: #333; }
+body.front header .global-nav li a { color: #fff;}
+body.front.scrolling header .global-nav li a { color: #333; }
 body.front .section { margin-top: -85px; }
 body.front .ib01 li dl { top: 200px; }
 

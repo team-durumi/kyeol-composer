@@ -1,0 +1,38 @@
+image: gitpod/workspace-mysql
+
+ports:
+- port: 8888 # drush rs
+  onOpen: open-preview
+- port: 3000 # yarn start
+  onOpen: ignore
+
+tasks:
+- name: drush-rs
+  before: |
+    mkdir -p ~/.local/bin && export PATH="$HOME/.local/bin:$PATH"
+    git config --global user.email "$GH_EMAIL"
+    echo 'export PATH="$HOME/.local/bin:$PATH"' > ~/.bashrc
+    curl -sS https://getcomposer.org/installer | php -- --install-dir=/home/gitpod/.local/bin --filename=composer
+    wget -O drush.phar https://github.com/drush-ops/drush-launcher/releases/latest/download/drush.phar
+    chmod +x drush.phar && mv drush.phar ~/.local/bin/drush
+    composer update
+    chmod +w /workspace/gswebplay/web/sites/default/
+    cp -r /workspace/gswebplay/config/provision/*.php /workspace/gswebplay/web/sites/default/
+  init: mysql -e "CREATE DATABASE IF NOT EXISTS gswebplay CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;" && composer update
+  command: drush rs 0.0.0.0
+  openMode: split-left
+
+- name: drush
+  command: export PATH="$HOME/.local/bin:$PATH"
+  openMode: split-right
+
+github:
+  prebuilds:
+    master: true
+    branches: true
+    pullRequests: true
+    pullRequestsFromForks: false
+    addCheck: true
+    addComment: true
+    addBadge: false
+    addLabel: false

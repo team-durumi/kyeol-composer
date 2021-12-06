@@ -136,6 +136,13 @@
             <?php endif;?>
         </div>
         <!-- //attachA -->
+
+        <div id="share-links" class="mx-auto clearfix">
+          <div class="float-right mb-6 w-48">
+            <?php print theme('share_links', ['data' => $share_links]); ?>
+          </div>
+        </div>
+
         <!-- aside -->
         <aside>
             <?php if(render($content['field_person'])): ?>

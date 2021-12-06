@@ -122,12 +122,13 @@ function slowalk_theme($existing, $type, $theme, $path) {
     $themes[$page] = [
       'path' => drupal_get_path('module', 'slowalk') . '/templates',
       'template' => $page,
-      'variables' => ['data' => $data ]
+      'variables' => ['data' => $data],
     ];
   }
   $themes['share_links'] = [
+    'path' => drupal_get_path('module', 'slowalk') . '/templates',
     'template' => 'share_links',
-    'variables' => [ 'data' => $data ],
+    'variables' => ['data' => $data],
   ];
   return $themes;
 }

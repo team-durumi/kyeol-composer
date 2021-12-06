@@ -47,6 +47,16 @@
 .file-image .content a:focus{outline:#999 dotted 1px !important;display:block}
 .postA sup > a:focus{outline:#999 dotted 1px}
 
+#share-links { width: 1108px; }
+#share-links svg {
+  width: 2.8em;
+  height: 2.8em;
+  margin-left: 1rem;
+  vertical-align: top;
+  float: left;
+  fill: rgba(0, 0, 0, 0.6);
+}
+
 @media all and (max-width:767px){
   .cke_editable p, .postA p{font-size:13px;line-height:21px;margin-bottom:1rem;word-break:keep-all;}
   .cke_editable p.origin, .postA p.origin{font-size:13px;line-height:16px}

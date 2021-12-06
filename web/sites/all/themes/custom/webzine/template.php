@@ -321,6 +321,11 @@ function webzine_preprocess_node(&$vars) {
   if($vars['type'] == 'article' && $lang == 'en' && $vars['view_mode'] == 'full') {
     $vars['theme_hook_suggestions'][] = 'node__article__en';
   }
+
+  $vars['share_links'] = [
+    'canonical_url' => url('node/' . $vars['nid'], ["absolute" => TRUE]),
+    'text' => $vars['title_original'],
+  ];
 }
 
 function get_writers_und($field_writer) {

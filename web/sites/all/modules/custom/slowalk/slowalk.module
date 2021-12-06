@@ -94,16 +94,16 @@ function slowalk_menu()
  */
 function slowalk_permission()
 {
-    return array(
-        'access webzine ajax' => array(
-            'title' => 'Webzine Ajax',
-            'description' => 'Webzine Ajax access role.'
-        ),
-        'access administrator webzine' => array(
-          'title' => 'Webzine Administor',
-          'description' => 'Webzine administor page access role.'
-        )
-    );
+  return [
+    'access webzine ajax' => [
+      'title' => 'Webzine Ajax',
+      'description' => 'Webzine Ajax access role.',
+    ],
+    'access administrator webzine' => [
+      'title' => 'Webzine Administor',
+      'description' => 'Webzine administor page access role.',
+    ]
+  ];
 }
 
 /**
@@ -125,6 +125,10 @@ function slowalk_theme($existing, $type, $theme, $path) {
       'variables' => ['data' => $data ]
     ];
   }
+  $themes['share_links'] = [
+    'template' => 'share_links',
+    'variables' => [ 'data' => $data ],
+  ];
   return $themes;
 }
 

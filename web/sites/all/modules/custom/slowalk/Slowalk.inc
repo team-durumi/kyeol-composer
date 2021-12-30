@@ -446,10 +446,7 @@ class Archive extends Slowalk
 
     public function getYears($machine_name)
     {
-        $search = '';
-        if (!empty($_GET['search'])) {
-            $search = filter_xss($_GET['search']);
-        }
+        $search = $_GET['search'] ?? "";
         $term = taxonomy_get_term_by_name($search, $machine_name);
         $tid = key($term);
         $parent = taxonomy_get_parents($tid);
@@ -474,10 +471,7 @@ class Archive extends Slowalk
 
     public function getMap()
     {
-        $search = '';
-        if (!empty($_GET['search'])) {
-            $search = filter_xss($_GET['search']);
-        }
+        $search = $_GET['search'] ?? '';
         $term = taxonomy_get_term_by_name($search, 'location');
         $term = array_shift($term);
         $view = taxonomy_term_view($term);
@@ -486,10 +480,7 @@ class Archive extends Slowalk
 
     public function getPerson()
     {
-        $search = str_replace('"', '', $_POST['search']);
-        if (!empty($_GET['search'])) {
-            $search = filter_xss($_GET['search']);
-        }
+        $search = str_replace('"', '', $_GET['search']) ?? '';
         $term = taxonomy_get_term_by_name($search, 'person');
         $info = array_shift($term);
         return array(

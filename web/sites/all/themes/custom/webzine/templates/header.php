@@ -6,7 +6,7 @@
  * Time: 11:59
  */
 
-$action = '/search' . (current_path() == 'search/term') ? '/term' : '';
+$action = '/search' . ((current_path() == 'search/term') ? '/term' : '');
 ?>
 <header>
   <div class="inner">

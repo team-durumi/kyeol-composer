@@ -66,6 +66,7 @@
                     alert('해당하는 콘텐츠가 존재하지 않습니다.');
                     $this.attr('checked', false);
                 } else {
+                    res = res[0];
                     let nodeUrl = $('<a />').attr('href', res.url).attr('data-nid', res.nid);
                     let title = $('<h2 />').text(res.title);
                     let img = $('<img />').attr('src', res.img);
@@ -87,6 +88,7 @@
                     alert('해당하는 콘텐츠가 존재하지 않습니다.');
                     $this.attr('checked', false);
                 } else {
+                    res = res[0];
                     let nodeUrl = $('<a />').attr('href', res.url).attr('data-nid', res.nid);
                     let title = $('<h2 />').text(res.title);
                     let img = $('<img />').attr('src', res.img);

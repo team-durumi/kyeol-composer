@@ -236,7 +236,7 @@
         <dd>
           <ul>
             <?php foreach($content['field_url']['#items'] as $link): ?>
-              <li><a href="<?php print $link['url'];?>"><?php print htmlspecialchars($link['title']);?></a></li>
+              <li><a href="<?php print $link['original_url'];?>"><?php print htmlspecialchars($link['title']);?></a></li>
             <?php endforeach;?>
           </ul>
         </dd>

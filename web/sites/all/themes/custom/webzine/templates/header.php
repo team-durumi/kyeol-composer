@@ -34,7 +34,7 @@ $action = '/search' . ((current_path() == 'search/term') ? '/term' : '');
       <ul class="ng01">
         <li class="search"><a href="#" title="검색창 열기"><i class="xi-search"></i></a></li>
         <li class="menu"><a href="#" title="메뉴 열기"><i class="xi-bars"></i></a></li>
-        <li class="translate"><a href="/en" title="Translate" ><i style="font-size: 1.955rem; font-style:normal;">EN</i></a></li>
+        <li class="lg:text-3xl sm:text- text-white"><a href="/en" title="switch to EN" >EN</a></li>
       </ul>
       <nav class="displayNone">
           <a href="#" class="btn_icon01" title="메뉴 닫기"><i class="xi-close"></i></a>

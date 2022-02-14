@@ -125,8 +125,7 @@ function wz_main_slide_block_view() {
                             <dd>' .
                             str_replace('</br>', '', nl2br($item['body']));
                 if ($lang == 'ko') {
-                    $html .= '<p class="mt-3">-<br>웹진결 vol. ' . $vol . '</p>
-                    <p>글 ' . $item['authors'] . '</p>
+                    $html .= '<p class="mt-3">-<br>글 ' . $item['authors'] . '</p>
                     <p>게시일 ' . $item['created'] . '</p>';
                 }
                 $html .='    </dd>

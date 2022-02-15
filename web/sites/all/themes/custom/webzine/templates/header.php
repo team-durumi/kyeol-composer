@@ -16,6 +16,9 @@ $action = '/search' . ((current_path() == 'search/term') ? '/term' : '');
     </h1>
       <ul class="global-nav ml-10 mt-10 float-left text-white">
         <li class="mx-6 float-left">
+          <a href="/featured">특집</a>
+        </li>
+        <li class="mx-6 float-left">
           <a href="/category/인터뷰">인터뷰</a>
         </li>
         <li class="mx-6 float-left">

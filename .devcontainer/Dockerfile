@@ -30,7 +30,7 @@ RUN wget -O drush.phar https://github.com/drush-ops/drush-launcher/releases/late
   && chmod +x drush.phar && mv drush.phar /usr/local/bin/drush
 
 # Install rclone.
-# RUN curl https://rclone.org/install.sh | bash
+RUN curl https://rclone.org/install.sh | bash
  
 # [Optional] Uncomment this section to install additional OS packages.
 # RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \

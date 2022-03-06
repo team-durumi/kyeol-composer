@@ -47,6 +47,6 @@
         <a href="<?php print $term_url;?>"><?php print $term_name;?></a>
     </dt>
     <dd>
-        발행일 : <?php print $term->description;?>
+        <?php print $term->description;?>
     </dd>
 </dl>

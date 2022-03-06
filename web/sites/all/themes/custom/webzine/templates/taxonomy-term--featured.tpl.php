@@ -42,11 +42,11 @@
  */
 
 ?>
-<dl class="conA text-gray-500 hover:bg-yellow-700 hover:text-gray-100">
-    <dt class="lg:text-3xl text-xl mb-4">
+<dl class="conA text-gray-700 hover:bg-yellow-700 hover:text-gray-100 mb-5">
+    <dt class="lg:text-3xl text-xl mb-1">
         <a href="<?php print $term_url;?>"><?php print $term_name;?></a>
     </dt>
     <dd>
-        <?php print $term->description;?>
+        발행일 : <?php print $term->description;?>
     </dd>
 </dl>

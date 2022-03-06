@@ -42,7 +42,7 @@
  */
 
 ?>
-<dl class="conA">
+<dl class="conA text-gray-500 hover:bg-yellow-700 hover:text-gray-100">
     <dt class="lg:text-3xl text-xl mb-4">
         <a href="<?php print $term_url;?>"><?php print $term_name;?></a>
     </dt>

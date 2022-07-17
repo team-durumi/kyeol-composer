@@ -12,10 +12,37 @@
               <dt>Research Institute on Japanese Military Sexual Slavery (RIMSS)</dt>
               <br/><br /><br />
               <dd>
-                <p>The Research Institute on Japanese Military Sexual Slavery (RIMSS) was launched in August 2018 under the Women's Human Rights Institute of Korea (WHRIK) to conduct systematic investigations and research on the Japanese Military “Comfort Women” issue and deliver education and promotion aimed at enhancing the public’s understanding on the Japanese Military “Comfort Women” issue.</p>
+                <p>Women’s Human Rights Institute of Korea (hereafter referred to as the “WHRIK”) adheres to the mission of
+                “Achieving True Gender Equality by Eliminating Gender Violence” as a public institution under MOGEF
+                (Ministry of Gender Equality and Family).</p>
+                
+                <p>In August 2018, the WHRIK commenced with the project of presenting a Research Institute on Japanese
+                Military Sexual Slavery (hereafter referred to as the “RIMSS”) that reveals such a mission with the subject of
+                wartime sexual violence as well as Military “Comfort Women”.</p>
 
-                <p>RIMSS, through conducting continuous investigations and research on the Japanese Military “Comfort Women” issue, intends to provide relevant data by collecting and organizing them in order to publicize the conditions of the operations of the comfort stations and offer easy access to the Japanese Military “Comfort Women” issue. Furthermore, RIMSS hopes to contribute to the improvement of awareness on the Japanese Military “Comfort Women” issue, the enhancement of women's rights, and the spread of consciousness for peace through providing education and promotion regarding this issue.</p>
+                <p>RIMSS spreads out the diverse projects of researches, conferences, archiving, and victim support to activate
+                social discourse into wartime sexual violence.</p>
 
+                <p>RIMSS ties up the internal and external networks to relay and develop the researches and campaigns for
+                “Comfort Women”, brings forth the voice of the surviving victims never revealed before, and restructures the
+                meaning on the position of women’s rights.</p>
+
+                <p>The slogan ‘Women&#39;s Rights are Human Rights’ was first created as a direct result of the feminist movement.
+                However, it indicates a paradoxical actuality that women’s rights are ‘still not’ guaranteed.</p>
+
+                <p>The revelation behind gender inequality acting tacitly provides an essential epistemic opportunity to achieve
+                social justice. Thus, the core of sexual violence lies in the question of which perspective dominates such
+                offending and victimization.</p>
+
+                <p>Female suffering in troubled regions is caused by regarding the gender division of labor as natural. Thus, the
+                symbolism imprinted to women’s sexuality brings entirely different types of female and male mobilization in
+                war. It has repeatedly presented the sexual violence as the contemptuous means from Intrasexual male
+                competition, the rape as the means to promote own good battle, the reproductive disruption, and ethnic
+                cleansing. RIMSS is fully committed towards issuing such gender roles given in war into a social agenda.</p>
+
+                <p>Through this process, RIMSS seeks to turn the issue of the &quot;comfort women&quot; into a mature policy discussion
+                that deals with the determination of knowledge constitution in the post-colonial society, and not left in the past.
+                Please look forward to it and come participate.</p>
               </dd>
             </dl>
           </div>

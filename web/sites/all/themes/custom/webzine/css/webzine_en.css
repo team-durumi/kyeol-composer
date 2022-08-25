@@ -273,7 +273,7 @@ section h1.title{font-size:38px;line-height:40px;padding-bottom:24px;font-family
 .lc04 li dt a{font-size:20px;line-height:32px;color:#111;font-weight:600;max-height:64px;display:block;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis}
 .lc04 li dt .field-name-field-category a {color:#9f865f;font-weight:600; font-size: 16px; }
 .lc04 li:hover dt a{text-decoration:underline;}
-.lc04 li dd{max-height:100px;display:block;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis}
+.lc04 li dd{display:block;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis}
 .lc04 li dd em{color:#888}
 
 /*지난호 보기 리스트*/

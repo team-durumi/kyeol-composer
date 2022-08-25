@@ -16,22 +16,22 @@ $action = '/search' . ((current_path() == 'search/term') ? '/term' : '');
     </h1>
       <ul class="global-nav ml-10 mt-10 float-left text-white">
         <li class="mx-6 float-left">
-          <a href="/featured">특집</a>
+          <a href="/featured" title="특집">특집</a>
         </li>
         <li class="mx-6 float-left">
-          <a href="/category/인터뷰">인터뷰</a>
+          <a href="/category/인터뷰" title="인터뷰">인터뷰</a>
         </li>
         <li class="mx-6 float-left">
-          <a href="/category/에세이">에세이</a>
+          <a href="/category/에세이" title="에세이">에세이</a>
         </li>
         <li class="mx-6 float-left">
-          <a href="/category/논평">논평</a>
+          <a href="/category/논평" title="논평">논평</a>
         </li>
         <li class="mx-6 float-left">
-          <a href="/category/좌담">좌담</a>
+          <a href="/category/좌담" title="좌담">좌담</a>
         </li>
         <li class="mx-6 float-left">
-          <a href="/category/자료해제">자료해제</a>
+          <a href="/category/자료해제" title="자료해제">자료해제</a>
         </li>
       </ul>
       <ul class="ng01">

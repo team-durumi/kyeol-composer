@@ -5,8 +5,8 @@
   </div>
   <ul class="infoA">
     <li class="l1"><strong>Publish :</strong><span>RIMSS</span></li>
-    <li class="l2"><strong>Planning :</strong><a href="">Somethingspecial.studio</a></li>
-    <li class="l3"><strong>Design&Dev :</strong><a href="//durumi.io/">Team Durumi</a></li>
+    <li class="l2"><strong>Planning :</strong><a href="https://indnp.com/">indnp.com</a></li>
+    <li class="l3"><strong>Design&Dev :</strong><a href="https://durumi.io/">Team Durumi</a></li>
     <li class="l4"><strong>Contact :</strong><a href="mailto:remember814@stop.or.kr">remember814@stop.or.kr</a></li>
     <!-- li class="l5"><strong>Contact :</strong><a href="mailto:remember814@stop.or.kr ">remember814@stop.or.kr</a></li-->
   </ul>

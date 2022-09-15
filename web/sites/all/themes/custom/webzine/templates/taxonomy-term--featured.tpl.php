@@ -42,11 +42,13 @@
  */
 
 ?>
-<dl class="conA text-gray-700 hover:bg-yellow-700 hover:text-gray-100 mb-5">
-    <dt class="lg:text-3xl text-xl mb-1">
-        <a href="<?php print $term_url;?>"><?php print $term_name;?></a>
-    </dt>
-    <dd>
-        <?php print $term->description;?>
-    </dd>
-</dl>
+<a href="<?php print $term_url;?>">
+    <dl class="featured text-black rounded-full py-3 px-6 hover:bg-yellow-300 hover:text-gray-800 active:bg-yellow-900 focus:outline-none focus:ring-2 focus:ring-yellow-300 mb-10">
+        <dt class="lg:text-3xl text-xl mb-1">
+            <?php print $term_name;?>
+        </dt>
+        <dd class="lg:text-md text-sx mb-1">
+            <?php print $term->description;?>
+        </dd>
+    </dl>
+</a>

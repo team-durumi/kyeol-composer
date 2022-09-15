@@ -115,7 +115,7 @@ function webzine_preprocess_page(&$variables) {
   drupal_add_css('//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css', array('type' => 'external', 'group' => CSS_THEME));
   drupal_add_css('//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css', array('type' => 'external', 'group' => CSS_THEME));
   drupal_add_css(drupal_get_path('module', 'ckeditor') . '/plugins/cavacnote/css/cavacnote.css', array('type' => 'file', 'group' => CSS_THEME));
-  drupal_add_css('//unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css', array('type' => 'external', 'group' => CSS_THEME));
+  drupal_add_css('//unpkg.com/tailwindcss@^2.0/dist/tailwind.min.css', array('type' => 'external', 'group' => CSS_THEME));
 
   // 언어에 따라 홈페이지 템플릿 선택
   $language = $variables['language'];

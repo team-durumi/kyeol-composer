@@ -162,16 +162,16 @@
 
     color: transparent;
     border: 0;
-    outline: none;
+    outline: yellow;
     background: transparent;
 }
 .slick-dots li button:hover,
-.slick-dots li button:focus
+.slick-dots li button:focus-visible
 {
-    outline: none;
+    outline: yellow;
 }
 .slick-dots li button:hover:before,
-.slick-dots li button:focus:before
+.slick-dots li button:focus-visible:before
 {
     opacity: 1;
 }

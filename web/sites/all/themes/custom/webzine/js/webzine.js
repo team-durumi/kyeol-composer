@@ -56,11 +56,12 @@ $(document).ready(function() {
 		$(this).css({'background-image':'url('+$('img',$(this)).attr('src')+')'});
 		//$('img',$(this)).remove();
 	});
-  $('.ib01 .slide').on('init', function(){  //2021.8.3 웹접근성 작업
+  $('.ib01 .slide').on('init', function(){  //2021.8.3 웹접근성 작업, 2022.10.06
     $('.slick-dots').append($('<li class="pause"><a href="#" title="일시정지하기" class="pause"><i class="xi-pause"></i></a><a href="#" title="재생하기" class="play"><i class="xi-play"></i></a></li>'));
     setTimeout(function(){
       $('.slick-dots li button').attr('tabindex','0');
     },300);
+		return false;
 });
   $('.ib01 .slide').on('afterChange', function(event,slick,currentSlide,nextSlide){ //2021.8.3 웹접근성 작업
       setTimeout(function(){

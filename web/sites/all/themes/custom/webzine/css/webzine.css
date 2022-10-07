@@ -239,7 +239,7 @@ section h1.title{font-size:38px;line-height:40px;padding-bottom:24px;font-family
 .ib01 li dl{position:absolute;top:230px;right:50%;margin-left:16px;max-width:556px;word-break:keep-all;}
 .ib01 li dl dt{font-size:50px;line-height:62px;color:#fff;margin-bottom:1rem;font-family:'Iropke Batang','IropkeBatang',sans-serif}
 .ib01 li dl dd{font-size:18px;line-height:30px;color:#fff;font-weight:300}
-.ib01 .slick-dots{width:auto;top:50%;right:50%;margin-top:-40px;margin-right:-540px}
+.ib01 .slick-dots{display:block!important;width:auto;top:50%;right:50%;margin-top:-40px;margin-right:-540px;}
 .ib01 .slick-dots li{background-color:transparent;display:block;margin-bottom:15px}
 .ib01 .slick-dots li button{width:20px;height:20px;border-radius:10px;padding:0;border:1px solid #fff;text-indent:-9999px}
 .ib01 .slick-dots li button:focus{border-color:blue}
@@ -524,6 +524,9 @@ body.page-archive-person .ui-dialog .ui-dialog-titlebar .ui-dialog-titlebar-clos
 /* 기사 - 이미지 슬라이더 */
 .slider-nav .slick-slide{margin:0 1%;}
 .slider-nav .slick-slide.slick-current img{border:solid 3px #9f865f;box-sizing:border-box;}
+.slick-dots{display: none!important;}
+.slick-prev{display: none!important;}
+.slick-next{display: none!important;}
 
 span.cavacnote,
 span.cavacnotify {

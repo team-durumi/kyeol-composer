@@ -71,7 +71,7 @@
     line-height: 1;
 
     opacity: .75;
-    color: #a18963;
+    color: red;
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -89,6 +89,7 @@
 .slick-prev:before
 {
     content: '←';
+    color: red;
 }
 [dir='rtl'] .slick-prev:before
 {
@@ -107,6 +108,7 @@
 .slick-next:before
 {
     content: '→';
+    color: red;
 }
 [dir='rtl'] .slick-next:before
 {
@@ -160,7 +162,7 @@
 
     cursor: pointer;
 
-    color: transparent;
+    color: #a18963;
     border: 1;
     outline: yellow;
     background: transparent;
@@ -179,7 +181,7 @@
 .slick-dots li button:before
 {
     font-family: 'slick';
-    font-size: 6px;
+    font-size: 10px;
     line-height: 20px;
 
     position: absolute;

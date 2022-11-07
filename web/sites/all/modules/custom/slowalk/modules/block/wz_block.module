@@ -216,65 +216,7 @@ function wz_main_articles_block_view()
 
 function wz_main_newsletter_block_view()
 {
-    global $base_url;
 
-    $block = array(
-        '#prefix' => '<div class="inner">',
-        '#suffix' => '</div>',
-        'h2' => array(
-            '#type' => 'markup',
-            '#markup' => '<h2>'.nl2br(variable_get('newsletter_text')).'</h2>'
-        ),
-        'form' => array(
-            '#type' => 'form',
-            '#action' => variable_get('newsletter_action', ''),
-            'fieldset' => array(
-                '#type' => 'fieldset',
-                'newsletter' => array(
-                    '#type' => 'textfield',
-                    '#title' => '이메일',
-                    '#id' => 'letter_email',
-                    '#name' => 'email',
-                    '#attributes' => array('placeholder' => '이메일을 입력하세요')
-                ),
-                'type' => array(
-                    '#type' => 'hidden',
-                    '#name' => 'type',
-                    '#value' => 'newsletter'
-                ),
-                'mailing_list' => [
-                  '#type' => 'hidden',
-                  '#name' => 'mailing_list',
-                  '#value' => '1',
-                ],
-                'agreed' => array(
-                  '#type' => 'hidden',
-                  '#name' => 'agreed',
-                  '#value' => false,
-                  '#attributes' => ['id' => ['agreed']]
-                ),
-                'submit' => array(
-                  '#type' => 'submit',
-                  '#value' => '뉴스레터 신청하기',
-                  '#attributes' => array('class' => array('btn'))
-                )
-            ),
-            '#attributes' => array(
-                'id' => 'newsletter-form',
-                'class' => array('cf02')
-            ),
-            '#attached' => array(
-                'library' => array(array('system', 'jquery.form')),
-                'js' => array(__WZ_BLOCK__ . '/newsletter.js' => array('type' => 'file', 'scope' => 'footer', 'group' => JS_THEME))
-            )
-        )
-    );
-    $block['modal'] = [
-      '#markup' => file_get_contents(__WZ_BLOCK__ . '/newsletter-privacy-notice.html'),
-      '#attached' => ['css' => [__WZ_BLOCK__ . '/newsletter.css']]
-    ];
-
-    return $block;
 }
 
 /**

@@ -14,6 +14,18 @@
         <?php print render($page['content']); ?>
         <?php print $messages;?>
     </div>
+    <!-- 뉴스레터 -->
+    <div class="fc01_03">
+        <div class="inner">
+        <h2>일본군'위안부'문제연구소의 <br/>새로운 소식을 받아보세요</h2>
+        <div class="cf02">
+            <a href="https://www.stop.or.kr/newsletter/newsletterForm.do" target="_blank">
+            <button>뉴스레터 신청하기</button>
+            </a>
+        </div>
+        </div>
+    </div>
+    <!-- //뉴스레터 -->
     <!-- //메인 컨텐츠 영역 -->
     <footer>
         <div class="inner">

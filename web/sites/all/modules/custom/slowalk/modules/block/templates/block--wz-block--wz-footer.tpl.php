@@ -5,7 +5,7 @@
       <p class="cpr">Copyright 2021&nbsp;한국여성인권진흥원 일본군'위안부'문제연구소. All Rights Reserved.</p>
     </div>
 
-    <ul class="infoA"><li class="l1"><strong>발행인&nbsp;: 박봉정숙</strong></li>
+    <ul class="infoA"><li class="l1"><strong>발행인&nbsp;:</strong></li>
       <li class="l2"><strong>편집인 : 일본군'위안부'문제연구소</strong></li>
       <li class="l3"><strong>기획 : 일본군'위안부'문제연구소</strong></li>
       <li class="l4"><strong>제작 : 퍼플레이컴퍼니</strong></li>
@@ -17,6 +17,6 @@
     <img alt="814 일본군'위안부'문제연구소 아카이브814" src="/sites/all/themes/custom/webzine/images/814-logo.png" style="width: 260px;">
   </a>
   <a title="새창" href="http://www.wa.or.kr/board/list.asp?BoardID=0006" target="_blank" class="wa-mark">
-    <img class="wa" alt="(사)한국장애인단체총연합회 한국웹접근성인증평가원 웹 접근성 우수사이트 인증마크(WA인증마크)" src="/sites/all/themes/custom/webzine/images/wa-mark.png" />
+    <img class="wa" alt="(사)한국장애인단체총연합회 한국웹접근성인증평가원 웹 접근성 우수사이트 인증마크(WA인증마크_2022갱신)" src="/sites/all/themes/custom/webzine/images/wa_mark_220906.png" />
   </a>􀀁
 </div>

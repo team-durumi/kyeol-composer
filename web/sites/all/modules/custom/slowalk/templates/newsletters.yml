@@ -1,4 +1,13 @@
 2022:
+- origin_url: https://stib.ee/skb6
+  title: "[웹진 결] 사유의 힘"
+  date: "2022.12.08"
+- origin_url: https://stib.ee/jFZ6
+  title: "[웹진 결] 여성 인권을 외치다"
+  date: "2022.12.01"
+- origin_url: https://stib.ee/F7W6
+  title: "[웹진 결] 우리가 공유하는 세계의 어떤 연대기"
+  date: "2022.11.24"
 - origin_url: https://stib.ee/S4Q6
   title: "[웹진 결] 폭력, 이후"
   date: "2022.11.10"
@@ -17,6 +26,9 @@
 - origin_url: https://stib.ee/ziA6
   title: "[웹진 결] 우리가 마주한 숙제"
   date: "2022.09.29"
+- origin_url: https://stib.ee/zg76
+  title: "[웹진 결] 각자의 자리에서 말하다"
+  date: "2022.09.22"  
 - origin_url: https://stib.ee/Rr46
   title: "[웹진 결] 일본군‘위안부’ 문제의 현재"
   date: "2022.09.15"
@@ -26,21 +38,27 @@
 - origin_url: https://stib.ee/mks5
   title: "[웹진 결] 기림의 날을 맞이하며 1"
   date: "2022.08.18"
+- origin_url: https://stib.ee/1fp5
+  title: "[웹진 결] 지금, 여기에서 일본군위안부‘문제’란 무엇인가"
+  date: "2022.08.11"  
 - origin_url: https://stib.ee/sah5
   title: "[웹진 결] 여성의 몸을 여성에게 돌려주기"
   date: "2022.07.21"
 - origin_url: https://stib.ee/Dbf5
   title: "[웹진 결] 역사적 고통을 이야기하는 방식"
   date: "2022.07.14"
-  directory: "20220714"
 - origin_url: https://stib.ee/K1b5
   title: "[웹진 결] 진실 없는 역사전쟁"
   date: "2022.07.07"
-  directory: "20220707"
+- origin_url: https://stib.ee/4EW5
+  title: "[웹진 결] 곁을 지키는 사람들"
+  date: "2022.06.23" 
 - origin_url: https://stib.ee/LJU5
   title: "[웹진 결] 여성 재현의 윤리"
   date: "2022.06.16"
-  directory: "20220616"
+- origin_url: https://stib.ee/CyR5
+  title: "[웹진 결] 💬 또 다른 목소리, 침묵"
+  date: "2022.06.09"  
 - origin_url: https://stib.ee/YtO5
   title: "기억하고 싶은 이름"
   date: "2022.06.02"

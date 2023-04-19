@@ -5,7 +5,7 @@
       <p class="cpr">Copyright 2021&nbsp;한국여성인권진흥원 일본군'위안부'문제연구소. All Rights Reserved.</p>
     </div>
 
-    <ul class="infoA"><li class="l1"><strong>발행인&nbsp;:</strong></li>
+    <ul class="infoA"><li class="l1"><strong>발행인&nbsp;: 일본군'위안부'문제연구소</strong></li>
       <li class="l2"><strong>편집인 : 일본군'위안부'문제연구소</strong></li>
       <li class="l3"><strong>기획 : 일본군'위안부'문제연구소</strong></li>
       <li class="l4"><strong>제작 : 퍼플레이컴퍼니</strong></li>

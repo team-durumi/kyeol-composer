@@ -62,7 +62,7 @@ body.front .ib01 li dl { top: 200px; }
 header nav{position:fixed;right:-548px;top:0;background-color:#9f865f;width:548px;height:100%;box-sizing:border-box;padding:160px 80px 80px 80px;z-index:60;transition:right 0.5s ease-in-out;overflow-y:auto;-ms-overflow-style:none;overflow-y:scroll;
 	-ms-overflow-style: none;
 }
-::-webkit-scrollbar{ display: none !important; /*윈도우 크롬 등*/}
+header nav::-webkit-scrollbar{ display: none !important; /* 윈도우 크롬 등*/}
 header nav .btn_icon01{position:absolute;right:45px;top:40px}
 header nav h2{display: none}
 header nav #secondary-menu{margin-bottom:80px}

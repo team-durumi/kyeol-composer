@@ -13,6 +13,8 @@
 .cke_editable p.indent, .postA p.indent{font-style:italic;color:#444;border-left:3px solid #ddd;padding-left:20px;font-weight:200}
 .cke_editable b, .postA b{color:#333;font-weight:500}
 .cke_editable strong, .postA strong{color:#333;font-weight:500}
+.cke_editable em, .postA em{font-style:italic}
+.cke_editable u, .postA u{text-decoration: underline; text-underline-position:under;}
 .cke_editable h2, .postA h2{font-size:2.375rem;line-height:3.125rem;margin-bottom:2rem;color:#9f865f;font-family:'Iropke Batang',sans-serif}
 .cke_editable h3, .postA h3{font-size:1.75rem;line-height:2.5rem;margin-bottom:1.5rem;color:#444;font-weight:500}
 .cke_editable h4, .postA h4{font-size:1.25rem;line-height:1.875rem;color:#444}
@@ -63,6 +65,8 @@
   .cke_editable p.indent, .postA p.indent{border-left:2px solid #ddd;padding-left:15px;line-height:24px}
   .cke_editable b, .postA b{color:#333;font-weight:500}
   .cke_editable strong, .postA strong{color:#333;font-weight:500}
+  .cke_editable em, .postA em{font-style:italic}
+  .cke_editable u, .postA u{text-decoration: underline; text-underline-position:under;}
   .cke_editable h2, .postA h2{font-size:24px;line-height:30px;margin-bottom:16px}
   .cke_editable h3, .postA h3{font-size:19px;line-height:25px;margin-bottom:20px}
   .cke_editable h4, .postA h4{font-size:15px;line-height:21px}

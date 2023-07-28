@@ -13,7 +13,8 @@ header,nav,article,section,footer,address,aside{display:block;}
 b,strong,h1,h2,h3,h4,h5,h6{font-weight:500;color:#231f20}
 img,fieldset{border:0}
 ul,ol,menu{list-style:none}
-em,address{font-style:normal}
+em{font-style:italic}
+address{font-style:normal}
 a{text-decoration:none;color:#111111}
 a:hover,a:active{text-decoration:underline}
 a:focus, button:focus{outline:solid 3px #0088ff; !important;}

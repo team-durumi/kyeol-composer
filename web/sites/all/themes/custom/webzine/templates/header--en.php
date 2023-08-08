@@ -50,7 +50,7 @@ $action = 'en/search' . ((current_path() == 'en/search/term') ? 'en/term' : '');
         <!-- <li class="menu-935 last"><a href="/en/newsletters" title="">뉴스레터</a></li> -->
       </ul>
     </nav>
-    <form class="cf01 displayNone" method="post" action="<?php print $action;?>">
+    <form class="cf01 displayNone" method="post" action="en/search">
       <fieldset>
         <label for="search_query">Search Keyword</label>
         <input type="text" name="key" id="search_query" placeholder="Type in here ..." value="<?php print ($_GET['key']) ?? '';?>"/>

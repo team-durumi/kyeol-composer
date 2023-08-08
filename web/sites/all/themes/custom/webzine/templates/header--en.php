@@ -5,7 +5,7 @@
  * Date: 2023-07-28
  */
 
-$action = '/search' . ((current_path() == 'search/term') ? '/term' : '');
+$action = 'en/search' . ((current_path() == 'en/search/term') ? 'en/term' : '');
 ?>
 <header>
   <div class="inner">

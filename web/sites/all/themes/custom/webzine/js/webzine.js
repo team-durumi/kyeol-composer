@@ -219,6 +219,17 @@ $(document).ready(function() {
 		});
 	}
 
+	//검색 페이지 접근시 검색 결과 Ajax
+	if($('body').hasClass('page-search')) {
+		let status = (window.location.pathname === 'en/search') ? 'keyword' : 'term';
+		let searchParam = new URLSearchParams(window.location.search);
+		let key = searchParam.get('key');
+		$.post('/ajax/webzine', {type:'search', status:status, key:key}).done(function (res) {
+			$("div.menu-name-menu-search ul.menu li a:eq(0)").append(' ('+res.keyword+')');
+			$("div.menu-name-menu-search ul.menu li a:eq(1)").append(' ('+res.term+')');
+		});
+	}
+
 	//기사페이지 이미지 슬라이드
 	$('.slide ul.slider').slick({
 		autoplay:true,

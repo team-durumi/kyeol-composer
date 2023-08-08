@@ -26,12 +26,18 @@
  *
  * @ingroup views_templates
  */
+global $language;
+$lang = $language->language;
 ?>
 
 <?php if(isset($_GET['key']) && !empty($_GET['key']) && isset($view->total_rows)): ?>
-<div class="fc_box01 fc_box01_01 tags">
-    <p class="td01 leftF"><b>"<?php print filter_xss($_GET['key']);?>"</b>에 관련된 기사는 <em><?php print $view->total_rows;?></em>건입니다.</p>
-</div>
+    <div class="fc_box01 fc_box01_01 tags">
+      <?php if($lang != 'en'): ?>
+        <p class="td01 leftF"><b>"<?php print filter_xss($_GET['key']);?>"</b>에 관련된 기사는 <em><?php print $view->total_rows;?></em>건입니다.</p>
+      <?php else: ?>
+          <p class="td01 leftF"><?php print $view->total_rows;?></em> related contents with<em><b>"<?php print $_GET['key'];?>"</b></p>
+      <?php endif; ?>
+    </div>
 <?php endif;?>
 
 <div class="<?php print $classes; ?>">

@@ -43,7 +43,7 @@
 
 ?>
 <a href="<?php print $term_url;?>">
-    <dl class="featured text-black rounded-full py-3 px-6 hover:bg-yellow-300 hover:text-gray-800 active:bg-yellow-900 focus:outline-none focus:ring-2 focus:ring-yellow-300 mb-10">
+    <dl class="featured text-black rounded-sm py-3 px-6 hover:bg-gray-900 hover:text-gray-300 focus:ring-3 focus:ring-grat-900 mb-10">
         <dt class="lg:text-3xl text-xl mb-1">
             <?php print $term_name;?>
         </dt>

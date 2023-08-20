@@ -42,8 +42,8 @@
  */
 
 ?>
-<a href="<?php print $term_url;?>">
-    <dl class="featured text-black rounded-sm py-3 px-6 hover:bg-gray-900 hover:text-gray-300 focus:ring-3 focus:ring-grat-900 mb-10">
+<a href="<?php print $term_url;?>" class="focus:ring-3 focus:ring-gray-900 ring-inset">
+    <dl class="featured text-black rounded-sm py-3 px-6 hover:bg-gray-900 hover:text-gray-300 focus:ring-3 focus:ring-gray-900 ring-inset mb-10">
         <dt class="lg:text-3xl text-xl mb-1">
             <?php print $term_name;?>
         </dt>

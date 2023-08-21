@@ -50,6 +50,7 @@
 .postA sup > a:focus{outline:#999 dotted 1px}
 
 #share-links {width: 1108px;}
+#share-links:focus{outline:none; border: 3px solid red}
 #share-links a:focus{outline:solid 3px #0088ff; !important;}
 #share-links svg {
   width: 2.8em;

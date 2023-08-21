@@ -157,7 +157,7 @@
     <div class="inner">
       <h2>일본군'위안부'문제연구소의 <br/>새로운 소식을 받아보세요</h2>
       <div class="cf02">
-        <button class="focus:ring-2 ring-red-600 ring-inset" >
+        <button class="focus:ring-2 ring-red-600 ring-inset">
           <a href="https://www.stop.or.kr/newsletter/newsletterForm.do" target="_blank" title="새 창 알림">
             뉴스레터 신청하기
           </a>

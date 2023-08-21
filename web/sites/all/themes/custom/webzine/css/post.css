@@ -59,7 +59,6 @@
   float: left;
   fill: rgba(0, 0, 0, 0.6);
 }
-#share-links svg:focus{outline:solid 3px #0088ff; !important;}
 
 @media all and (max-width:767px){
   .cke_editable p, .postA p{font-size:13px;line-height:21px;margin-bottom:1rem;word-break:keep-all;}

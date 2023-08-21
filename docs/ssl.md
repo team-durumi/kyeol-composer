@@ -50,8 +50,8 @@ sudo chmod 640 /etc/apache2/ssl/private/www_kyeol_kr.key
     Require all granted
   </Directory>
 
-  ErrorLog /data/kyeol/logs/error.log
-  CustomLog /data/kyeol/logs/access.log combined
+  ErrorLog /efs/data/kyeol/logs/error.log
+  CustomLog /efs/data/kyeol/logs/access.log combined
 </VirtualHost>
 
 <VirtualHost *:80>
@@ -76,4 +76,22 @@ sudo a2dissite 000-default && sudo a2ensite kyeol-ssl
 # sudo a2dissite kyeol-ssl && sudo a2ensite 000-default
 
 sudo service apache2 restart
+```
+
+# 가비아 Sectigo 인증서 Apache 갱신하기
+
+- 2023-04-24
+- @woonjjang
+
+https://customer.gabia.com/manual/hosting/435/994
+
+- 인증서 www_kyeol_kr.crt
+- 개인키 www_kyeol_kr.key
+- 체인 루트 인증서 Chain_RootCA_Bundle.crt
+
+```
+  SSLCertificateFile /etc/apache2/ssl/www_kyeol.kr_cert.crt
+  SSLCertificateKeyFile /etc/apache2/ssl/private/www_kyeol_kr.key
+  SSLCertificateChainFile /etc/apache2/ssl/www_kyeol.kr_chain_cert.crt
+  SSLCACertificateFile /etc/apache2/ssl/www_kyeol.kr_root_cert.crt
 ```

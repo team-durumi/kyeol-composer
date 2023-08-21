@@ -18,7 +18,7 @@ em{font-style:italic}
 address{font-style:normal}
 a{text-decoration:none;color:#111111}
 a:hover,a:active{text-decoration:underline}
-a:focus, button:focus{outline:solid 3px #0088ff; !important;}
+a:focus, button:focus{outline:none;border: 3px red; !important;}
 input[type=text],
 input[type=password],
 input[type=date],
@@ -413,7 +413,7 @@ body.front .ng01 li a i{font-size:2rem;line-height:73px}
 /*메인 첫번째 헤드라인 리스트*/
 .tc01{overflow:hidden}
 .tc01 .thumb{float:left;width:189px;height:142px;overflow:hidden;margin-right:24px}
-.tc01 .thumb:focus{outline: 2px solid red}
+.tc01 .thumb:focus{outline:none; border: 3px solid red}
 .tc01 .thumb img{width:100%;min-height:142px}
 .tc01 dt{margin-bottom:10px}
 .tc01 dt a{font-size:20px;line-height:32px;color:#111;font-weight:600;max-height:64px;display:block;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis}

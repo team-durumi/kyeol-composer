@@ -42,13 +42,14 @@
  */
 
 ?>
-<a href="<?php print $term_url;?>" class="focus:ring-2 ring-red-600">
-    <dl class="featured text-black rounded-sm py-3 px-6 hover:bg-gray-900 hover:text-gray-300 mb-10">
-        <dt class="lg:text-3xl text-xl mb-1 focus:ring-2 ring-red-600">
+
+<dl class="featured text-black rounded-sm py-3 px-6 hover:bg-gray-900 hover:text-gray-300 mb-10">
+    <a href="<?php print $term_url;?>" class="focus:ring-2 ring-red-600">
+        <dt class="lg:text-3xl text-xl mb-1">
             <?php print $term_name;?>
         </dt>
-        <dd class="lg:text-md text-sx mb-1 focus:ring-2 ring-red-600">
+        <dd class="lg:text-md text-sx mb-1">
             <?php print $term->description;?>
         </dd>
-    </dl>
-</a>
+    </a>
+</dl>

@@ -18,7 +18,7 @@ em{font-style:italic}
 address{font-style:normal}
 a{text-decoration:none;color:#111111}
 a:hover,a:active{text-decoration:underline}
-a:focus, button:focus{outline:none;border: 3px red; !important;}
+a:focus, button:focus{outline:solid 3px #0088ff; !important;}
 input[type=text],
 input[type=password],
 input[type=date],

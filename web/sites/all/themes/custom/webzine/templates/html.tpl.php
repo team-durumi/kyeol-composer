@@ -63,7 +63,7 @@
 </head>
 <body class="<?php print $classes; ?>" <?php print $attributes;?>>
 <div id="skip-link">
-  <a href="#content" class="element-invisible element-focusable">본문 바로가기</a>
+  <a href="#main-content" class="element-invisible element-focusable">본문 바로가기</a>
 </div>
 <?php print $page_top; ?>
 <?php print $page; ?>

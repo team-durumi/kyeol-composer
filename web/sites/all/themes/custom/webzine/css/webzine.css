@@ -244,7 +244,7 @@ section h1.title{font-size:38px;line-height:40px;padding-bottom:24px;font-family
 	background: linear-gradient(to right, rgba(0,0,0,0.7) 0%,rgba(0,0,0,0.7) 29%,rgba(255,255,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3000000', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 */
 }
-.ib01 li a:focus{outline:solid 3px #0088ff; !important}
+.ib01 li a:focus{outline:none; border-style: solid 5px #ff0000; !important}
 .ib01 li img{visibility:hidden}
 .ib01 li dl{position:absolute;top:230px;right:50%;margin-left:16px;max-width:556px;word-break:keep-all;}
 .ib01 li dl dt{font-size:50px;line-height:62px;color:#fff;margin-bottom:1rem;font-family:'Iropke Batang','IropkeBatang',sans-serif}

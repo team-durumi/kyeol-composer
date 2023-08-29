@@ -35,7 +35,7 @@ $action = '/search' . ((current_path() == 'search/term') ? '/term' : '');
       </ul>
       <ul class="ng01">
         <li class="search focus:outline-none focus:ring"><a href="#" title="검색창 열기"><i class="xi-search"></i></a></li>
-        <li class="menu focus:outline-none focus:ring"><a href="#" title="메뉴 열기"><i class="xi-bars"></i></a></li>
+        <li class="menu focus:outline-none focus:ring"><a href="#" title="전체 메뉴"><i class="xi-bars"></i></a></li>
         <li class="swichtoen lg:text-3xl md:text-3xl text-white">
           <a href="/en" title="영문 웹진으로 이동"><span class="focus:outline-none focus:ring-2 focus:ring-red-900">EN</span>
           </a>

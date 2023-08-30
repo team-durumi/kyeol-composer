@@ -247,8 +247,8 @@ section h1.title{font-size:38px;line-height:40px;padding-bottom:24px;font-family
 .ib01 li a:focus{outline:none; border-style:solid; border-width:7px; border-color: #0088ff; !important}
 .ib01 li img{visibility:hidden}
 .ib01 li dl{position:absolute;top:230px;right:50%;margin-left:16px;max-width:556px;word-break:keep-all;}
-.ib01 li dl dt{font-size:50px;line-height:62px;color:#000000;margin-bottom:1rem;font-family:'Iropke Batang','IropkeBatang',sans-serif}
-.ib01 li dl dd{font-size:18px;line-height:30px;color:#000000;font-weight:300}
+.ib01 li dl dt{font-size:50px;line-height:62px;color:#fff;margin-bottom:1rem;font-family:'Iropke Batang','IropkeBatang',sans-serif}
+.ib01 li dl dd{font-size:18px;line-height:30px;color:#fff;font-weight:300}
 .ib01 .slick-dots{display:block!important;width:auto;top:50%;right:50%;margin-top:-40px;margin-right:-540px;}
 .ib01 .slick-dots li{background-color:transparent;display:block;margin-bottom:15px}
 .ib01 .slick-dots li button{width:20px;height:20px;border-radius:10px;padding:0;border:2px solid #000000;text-indent:-9999px}

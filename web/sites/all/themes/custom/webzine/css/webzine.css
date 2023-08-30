@@ -182,8 +182,8 @@ body > button#toTop:focus{outline:solid 3px #0088ff; !important}
 .sidebar h2{font-size:28px;line-height:34px;padding-bottom:30px;font-family:'Iropke Batang',sans-serif;border-bottom:2px solid #ddd}
 .sidebar ul.menu li{border-bottom:1px solid #ddd;padding:10px 10px}
 .sidebar ul.menu li a{font-size:18px;line-height:34px;color:#444}
-.sidebar ul.menu li.active a{color:#9f865f;font-weight:500}
-.sidebar ul.menu li a:hover{color:#9f865f;text-decoration:none}
+.sidebar ul.menu li.active a{color:#9f865f;font-weight:700}
+.sidebar ul.menu li a:hover{color:#000000;text-decoration:none;font-weight:700}
 /*컨텐트 타이틀*/
 section h1.title{font-size:38px;line-height:40px;padding-bottom:24px;font-family:'Iropke Batang',sans-serif;border-bottom:2px solid #111}
 /* 페이징 */

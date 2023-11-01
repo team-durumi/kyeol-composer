@@ -49,12 +49,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" />
   <meta name="google-site-verification" content="NnfLR0jiAgl9MAW7jzw6HuyyqHQrEalkMHimZTKo6m4" />
   <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XWGCLMK7TP"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11290513099"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-XWGCLMK7TP');
+    gtag('config', 'AW-11290513099');
   </script>
   <title><?php print $head_title; ?></title>
   <!-- stylesheet -->

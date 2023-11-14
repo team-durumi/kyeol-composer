@@ -55,6 +55,7 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-XWGCLMK7TP');
+    gtag('config', 'AW-11290513099');
   </script>
   <title><?php print $head_title; ?></title>
   <!-- stylesheet -->

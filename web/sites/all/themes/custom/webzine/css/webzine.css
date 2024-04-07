@@ -317,7 +317,7 @@ section h1.title{font-size:38px;line-height:40px;padding-bottom:24px;font-family
 .lc02 li dt > a{font-size:20px;line-height:32px;color:#111;font-weight:600;max-height:64px;display:block;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis}
 .lc02 li dd p.summury{max-height:86px;display:block;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis;margin-bottom:8px}
 .lc02 li dd p.meta{color:#888}
-.lc02 li dd p.meta span:after{content:"|";margin:0 5px 0 9px;color:#ddd}
+.lc02 li dd p.meta span:after{margin:0 5px 0 9px;color:#ddd}
 .lc02_01 li dt .category{display:block;margin-bottom:10px}
 .lc02_01 li dd p.summury{max-height:58px;-webkit-line-clamp:2}
 

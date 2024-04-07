@@ -29,7 +29,6 @@ if($lang == 'en') {
         <p class="summury"><?php print strip_tags($content['body'][0]['#markup']);?></p>
         <p class="meta">
             <span><?php print get_writers($content['field_writer']);?></span>
-            <em><?php print format_date($created, 'custom', 'Y.m.d');?></em>
         </p>
     </dd>
 </dl>

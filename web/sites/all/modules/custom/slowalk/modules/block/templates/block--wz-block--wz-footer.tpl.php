@@ -2,7 +2,7 @@
   <div class="clearfix">
     <div class="addrA">
       <address>서울특별시 중구 서소문로 50 센트럴플레이스 4층 한국여성인권진흥원 일본군'위안부'문제연구소&nbsp;(04505)</address>
-      <p class="cpr">Copyright 2023&nbsp;한국여성인권진흥원 일본군'위안부'문제연구소. All Rights Reserved.</p>
+      <p class="cpr">Copyright 2024&nbsp;한국여성인권진흥원 일본군'위안부'문제연구소. All Rights Reserved.</p>
     </div>
 
     <ul class="infoA"><li class="l1"><strong>발행인&nbsp;: 일본군'위안부'문제연구소</strong></li>

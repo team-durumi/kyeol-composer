@@ -191,7 +191,7 @@ function slowalk_captain($patterns) {
     $pattern = '/' . $term['name'] . '/u';
     $text = str_replace('"', "´", str_replace("'", "´", $term['text']));
     $name = str_replace('"', "´", str_replace("'", "´", $term['name']));
-    $terms_patterns[$pattern] = ' <span class="cavacnotify"';
+    $terms_patterns[$pattern] = '<span class="cavacnotify"';
     $terms_patterns[$pattern] .= ' popuptext="' . $text . '"';
     $terms_patterns[$pattern] .= ' popuptitle="' . $name . '"';
     $terms_patterns[$pattern] .= ' data-url="' . $term['url'] . '"';

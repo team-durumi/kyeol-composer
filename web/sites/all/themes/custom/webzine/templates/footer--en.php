@@ -1,7 +1,7 @@
 <div class="clearfix">
   <div class="addrA">
     <address>(04505) 4th Floor, Central Place, 50 Seosomun-ro, Jung-Gu, Seoul.</address>
-    <p class="cpr">Copyright 2020 Webzine by the Research Institute on Japanese Military Sexual Slavery (RIMSS) <br/>All Rights Reserved.</p>
+    <p class="cpr">Copyright 2024 Webzine by the Research Institute on Japanese Military Sexual Slavery (RIMSS) <br/>All Rights Reserved.</p>
   </div>
   <ul class="infoA">
     <li class="l1"><strong>Publish :</strong><span>RIMSS</span></li>

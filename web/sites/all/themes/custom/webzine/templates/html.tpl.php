@@ -49,6 +49,8 @@
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" />
   <meta content="yes" name="apple-mobile-web-app-capable" />
   <meta content="minimum-scale=1.0, width=device-width, maximum-scale=1, user-scalable=no" name="viewport" />
+  <!--Naver site verification -->
+  <meta name="naver-site-verification" content="d2a758ffce5b500bc8ffe7888eec3289caaf7ceb" />
   <meta name="google-site-verification" content="NnfLR0jiAgl9MAW7jzw6HuyyqHQrEalkMHimZTKo6m4" />
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XWGCLMK7TP"></script>

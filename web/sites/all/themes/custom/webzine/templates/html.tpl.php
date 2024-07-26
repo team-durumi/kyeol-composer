@@ -61,6 +61,21 @@
     gtag('config', 'G-XWGCLMK7TP');
     gtag('config', 'AW-11290513099');
   </script>
+  <!-- A Schema.org Type Organization -->
+  <script type="application/ld+json">
+  {
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "일본군 위안부 문제연구소 웹진 결 KYEOL",
+  "description": "일본군 위안부 문제관련 자료 조사, 수집, 연구, 웹진 웹진결 발간",
+  "url": "https://kyeol.kr",
+  "sameAs": [
+    "https://www.instagram.com/remember_814",
+    "https://www.facebook.com/archive814",
+    "https://www.youtube.com/@user-vp6ke6ml6d"
+  ]
+  }
+  </script>
   <title><?php print $head_title; ?></title>
   <!-- stylesheet -->
   <?php print $styles; ?>

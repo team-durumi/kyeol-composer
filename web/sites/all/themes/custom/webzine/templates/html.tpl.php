@@ -67,7 +67,7 @@
   "@context": "http://schema.org",
   "@type": "Organization",
   "name": "일본군 위안부 문제연구소 웹진 결 KYEOL",
-  "description": "일본군 위안부 문제관련 자료 조사, 수집, 연구, 웹진 웹진결 발간",
+  "description": "일본군 위안부 문제관련 자료 조사, 수집, 연구, 웹진결 발간",
   "url": "https://kyeol.kr",
   "sameAs": [
     "https://www.instagram.com/remember_814",

@@ -46,6 +46,8 @@
 <html lang="ko">
 <head>
   <?php print $head; ?>
+  <title><?php print $head_title; ?></title>
+  <meta name="description" content="일본군 위안부 문제관련 자료 조사, 수집, 연구, 웹진결 발간">
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" />
   <meta content="yes" name="apple-mobile-web-app-capable" />
   <meta content="minimum-scale=1.0, width=device-width, maximum-scale=1, user-scalable=no" name="viewport" />
@@ -76,7 +78,6 @@
   ]
   }
   </script>
-  <title><?php print $head_title; ?></title>
   <!-- stylesheet -->
   <?php print $styles; ?>
   <?php print $scripts; ?>

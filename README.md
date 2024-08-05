@@ -4,6 +4,8 @@
 
 웹진 <결>은 ‘위안부’ 문제에 관한 연구자의 활동을 장려하고, 국민들의 관심을 모으고, 일반 대중의 이해를 높이고자 연구소가 발행하는 웹진입니다.
 
+해당 프로젝트는 2019년 ~ 2024년 운영되고 있습니다.(team - durumi)
+
 ```
 sudo service apache2 stop && sudo service php7.3-fpm stop
 echo 'user_allow_other' | sudo tee -a /etc/fuse.conf

@@ -44,7 +44,7 @@
 ?>
 
 <dl class="featured text-black rounded-sm py-3 px-6 hover:bg-gray-900 hover:text-gray-300 mb-10">
-    <a href="<?php print $term_url;?>" class="block focus:ring-2 ring-red-600 focus:border-red-600">
+    <a href="<?php print $term_url;?>" class="block">
         <dt class="lg:text-3xl text-xl mb-1">
             <?php print $term_name;?>
         </dt>

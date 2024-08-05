@@ -162,7 +162,7 @@ function wz_main_features_block_view()
                 <dd><a href="/'.$url.'" class="btn_icon02" title="' . $category_name . ' 더보기"><i class="xi-plus"></i></a></dd>
             </dl>';
         foreach ($rows as $item) {
-            $html .= '<div class="tc01 my-3">
+            $html .= '<div class="tc01 my-3 p-1">
                 <a href="/node/'.$item['nid'].'" class="thumb"><img src="'.$item['img'].'" alt="'.htmlspecialchars($item['title']).'"/></a>
                 <dl class="conA">
                     <dt><a href="/node/'.$item['nid'].'">'.$item['title'].'</a></dt>

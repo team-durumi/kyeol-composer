@@ -53,7 +53,7 @@ $action = 'en/search' . ((current_path() == '/search/term') ? '/term' : '');
     <form class="cf01 displayNone" method="post" action="en/search">
       <fieldset>
         <label for="search_query">Search Keyword</label>
-        <input type="text" name="key" id="search_query" placeholder="Type in here ..." value="<?php print ($_GET['key']) ?? '';?>"/>
+        <input type="text" name="key" id="search_query" placeholder="Type in here ..." value="<?php print htmlspecialchars($_GET['key']) ?? '';?>"/>
         <button><i class="xi-search"></i>search</button>
       </fieldset>
       <a href="#" class="btn_icon01" title="Close search box"><i class="xi-close"></i></a>

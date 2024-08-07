@@ -49,7 +49,7 @@ $action = '/search' . ((current_path() == 'search/term') ? '/term' : '');
       <form class="cf01 displayNone" method="get" action="<?php print $action;?>">
           <fieldset>
               <label for="search_query">검색어</label>
-              <input type="text" name="key" id="search_query" placeholder="검색어를 입력해 주세요" value="<?php print ($_GET['key']) ?? '';?>"/>
+              <input type="text" name="key" id="search_query" placeholder="검색어를 입력해 주세요" value="<?php print htmlspecialchars($_GET['key']) ?? '';?>"/>
               <button><i class="xi-search"></i>검색하기</button>
           </fieldset>
           <a href="#" class="btn_icon01" title="검색창 닫기"><i class="xi-close"></i></a>

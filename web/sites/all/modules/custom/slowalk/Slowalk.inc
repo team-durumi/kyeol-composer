@@ -126,7 +126,7 @@ class Slowalk
             case 'search':
                 if(isset($key)) {
                     $keyword = _slowalk_search('search', 'page', $key);
-                    $term = _slowalk_search('search_term', 'page', htmlspecialchars(str_replace(["\r" , """, '&nbsp;'], '', $key)));
+                    $term = _slowalk_search('search_term', 'page', $key);
                     return array('keyword' => $keyword, 'term' => $term);
                 }
                 break;

@@ -126,7 +126,7 @@ class Slowalk
             case 'search':
                 if(isset($key)) {
                     $keyword = _slowalk_search('search', 'page', $key);
-                    $term = _slowalk_search('search_term', 'page', $key);
+                    $term = _slowalk_search('search_term', 'page', trim($key));
                     return array('keyword' => $keyword, 'term' => $term);
                 }
                 break;
@@ -403,7 +403,9 @@ class Archive extends Slowalk
         $this->years = $data;
         return $data;
     }
-
+    /**
+     * 엮어보기 페이지 필터페이지를 검색으로 구현한 부분
+     */
     public function template($machine_name) {
         global $language;
         $lang = $language->language ?? 'ko';

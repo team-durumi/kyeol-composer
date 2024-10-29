@@ -63,6 +63,168 @@
     gtag('config', 'G-XWGCLMK7TP');
     gtag('config', 'AW-11290513099');
   </script>
+  <!-- Google ADsense 1-0025000037372 -->
+  <script>
+  (function() {
+  // === Override dataLayer.push to Listen for 'first_visit' Event ===
+  window.dataLayer = window.dataLayer || [];
+  const originalPush = window.dataLayer.push;
+
+  window.dataLayer.push = function() {
+  // Iterate through the arguments to detect 'first_visit' events
+  for (let i = 0; i < arguments.length; i++) {
+  const event = arguments[i].event;
+  if (event === 'first_visit') {
+  initiateFirstUserTimer();
+  }
+  }
+  // Call the original dataLayer.push method
+  return originalPush.apply(window.dataLayer, arguments);
+  };
+
+  // === Function to Detect and Push 'first_visit' Event ===
+  function detectFirstVisit() {
+  if (!sessionStorage.getItem('hasVisited')) {
+  sessionStorage.setItem('hasVisited', '1');
+  window.dataLayer.push({ event: 'first_visit' });
+  }
+  }
+
+  // Call the function on script load
+  detectFirstVisit();
+
+  // === Function to Initiate 30-Second Timer for First-Time Users ===
+  function initiateFirstUserTimer() {
+  const firstUserThreshold = 30; // 30 seconds (adjust as needed)
+  const firstUserEventName = 'conversion_event_page_view_4'; // GA4 Event Name
+  const firstUserTimeRemainKey = `first_user_time_remain_${firstUserThreshold}`;
+  const firstUserIsTriggeredKey = `first_user_is_triggered_${firstUserThreshold}`;
+  let firstUserTimeRemain = parseInt(sessionStorage.getItem(firstUserTimeRemainKey)) || firstUserThreshold;
+
+  if (!sessionStorage.getItem(firstUserIsTriggeredKey)) {
+  sessionStorage.setItem(firstUserIsTriggeredKey, '1');
+  }
+
+  if (firstUserTimeRemain > 0) {
+  setTimeout(() => {
+  // Set timeRemain to 0 before finalizing
+  firstUserTimeRemain = 0;
+  finalizeFirstUser();
+  }, firstUserTimeRemain * 1000);
+  }
+
+  function finalizeFirstUser() {
+  if (firstUserTimeRemain <= 0 && sessionStorage.getItem(firstUserIsTriggeredKey) === '1') {
+  gtag('event', firstUserEventName);
+  sessionStorage.setItem(firstUserIsTriggeredKey, '0');
+  }
+  sessionStorage.setItem(firstUserTimeRemainKey, firstUserTimeRemain);
+  }
+
+  const firstUserTimeBegin = Date.now();
+  window.addEventListener('beforeunload', () => {
+  const elapsedFirstUserTime = Math.floor((Date.now() - firstUserTimeBegin) / 1000);
+  firstUserTimeRemain = Math.max(0, firstUserTimeRemain - elapsedFirstUserTime);
+  finalizeFirstUser();
+  });
+  }
+
+  // === Overall Site Time Tracking ===
+  const overallThresholds = [
+  { threshold: 180, eventName: 'conversion_event_page_view' }, // 3 minute
+  { threshold: 600, eventName: 'conversion_event_page_view_1' }, // 10 minutes
+  { threshold: 1800, eventName: 'conversion_event_page_view_2' }, // 30 minutes
+  { threshold: 3600, eventName: 'conversion_event_page_view_3' } // 60 minutes
+  ];
+
+  overallThresholds.forEach(({ threshold, eventName }) => {
+  const timeRemainKey = `time_remain_${threshold}`;
+  const isTriggeredKey = `is_triggered_${threshold}`;
+  let timeRemain = parseInt(sessionStorage.getItem(timeRemainKey)) || threshold;
+
+  if (!sessionStorage.getItem(isTriggeredKey)) {
+  sessionStorage.setItem(isTriggeredKey, '1');
+  }
+
+  if (timeRemain > 0) {
+  setTimeout(() => {
+  // Set timeRemain to 0 before finalizing
+  timeRemain = 0;
+  finalizeOverallEvent(threshold, eventName);
+  }, timeRemain * 1000);
+  }
+
+  function finalizeOverallEvent(currentThreshold, currentEventName) {
+  if (timeRemain <= 0 && sessionStorage.getItem(isTriggeredKey) === '1') {
+  gtag('event', currentEventName);
+  sessionStorage.setItem(isTriggeredKey, '0');
+  }
+  sessionStorage.setItem(timeRemainKey, timeRemain);
+  }
+
+  const overallTimeBegin = Date.now();
+  window.addEventListener('beforeunload', () => {
+  const elapsedOverallTime = Math.floor((Date.now() - overallTimeBegin) / 1000);
+  timeRemain = Math.max(0, timeRemain - elapsedOverallTime);
+  finalizeOverallEvent(threshold, eventName);
+  });
+  });
+
+  // === Page-Specific Time Tracking ===
+  const pagesToTrack = [
+  {
+  path: '/comfort-women',
+  eventName: 'conversion_event_page_view_5'
+  },
+  {
+  path: '/rimss',
+  eventName: 'conversion_event_page_view_6'
+  },
+  {
+  path: '/kyeol',
+  eventName: 'conversion_event_page_view_7'
+  }
+  ];
+
+  const currentPath = window.location.pathname.toLowerCase(); // Convert to lowercase for case-insensitive matching
+  const page = pagesToTrack.find(p => currentPath.includes(p.path.toLowerCase())); // Partial match
+
+  if (page) {
+  const pageThreshold = 60; // 1 minute (adjust as needed)
+  const pageTimeRemainKey = `page_time_remain_${page.path}`;
+  const pageIsTriggeredKey = `page_is_triggered_${page.path}`;
+  let pageTimeRemain = parseInt(sessionStorage.getItem(pageTimeRemainKey)) || pageThreshold;
+
+  if (!sessionStorage.getItem(pageIsTriggeredKey)) {
+  sessionStorage.setItem(pageIsTriggeredKey, '1');
+  }
+
+  if (pageTimeRemain > 0) {
+  setTimeout(() => {
+  // Set pageTimeRemain to 0 before finalizing
+  pageTimeRemain = 0;
+  finalizePageEvent();
+  }, pageTimeRemain * 1000);
+  }
+
+  function finalizePageEvent() {
+  if (pageTimeRemain <= 0 && sessionStorage.getItem(pageIsTriggeredKey) === '1') {
+  gtag('event', page.eventName);
+  sessionStorage.setItem(pageIsTriggeredKey, '0');
+  }
+  sessionStorage.setItem(pageTimeRemainKey, pageTimeRemain);
+  }
+
+  const pageTimeBegin = Date.now();
+  window.addEventListener('beforeunload', () => {
+  const elapsedPageTime = Math.floor((Date.now() - pageTimeBegin) / 1000);
+  pageTimeRemain = Math.max(0, pageTimeRemain - elapsedPageTime);
+  finalizePageEvent();
+  });
+  }
+  })();
+  </script>
+  
   <!-- A Schema.org Type Organization -->
   <script type="application/ld+json">
   {

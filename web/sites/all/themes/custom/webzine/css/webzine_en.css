@@ -330,7 +330,6 @@ section h1.title{font-size:38px;line-height:40px;padding-bottom:24px;font-family
 }
 .lc05 li dd p.summury{max-height:94px;display:block;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis;margin-bottom:8px}
 .lc05 li dd p.meta{color:#888}
-.lc05 li dd p.meta span:after{content:"|";margin:0 5px 0 9px;color:#ddd}
 .lc05_01 li dt .category{display:block;margin-bottom:10px}
 .lc05_01 li dd p.summury{max-height:58px;-webkit-line-clamp:2}
 

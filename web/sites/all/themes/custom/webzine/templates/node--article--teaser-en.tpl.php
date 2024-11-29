@@ -96,7 +96,6 @@
   <dd>
     <p class="meta">
       <span><?php print truncate_utf8(get_writers_und($field_writer), 60, TRUE, TRUE);?></span>
-      <em><?php print format_date($created, 'custom', 'Y.m.d');?></em>
     </p>
   </dd>
 </dl>
